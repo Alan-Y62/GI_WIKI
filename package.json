@@ -1,0 +1,29 @@
+{
+  "name": "gi_wiki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alan-Y62/GI_WIKI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alan-Y62/GI_WIKI/issues"
+  },
+  "homepage": "https://github.com/Alan-Y62/GI_WIKI#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7"
+  },
+  "devDependencies": {
+    "dotenv": "^14.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
