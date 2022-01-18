@@ -1,21 +1,29 @@
-header {
+nav {
   display: flex;
   background: rgba(20, 20, 61, 0.507);
-}
-
-nav {
   width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
 }
 
 #nav-logo {
   width: 100px;
-  height: 56px;
+  height: 76px;
 }
 
 #nav-list {
   display: flex;
+  width: fit-content;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem;
   margin: 0;
+}
+
+#nav-list * {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  padding: 10px 10px;
 }
