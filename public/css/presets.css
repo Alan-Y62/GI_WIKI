@@ -73,7 +73,3 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-body {
-  font-size: 5rem;
-}

@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
 </head>
 
 <body>
     <section class="video-container">
+        <%- include("../views/navbar")%>
         <video src="../public/video/bg.mp4" autoplay loop muted draggable="false"></video>
     </section>
     <section class="nation-container">
