@@ -16,3 +16,38 @@
     height: 100%;
     object-fit: fill;
 }
+
+.nation-container{
+    position: relative;
+    display: flex;
+    flex-wrap:wrap;
+    width:100vw;
+    min-height: 100vh;
+}
+
+.nation-container > div{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis:100px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.mondstadt{
+    background: url("../images/regions/mondstadt_card.png") no-repeat center center/cover;
+}
+
+.liyue{
+    background: url("../images/regions/liyue_card.png") no-repeat center center/cover;
+}
+
+.inazuma{
+    background: url("../images/regions/inazuma_card.png") no-repeat center center/cover;
+}
+
+.unreleased{
+    background-color: black;
+    border:1px solid white;
+    color:white;
+}
