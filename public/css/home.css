@@ -21,7 +21,7 @@
     position: relative;
     display: flex;
     flex-wrap:wrap;
-    width:100vw;
+    width:100%;
     min-height: 100vh;
 }
 
@@ -46,8 +46,22 @@
     background: url("../images/regions/inazuma_card.png") no-repeat center center/cover;
 }
 
-.unreleased{
-    background-color: black;
-    border:1px solid white;
-    color:white;
+.sumeru{
+    background-color: #a4d2ac;
+}
+
+.fontaine{
+    background-color: #0277bd;
+}
+
+.natlan{
+    background-color: #ffb74d;
+}
+
+.snezhnaya{
+    background-color: #b3e5fc;
+}
+
+.khaneriah{
+    background-color: #666666;
 }
