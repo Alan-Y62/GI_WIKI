@@ -6,9 +6,9 @@ const express = require("express");
 
 const app = express();
 
-const mongoose = require("mongoose");
+app.use("/public", express.static("public"));
 
-const Character = require("./models/characters");
+app.set("view engine", "ejs")
 
 const dbConnect = () => {
   try {
@@ -29,10 +29,5 @@ app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", async (req, res) => {
-  const charList = await Character.find();
-  res.write(`<pre>${JSON.stringify(charList, null, 2)}</pre>`);
-  res.end();
-});
 
 app.listen(PORT);
