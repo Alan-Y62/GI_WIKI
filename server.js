@@ -10,6 +10,8 @@ app.use("/public", express.static("public"));
 
 const path = require("path");
 
+const mongoose = require("mongoose");
+
 //ejs
 app.set("view engine", "ejs");
 
@@ -36,8 +38,4 @@ app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 3000;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d4be3590fd27ea8a2b0ab6111393c75abf4aee5d
 app.listen(PORT);
