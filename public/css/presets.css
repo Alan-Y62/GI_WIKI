@@ -74,11 +74,6 @@ select {
   }
 }
 
-body {
-  font-size: 5rem;
-}
-
 video {
   max-width: 100%;
-  max-height: 100vh;
 }
