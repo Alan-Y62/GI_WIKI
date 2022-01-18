@@ -8,7 +8,14 @@ const app = express();
 
 const mongoose = require("mongoose");
 
-const Character = require("./models/characters");
+const path = require("path");
+
+//ejs
+app.set("view engine", "ejs");
+
+//static files
+app.use("/public", express.static("public"));
+app.use("/public", express.static(path.join(__dirname)));
 
 const dbConnect = () => {
   try {
@@ -28,11 +35,5 @@ dbConnect();
 app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 3000;
-
-app.get("/", async (req, res) => {
-  const charList = await Character.find();
-  res.write(`<pre>${JSON.stringify(charList, null, 2)}</pre>`);
-  res.end();
-});
 
 app.listen(PORT);
