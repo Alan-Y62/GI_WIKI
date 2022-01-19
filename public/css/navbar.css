@@ -37,3 +37,15 @@ nav {
   background: hsla(208, 62%, 50%);
   color: black;
 }
+
+.vol{
+  background-color:red;
+  border: none;
+  font-size: 12px;
+  width:50px;
+}
+
+.vol.on{
+  background-color: whitesmoke;
+  color:black !important;
+}
