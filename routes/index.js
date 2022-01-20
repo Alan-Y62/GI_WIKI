@@ -8,4 +8,8 @@ router.get("/", (req, res) => {
   res.render("home");
 });
 
+router.get("/characters", (req, res) => {
+  res.render("character");
+});
+
 module.exports = router;
