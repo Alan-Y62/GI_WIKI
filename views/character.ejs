@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+
+    <title>Characters</title>
+</head>
+
+<body>
+    <%- include("../views/navbar")%>
+        <section id="character_List">
+            <div class="character">
+                <h4>Kaeya</h4>
+            </div>
+        </section>
+        <audio id="the_audio" loop>
+            <source src="../public/audio/2_4.mp3" type="audio/mp3">
+        </audio>
+</body>
+<script src="../public/scripts/audio.js"></script>
+<style>
+    section {
+        min-height: 100vh;
+        max-width: 100%;
+        display: block;
+        background-image: url("https://uploadstatic-sea.mihoyo.com/contentweb/20191028/2019102811522476460.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    section>div:first-child {
+        margin-top: 76px;
+    }
+</style>
+
+</html>
