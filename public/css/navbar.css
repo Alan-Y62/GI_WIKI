@@ -21,6 +21,28 @@ nav {
   margin: 0;
 }
 
+#nav-list-short {
+  display: none;
+  list-style-type: none;
+  color: white;
+}
+
+#nav-list-short * {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+}
+
+#nav-list-short li:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#nav-list-short li a {
+  display: flex;
+  width: 100%;
+}
+
 #nav-list * {
   color: white;
   text-decoration: none;
@@ -38,14 +60,43 @@ nav {
   color: black;
 }
 
-.vol{
-  background-color:red;
-  border: none;
-  font-size: 12px;
-  width:50px;
+#closeBtn {
+  display: none;
 }
 
-.vol.on{
+.vol {
+  background-color: red;
+  border: none;
+  font-size: 12px;
+  width: 50px;
+}
+
+.vol.on {
   background-color: whitesmoke;
-  color:black !important;
+  color: black !important;
+}
+
+@media only screen and (max-width: 720px) {
+  #nav-logo {
+    background: white;
+  }
+
+  #nav-list {
+    display: none;
+  }
+
+  #nav-list-short.show {
+    display: block;
+  }
+
+  #closeBtn {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  nav {
+    display: block;
+  }
 }

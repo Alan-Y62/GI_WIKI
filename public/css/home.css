@@ -42,20 +42,10 @@
 }
 
 .setsOfFour > div {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 25%;
   font-size: 1.5rem;
+  width: 25%;
   text-align: center;
   padding: 0px 20px;
-}
-
-.nation-container a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: black;
 }
 
 .mondstadt {
@@ -85,7 +75,14 @@
 .nation a {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
   color: black;
+}
+
+.nation a:hover {
+  text-decoration: underline;
 }
 
 .liyue {
@@ -116,4 +113,7 @@
 
 .khaneriah {
   background-color: #666666;
+}
+
+@media only screen and (max-width: 720px) {
 }
