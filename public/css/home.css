@@ -23,6 +23,7 @@
   flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
+  font-size: 2rem;
 }
 
 /* .nation-container > div {
@@ -34,20 +35,6 @@
   padding: 0px 20px;
 } */
 
-.setsOfFour {
-  display: flex;
-  flex-basis: 100%;
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-.setsOfFour > div {
-  font-size: 1.5rem;
-  width: 25%;
-  text-align: center;
-  padding: 0px 20px;
-}
-
 .mondstadt {
   background: url("../images/regions/mondstadt_card.png") no-repeat center
     center/cover;
@@ -56,10 +43,10 @@
 .hidden {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 0%;
   opacity: 0;
   overflow: hidden;
-  height: 90%;
+  height: 100%;
   z-index: 0;
   width: fit-content;
 }
@@ -70,6 +57,9 @@
 
 .nation {
   position: relative;
+  display: flex;
+  flex-basis: 50%;
+  min-height: 30rem;
 }
 
 .nation a {
@@ -115,5 +105,16 @@
   background-color: #666666;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1080px) {
+  .nation-container {
+    display: block;
+  }
+
+  .nation {
+    flex-basis: 100%;
+  }
+
+  .hidden {
+    float: right;
+  }
 }
