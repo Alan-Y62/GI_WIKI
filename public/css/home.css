@@ -43,8 +43,8 @@
 .hidden {
   position: absolute;
   bottom: 0;
-  right: 0%;
-  opacity: 0;
+  right: -20%;
+  opacity: 1;
   overflow: hidden;
   height: 100%;
   z-index: 0;
@@ -105,7 +105,7 @@
   background-color: #666666;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1320px) {
   .nation-container {
     display: block;
   }
@@ -115,6 +115,6 @@
   }
 
   .hidden {
-    float: right;
+    left: 20%;
   }
 }
