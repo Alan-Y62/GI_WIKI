@@ -5,25 +5,26 @@
         <li class="nav-item"><a href="/characters">Characters</a></li>
         <li class="nav-item"><a href="#regions">Regions</a></li>
         <li class="nav-item"><a href="#weapons">Weapons</a></li>
-        <button id="volume_control" class="vol">OFF</button>
+        <li class="nav-item" id="nav-enemies">
+            <a>Enemies</a>
+            <div class="enemy-content">
+                <a href="#">Weekly Boss</a>
+                <a href="#">World Boss</a>
+                <a href="#">Common Enemies</a>
+              </div>
+        </li>
+        <li class="nav-item"><button id="volume_control" class="vol">OFF</button></li>
+        <button id="closeBtn" onclick="toggleNav(this)">X</button>
     </ul>
-    <ul id="nav-list-short">
-        <li class="nav-item"><a href="/">Home</a></li>
-        <li class="nav-item"><a href="/characters">Characters</a></li>
-        <li class="nav-item"><a href="#regions">Regions</a></li>
-        <li class="nav-item"><a href="#weapons">Weapons</a></li>
-        <button id="volume_control" class="vol">OFF</button>
-    </ul>
-    <button id="closeBtn" onclick="toggleNav(this)">X</button>
 </nav>
 
 <script>
     function toggleNav(btn) {
-        if (document.getElementById('nav-list-short').className === "show") {
-            document.getElementById('nav-list-short').className = "";
-        }
-        else {
-            document.getElementById('nav-list-short').className = "show";
-        }
+       const x = document.getElementById("nav-list")
+       if(x.className === ""){
+           x.classList.add("show")
+       } else {
+           x.classList.remove("show")
+       }
     }
 </script>

@@ -10,6 +10,7 @@ nav {
 #nav-logo {
   width: 100px;
   height: 76px;
+  margin-left: 1rem;
 }
 
 #nav-list {
@@ -21,28 +22,6 @@ nav {
   margin: 0;
 }
 
-#nav-list-short {
-  display: none;
-  list-style-type: none;
-  color: white;
-}
-
-#nav-list-short * {
-  color: white;
-  text-decoration: none;
-  font-size: 1.25rem;
-  padding: 0.25rem;
-}
-
-#nav-list-short li:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-#nav-list-short li a {
-  display: flex;
-  width: 100%;
-}
-
 #nav-list * {
   color: white;
   text-decoration: none;
@@ -51,7 +30,7 @@ nav {
   border-radius: 50px 50px;
 }
 
-#nav-list .nav-item a {
+#nav-list .nav-item a{
   margin: 0 auto;
 }
 
@@ -60,15 +39,36 @@ nav {
   color: black;
 }
 
-#closeBtn {
+#nav-enemies{
+  position:relative;
+  cursor: default;
+}
+
+.enemy-content {
   display: none;
+  position: absolute;
+  background-color: rgba(20, 20, 61, 1);
+  min-width: 150px;
+  margin-top: 10px;
+  border-radius: 0 !important; 
+  z-index: 1;
+}
+
+.enemy-content a{
+  display: block;
+}
+
+#nav-enemies:hover .enemy-content{
+  display: block;
 }
 
 .vol {
   background-color: red;
   border: none;
-  font-size: 12px;
+  font-size: 1rem;
   width: 50px;
+  padding:0 !important;
+  cursor: pointer;
 }
 
 .vol.on {
@@ -76,27 +76,49 @@ nav {
   color: black !important;
 }
 
-@media only screen and (max-width: 720px) {
-  #nav-logo {
-    background: white;
+#closeBtn{
+  display: none;
+  border: none;
+  font-size: 1rem;
+  width: 50px;
+  padding: 5px !important;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 920px) {
+  nav{
+    flex-direction: column;
   }
 
-  #nav-list {
+  #nav-list #closeBtn{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    color:black;
+  }
+
+  #nav-list{
+    padding: 0;
+  }
+
+  #nav-list li{
     display: none;
   }
 
-  #nav-list-short.show {
-    display: block;
+  .show{
+    width: 100vw;
+    flex-direction: column;
+    align-content: center !important;
+    padding-left: 1rem;
   }
 
-  #closeBtn {
-    display: flex;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  .show li{
+    display: inline !important;
+    margin: 0 1rem;
   }
 
-  nav {
-    display: block;
+  #volume_control{
+    margin-left: 10px !important;
   }
 }
