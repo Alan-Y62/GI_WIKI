@@ -8,8 +8,9 @@ router.get("/", (req, res) => {
   res.render("home");
 });
 
-router.get("/characters", (req, res) => {
-  res.render("character");
+router.get("/characters", async (req, res) => {
+  const list = await Character.find();
+  res.render("character", { list: list });
 });
 
 module.exports = router;

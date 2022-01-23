@@ -11,7 +11,7 @@ sound.addEventListener("click", () => {
     sound.classList.remove("on");
   } else {
     audio.play();
-    audio.volume = 0.1;
+    audio.volume = 0.2;
     vol = !vol;
     sound.innerText = "ON";
     sound.classList.add("on");

@@ -14,12 +14,50 @@
 <body>
     <%- include("../views/navbar")%>
         <section id="character_List">
-            <div class="character">
-                <h4>Kaeya</h4>
+            <div class="container">
+                <div class="char-title">
+                    <h4>Ganyu</h4>
+                    <div class="stars-container">
+                        <img class="stars" src="/public/images/star.png" alt="star">
+                        <img class="stars" src="/public/images/star.png" alt="star">
+                        <img class="stars" src="/public/images/star.png" alt="star">
+                        <img class="stars" src="/public/images/star.png" alt="star">
+                        <img class="stars" src="/public/images/star.png" alt="star">
+                    </div>
+                </div>
+                <div class="char-info">
+                    <div class="img-side">
+                        <img id="img-src" src="/public/images/portrait/ganyu.png" alt="portrait" />
+                    </div>
+                    <div class="details-side">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio,
+                        voluptatum quisquam qui doloremque aut consectetur! A labore, exercitationem autem quaerat
+                        magnam soluta! Quam accusamus optio qui, recusandae aliquam ullam error?
+                        Quis, temporibus? Officiis delectus, hic nostrum magnam animi illo officia recusandae facilis,
+                        aspernatur porro minus nihil magni inventore consequuntur libero praesentium obcaecati similique
+                        at veniam. Magni voluptas possimus dicta reiciendis.
+                        Similique harum, illo quidem vel sunt quo vitae dolores deleniti tempora aliquid porro. Tenetur
+                        quo nisi officia quas rerum totam reiciendis at eaque omnis veniam aperiam, labore consequuntur
+                        aut ratione!
+                        Vitae fuga accusantium in, autem, amet tempora numquam nisi nobis reprehenderit sequi commodi.
+                        At facilis obcaecati repellendus. Quod officia praesentium officiis deleniti! Sapiente nisi
+                        debitis quas consequatur quasi pariatur voluptatem?
+                        Delectus error quibusdam voluptatum illo hic. Nisi reiciendis, voluptates ipsum placeat
+                        molestias, aperiam maxime eius odit explicabo inventore expedita nemo non accusamus,
+                        voluptatibus quasi? Cum, explicabo veniam! Quod, saepe dolore.</div>
+                </div>
+                <!-- <% if(list.length !==0) { %>
+                    <% list.forEach((item)=> { %>
+                        <h4 class="char-name">
+                            <%= item.name %>
+                        </h4>
+                        <h3 class="star-rating">
+                            <%= item.star %>
+                        </h3>
+                        <% })} %> -->
             </div>
         </section>
         <audio id="the_audio" loop>
-            <source src="../public/audio/2_4.mp3" type="audio/mp3">
+            <source src="../public/miscs/Radiant_Qilin.mp3" type="audio/mp3">
         </audio>
 </body>
 <script src="../public/scripts/audio.js"></script>
@@ -28,13 +66,51 @@
         min-height: 100vh;
         max-width: 100%;
         display: block;
-        background-image: url("/public/images/original.png");
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: green;
+        padding: 76px 0;
     }
 
-    section>div:first-child {
-        margin-top: 76px;
+    .container {
+        margin: 0 auto;
+        height: 100rem;
+        width: 90%;
+        background: lightblue;
+    }
+
+    .char-title {
+        font-size: 3rem;
+        padding: .5rem 0;
+        text-align: center;
+        background: rgba(135, 206, 250, .7);
+    }
+
+    .stars-container {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .stars {
+        max-height: 1.5rem;
+        max-width: 1.5rem;
+    }
+
+    .char-info {
+        height: calc(100% - 7rem);
+        display: flex;
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+
+    .img-side,
+    .details-side {
+        height: fit-content;
+        width: 45%;
+        margin: 0 1.5rem;
+    }
+
+    #img-src {
+        margin: .5rem auto;
     }
 </style>
 
