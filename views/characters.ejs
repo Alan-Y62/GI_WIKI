@@ -24,9 +24,8 @@
                     <th onclick="sortTable(3)">Weapon</th>
                     <th onclick="sortTable(4)">Region</th>
                 </tr>
-                <% list.map((char, index, arr)=> { %>
+                <% list.map((char)=> { %>
                     <tr>
-
                         <td>
                             <a href='/characters/<%=char.name%>'>
                                 <%= char.name %>
@@ -98,6 +97,10 @@
         background: #e6e6e6;
     }
 
+    tbody tr:first-child {
+        background: #fee5cb;
+    }
+
     a {
         text-decoration: none;
         color: black;
@@ -116,6 +119,9 @@
 </style>
 
 <script>
+
+    const currSort = 0;
+
     function sortTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("table");
