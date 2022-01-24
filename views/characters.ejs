@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <title>Characters</title>
+</head>
+
+<body>
+    <%- include("../views/navbar")%>
+        <h1>Characters</h1>
+        <section>
+            <% if(list.length !==0) { %>
+                <% list.map((char, index, arr)=> { %>
+                    <div class="character">
+                        <a href='/characters/<%=char.name%>'>
+                            <%= char.name %>
+                        </a>
+                    </div>
+                    <% })} %>
+        </section>
+</body>
+
+
+<style>
+    h1 {
+        padding-top: 10rem;
+        padding-left: 10rem;
+        font-size: 3rem;
+    }
+
+    section {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .character {
+        padding: 10px;
+        width: fit-content;
+        background: white;
+        margin-bottom: .25rem;
+    }
+</style>
+
+</html>

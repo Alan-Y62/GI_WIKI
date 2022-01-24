@@ -9,8 +9,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/characters", async (req, res) => {
-  const list = await Character.find();
-  res.render("character", { list: list });
+  const list = await Character.find().sort({ name: 1 });
+  res.render("characters", { list: list });
+});
+
+router.get("/characters/:name", (req, res) => {
+  res.render("character");
 });
 
 module.exports = router;
