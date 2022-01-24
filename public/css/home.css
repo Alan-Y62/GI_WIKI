@@ -131,6 +131,10 @@
     min-height:20rem;
   }
 
+  .nation a{
+    justify-content: flex-start;
+  }
+
   .nation p{
     text-align: center;
     width: 100%;
