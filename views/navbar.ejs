@@ -13,8 +13,12 @@
                 <a href="#">Common Enemies</a>
             </div>
         </li>
-        <li class="nav-item">
+        <li>
             <button id="volume_control" class="vol">OFF</button>
+        </li>
+        <li class="nav-item">
+            <input id="vol-control" type="range" value=".5" min="0" max="100" step="1" oninput="setVolume(this.value)"
+                onchange="setVolume(this.value)"></input>
         </li>
         <button id="closeBtn" onclick="toggleNav(this)">X</button>
     </ul>

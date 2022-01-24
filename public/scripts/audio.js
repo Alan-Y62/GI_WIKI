@@ -11,9 +11,13 @@ sound.addEventListener("click", () => {
     sound.classList.remove("on");
   } else {
     audio.play();
-    audio.volume = 0.2;
+    audio.volume = 0.5;
     vol = !vol;
     sound.innerText = "ON";
     sound.classList.add("on");
   }
 });
+
+function setVolume(value) {
+  audio.volume = value / 100;
+}
