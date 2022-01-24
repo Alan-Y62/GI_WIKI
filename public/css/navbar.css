@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background: #fee5cb;
+  background: rgba(254, 229, 203, 0.7);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -45,7 +45,7 @@ nav {
 
 #nav-enemies {
   position: relative;
-  cursor: default;
+  cursor: pointer;
 }
 
 .enemy-content {
@@ -53,7 +53,8 @@ nav {
   position: absolute;
   background-color: #fee5cb;
   min-width: 150px;
-  margin-top: 10px;
+  top: 40px;
+  left:0;
   border-radius: 0 !important;
   outline: 1px solid gray;
   z-index: 1;
@@ -65,6 +66,18 @@ nav {
 
 #nav-enemies:hover .enemy-content {
   display: block;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadein {
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+#vol-control{
+  padding: 3px 0;
+  cursor: grab;
 }
 
 .vol {
@@ -123,7 +136,7 @@ nav {
     margin: 0 1rem;
   }
 
-  #volume_control {
+  #volume-control {
     margin-left: 10px !important;
   }
 }
