@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
     <title>Characters</title>
 </head>
 
@@ -14,37 +15,162 @@
     <%- include("../views/navbar")%>
         <h1>Characters</h1>
         <section>
-            <% if(list.length !==0) { %>
+            <table id="table">
+                <tr>
+                    <th onclick="sortTable(0)">Name <box-icon id="chevron" name='chevron-down'></box-icon>
+                    </th>
+                    <th onclick="sortTable(1)">Star</th>
+                    <th onclick="sortTable(2)">Element</th>
+                    <th onclick="sortTable(3)">Weapon</th>
+                    <th onclick="sortTable(4)">Region</th>
+                </tr>
                 <% list.map((char, index, arr)=> { %>
-                    <div class="character">
-                        <a href='/characters/<%=char.name%>'>
-                            <%= char.name %>
-                        </a>
-                    </div>
-                    <% })} %>
+                    <tr>
+
+                        <td>
+                            <a href='/characters/<%=char.name%>'>
+                                <%= char.name %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= char.star %>
+                        </td>
+                        <td>
+                            <%= char.element %>
+                        </td>
+                        <td>
+                            <%= char.weapon %>
+                        </td>
+                        <td>
+                            <%= char.region %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
         </section>
+        <audio id="the_audio" loop>
+            <source src="../public/audio/2_4.mp3" type="audio/mp3">
+        </audio>
+        <script src="../public/scripts/audio.js"></script>
+
 </body>
 
 
 <style>
     h1 {
-        padding-top: 10rem;
-        padding-left: 10rem;
+        margin: 10rem 0 2rem 0;
         font-size: 3rem;
+        text-align: center;
+        color: white;
     }
 
     section {
         margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
+        background: #fee5cb;
+        width: 90%;
+        margin: 0 auto;
     }
 
-    .character {
-        padding: 10px;
-        width: fit-content;
-        background: white;
-        margin-bottom: .25rem;
+    table {
+        width: 100%;
+    }
+
+    th {
+        cursor: pointer;
+        position: relative;
+    }
+
+    #chevron {
+        position: absolute;
+        top: 30%;
+        right: 1%;
+    }
+
+    tr {
+        outline: 1px solid black;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #dbdbdb;
+    }
+
+    tbody tr:nth-child(even) {
+        background: #e6e6e6;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+        outline: white 1px solid;
+    }
+
+    a:hover {
+        color: white;
     }
 </style>
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("table");
+        switching = true;
+        // Set the sorting direction to ascending:
+        dir = "asc";
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /* Check if the two rows should switch place,
+                based on the direction, asc or desc: */
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                // Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /* If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again. */
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    document.getElementById('chevron').setAttribute('name', 'chevron-up');
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>
 
 </html>

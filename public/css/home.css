@@ -45,7 +45,7 @@
   color: black;
 }
 
-.nation p{
+.nation p {
   padding: 0px 1rem;
 }
 
@@ -55,20 +55,19 @@
   right: -20%;
   opacity: 0;
   height: 100%;
-  z-index: 0;
   width: fit-content;
-  transition: all 0.2s linear;
+  transition: all 0.5s linear;
 }
 
-.nation:hover{
-  border: 5px solid white
+.nation:hover {
+  outline: 5px solid white;
 }
 
-.nation:hover a{
+.nation:hover a {
   text-decoration: underline;
 }
 
-.nation:hover .hidden{
+.nation:hover .hidden {
   opacity: 1;
 }
 
@@ -94,22 +93,22 @@
 
 .fontaine {
   background: url("../images/regions/unreleased.png") no-repeat center
-  center/cover;
+    center/cover;
 }
 
 .natlan {
   background: url("../images/regions/unreleased.png") no-repeat center
-  center/cover;
+    center/cover;
 }
 
 .snezhnaya {
   background: url("../images/regions/unreleased.png") no-repeat center
-  center/cover;
+    center/cover;
 }
 
 .khaneriah {
   background: url("../images/regions/unreleased.png") no-repeat center
-  center/cover;
+    center/cover;
 }
 
 @media only screen and (max-width: 1320px) {
@@ -127,17 +126,17 @@
 }
 
 @media only screen and (max-width: 820px) {
-  .nation{
-    min-height:20rem;
+  .nation {
+    min-height: 20rem;
   }
 
-  .nation p{
+  .nation p {
     text-align: center;
     width: 100%;
   }
 
-  .hidden{
-    left:10%;
-    bottom:-20%;
+  .hidden {
+    left: 10%;
+    bottom: -20%;
   }
 }
