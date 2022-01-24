@@ -55,13 +55,15 @@
   right: -20%;
   opacity: 0;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
   width: fit-content;
   transition: all 0.2s linear;
 }
 
 .nation:hover{
-  border: 5px solid white
+  outline: 5px solid white;
+  outline-offset: -5px;
+  z-index: 999;
 }
 
 .nation:hover a{
