@@ -5,7 +5,6 @@ nav {
   position: fixed;
   top: 0px;
   z-index: 1000;
-  max-height: 76px;
 }
 
 #nav-logo {
@@ -33,11 +32,6 @@ nav {
 
 #nav-list .nav-item a {
   margin: 0 auto;
-}
-
-#nav-list .vol-item {
-  display: grid;
-  place-content: center;
 }
 
 #vol-control {
