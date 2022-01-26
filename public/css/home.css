@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
 .video-container {
   position: relative;
   right: 0;
@@ -15,23 +17,28 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-position:center;
+  object-position: center;
   object-fit: cover;
 }
 
-.text{
+.text {
   position: absolute;
-  right:1rem;
-  top:5rem;
-  max-width: 40%;
+  right: 1rem;
+  top: 5rem;
+  max-width: 35%;
   z-index: 999;
+  font-family: "Rock Salt", cursive;
 }
 
-.text h1{
+.text h1 {
   padding: 0 1rem;
   text-align: right;
   font-size: 4rem;
-  color:white;
+  color: white;
+}
+
+.special-text {
+  color: rgb(0, 118, 228);
 }
 
 .nation-container {
@@ -78,11 +85,11 @@
   transition: all 0.5s linear;
 }
 
-.unreleased{
+.unreleased {
   position: absolute;
   height: 50%;
   width: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-50%, 0);
 }
 
@@ -101,64 +108,64 @@
 }
 
 .mondstadt {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/regions/mondstadt_2.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/regions/mondstadt_2.png") no-repeat center center/cover;
 }
 
 .liyue {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/regions/Liyue_2.jpg") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/regions/Liyue_2.jpg") no-repeat center center/cover;
 }
 
 .inazuma {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),  url("../images/regions/inazuma_2.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/regions/inazuma_2.png") no-repeat center center/cover;
 }
 
 .sumeru {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/regions/unreleased.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/regions/unreleased.png") no-repeat center center/cover;
 }
 
 .fontaine {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/regions/unreleased.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/regions/unreleased.png") no-repeat center center/cover;
 }
 
 .natlan {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/regions/unreleased.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/regions/unreleased.png") no-repeat center center/cover;
 }
 
 .snezhnaya {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/regions/unreleased.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/regions/unreleased.png") no-repeat center center/cover;
 }
 
 .khaneriah {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/regions/unreleased.png") no-repeat center
-    center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/regions/unreleased.png") no-repeat center center/cover;
 }
 
-footer{
-  background:black;
+footer {
+  background: black;
   color: white;
-  font-size:1rem;
+  font-size: 1rem;
   line-height: 2rem;
-  padding:1rem;
+  padding: 1rem;
 }
 
-footer a{
-  color:white;
+footer a {
+  color: white;
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   justify-content: space-around;
 }
 
 @media only screen and (max-width: 1320px) {
-  .text h1{
+  .text h1 {
     font-size: 2rem;
   }
   .nation-container {
@@ -169,8 +176,8 @@ footer a{
     flex-basis: 100%;
   }
 
-  .nation a{
-    font-size: 2rem
+  .nation a {
+    font-size: 2rem;
   }
 
   .hidden {
