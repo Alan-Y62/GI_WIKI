@@ -17,6 +17,11 @@
   height: 100%;
   object-position:center;
   object-fit: cover;
+  z-index: -1;
+}
+
+.bg-btn{
+  display:none;
 }
 
 .text{
@@ -158,6 +163,10 @@ footer a{
 }
 
 @media only screen and (max-width: 1320px) {
+  .video-container video{
+    object-position: 45% center;
+  }
+
   .text h1{
     font-size: 2rem;
   }
@@ -179,6 +188,14 @@ footer a{
 }
 
 @media only screen and (max-width: 820px) {
+  .video-container video{
+    object-position: 25% center;
+  }
+
+  .bg-btn{
+    display: inline;
+  }
+
   .nation {
     min-height: 30rem;
   }

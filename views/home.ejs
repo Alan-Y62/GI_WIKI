@@ -14,7 +14,8 @@
 <body>
     <section id="home" class="video-container">
         <%- include("../views/navbar")%>
-            <video src="../public/video/bg2.mp4" autoplay loop muted draggable="false"></video>
+        <button id="bg-display" class="bg-btn" style="z-index: index 999;;">L</button>
+            <video src="../public/video/bg2.mp4" id="the-vid" autoplay loop muted draggable="false"></video>
             <div class="text">
                 <h1>Welcome to the World of Teyvat</h1>
             </div>
@@ -97,5 +98,22 @@
     </audio>
 </body>
 <script src="../public/scripts/audio.js"></script>
+<script>
+    let bg = document.getElementById('bg-display')
+    const video = document.getElementById('the-vid')
+    bg.addEventListener('click', () => {changebg()})
+
+    function changebg(){
+        if(bg.innerText == "L"){
+            video.style.objectPosition = '60%'
+            bg.innerText="A"
+        }
+        else{
+            video.style.objectPosition = '25%'
+            bg.innerText="L"
+        }
+        
+    }
+</script>
 
 </html>

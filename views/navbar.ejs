@@ -1,12 +1,12 @@
 <nav>
-    <img id="nav-logo" src="../public/images/gi_logo.png">
-    <ul id="nav-list">
+    <img id="nav-logo" class="logo" src="../public/images/gi_logo.png">
+    <ul id="nav-list" class="nav-list">
         <li class="nav-item"><a href="/">Home</a></li>
         <li class="nav-item"><a href="/characters">Characters</a></li>
         <li class="nav-item"><a href="#regions">Regions</a></li>
         <li class="nav-item"><a href="#weapons">Weapons</a></li>
         <li class="nav-item" id="nav-enemies">
-            <a>Enemies</a>
+            <a>Enemies ▼</a>
             <div class="enemy-content">
                 <a href="#">Weekly Boss</a>
                 <a href="#">World Boss</a>
@@ -14,20 +14,20 @@
             </div>
         </li>
         <li>
-            <button id="volume-control" class="vol">OFF</button>
+            <button id="volume-control" class="vol">♪ OFF</button>
         </li>
         <li class="vol-item">
             <input id="vol-control" type="range" value="1" min="0" max="100" step="1" oninput="setVolume(this.value)"
                 onchange="setVolume(this.value)"></input>
         </li>
-        <button id="closeBtn" onclick="toggleNav(this)">X</button>
+        <button id="closeBtn" onclick="toggleNav(this)">≡</button>
     </ul>
 </nav>
 
 <script>
     function toggleNav(btn) {
         const x = document.getElementById("nav-list")
-        if (x.className === "") {
+        if (!(x.className.includes("show"))) {
             x.classList.add("show")
         } else {
             x.classList.remove("show")

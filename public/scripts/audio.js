@@ -7,13 +7,13 @@ sound.addEventListener("click", () => {
   if (vol) {
     audio.volume = 0;
     vol = !vol;
-    sound.innerText = "OFF";
+    sound.innerText = "♪ OFF";
     sound.classList.remove("on");
   } else {
     audio.play();
     audio.volume = 0.2;
     vol = !vol;
-    sound.innerText = "ON";
+    sound.innerText = "♪ ON";
     sound.classList.add("on");
   }
 });
@@ -23,7 +23,7 @@ function setVolume(value) {
   if(!vol){
     audio.play();
     vol = !vol;
-    sound.innerText = "ON";
+    sound.innerText = "♪ ON";
     sound.classList.add("on");
   }
 }
