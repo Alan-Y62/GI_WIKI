@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 .video-container {
@@ -29,10 +30,9 @@
 .text {
   position: absolute;
   right: 1rem;
-  top: 5rem;
+  top: 5.75rem;
   max-width: 35%;
   z-index: 999;
-  font-family: "Rock Salt", cursive;
 }
 
 .text h1 {
@@ -40,10 +40,12 @@
   text-align: right;
   font-size: 4rem;
   color: white;
+  font-family: "Rock Salt", cursive;
 }
 
 .special-text {
   color: rgb(0, 118, 228);
+  font-family: "Rock Salt", cursive;
 }
 
 .nation-container {
@@ -94,7 +96,7 @@
   position: absolute;
   height: 50%;
   width: 50%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, 0);
 }
 
@@ -214,6 +216,11 @@ footer a {
   .nation p {
     text-align: center;
     width: 100%;
+  }
+
+  .unreleased {
+    position: relative;
+    top: 10%;
   }
 
   .hidden {
