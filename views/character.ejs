@@ -14,38 +14,46 @@
 <body>
     <%- include("../views/navbar")%>
         <section id="character_List">
-            <div class="container">
-                <div class="char-title">
-                    <h4>Ganyu</h4>
-                    <div class="stars-container">
-                        <img class="stars" src="/public/images/star.png" alt="star">
-                        <img class="stars" src="/public/images/star.png" alt="star">
-                        <img class="stars" src="/public/images/star.png" alt="star">
-                        <img class="stars" src="/public/images/star.png" alt="star">
-                        <img class="stars" src="/public/images/star.png" alt="star">
+            <% if(character.length> 0) {%>
+                <div class="container">
+                    <div class="bg-title <%= character[0].element%>">
+                        <div class="char-title">
+                            <div class="vision">
+                                <img src="/public/images/elements/<%= character[0].element.toLowerCase()%>.png"
+                                    alt="vision element" />
+                            </div>
+                            <div class="center-titles">
+                                <h4>
+                                    <%= character[0].name %>
+                                </h4>
+                                <div class="stars-container">
+                                    <% for(let i=0; i < character[0].star; i++) { %>
+                                        <img class="stars" src="/public/images/misc/star.png" alt="star" />
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div class="weapon">
+                                <img src="/public/images/weapon_icons/<%=character[0].weapon.toLowerCase()%>.png"
+                                    alt="weapon-type" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="char-info">
+                        <div class="img-side">
+                            <img id="img-src" src="/public/images/portrait/<%=character[0].name.toLowerCase()%>.png"
+                                alt="portrait" />
+                        </div>
+                        <div class="details-side">
+                            <div class="region">
+                                <%=character[0].region%>
+                            </div>
+                            <div class="constellation">
+                                <%=character[0].constellation%>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="char-info">
-                    <div class="img-side">
-                        <img id="img-src" src="/public/images/portrait/ganyu.png" alt="portrait" />
-                    </div>
-                    <div class="details-side">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio,
-                        voluptatum quisquam qui doloremque aut consectetur! A labore, exercitationem autem quaerat
-                        magnam soluta! Quam accusamus optio qui, recusandae aliquam ullam error?
-                        Quis, temporibus? Officiis delectus, hic nostrum magnam animi illo officia recusandae facilis,
-                        aspernatur porro minus nihil magni inventore consequuntur libero praesentium obcaecati similique
-                        at veniam. Magni voluptas possimus dicta reiciendis.
-                        Similique harum, illo quidem vel sunt quo vitae dolores deleniti tempora aliquid porro. Tenetur
-                        quo nisi officia quas rerum totam reiciendis at eaque omnis veniam aperiam, labore consequuntur
-                        aut ratione!
-                        Vitae fuga accusantium in, autem, amet tempora numquam nisi nobis reprehenderit sequi commodi.
-                        At facilis obcaecati repellendus. Quod officia praesentium officiis deleniti! Sapiente nisi
-                        debitis quas consequatur quasi pariatur voluptatem?
-                        Delectus error quibusdam voluptatum illo hic. Nisi reiciendis, voluptates ipsum placeat
-                        molestias, aperiam maxime eius odit explicabo inventore expedita nemo non accusamus,
-                        voluptatibus quasi? Cum, explicabo veniam! Quod, saepe dolore.</div>
-                </div>
-            </div>
+                <% } %>
         </section>
         <audio id="the_audio" loop>
             <source src="../public/miscs/Radiant_Qilin.mp3" type="audio/mp3">
@@ -57,7 +65,7 @@
         min-height: 100vh;
         max-width: 100%;
         display: block;
-        padding: 76px 0;
+        padding: 106px 0;
     }
 
     .container {
@@ -65,13 +73,59 @@
         height: 100rem;
         width: 90%;
         background: lightblue;
+        border-radius: 10px 10px;
+    }
+
+    .bg-title.Anemo {
+        background: #E27291;
+    }
+
+    .bg-title.Hydro {
+        background: #EB2B21;
+    }
+
+    .bg-title.Cryo {
+        background: #E9A0A4;
+    }
+
+    .bg-title.Electro {
+        background: #7BCB57;
+    }
+
+    .bg-title.Dendro {
+        background: #C1235A;
+    }
+
+    .bg-title.Pyro {
+        background: #5DC9FE;
+    }
+
+    .bg-title.Geo {
+        background: #4272E3;
     }
 
     .char-title {
         font-size: 3rem;
         padding: .5rem 0;
         text-align: center;
-        background: rgba(135, 206, 250, .7);
+        border-radius: 10px 10px 0 0;
+        max-height: 120px;
+        display: flex;
+        width: fit-content;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .vision,
+    .weapon {
+        width: 78px;
+        height: 78px;
+    }
+
+    .vision *,
+    .weapon * {
+        height: 100%;
+        width: 100%;
     }
 
     .stars-container {
@@ -96,7 +150,7 @@
     .details-side {
         height: fit-content;
         width: 45%;
-        margin: 0 1.5rem;
+        margin: .25rem 1.5rem;
     }
 
     #img-src {

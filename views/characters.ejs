@@ -34,8 +34,10 @@
                         <td>
                             <%= char.star %>
                         </td>
-                        <td>
+                        <td class="<%= char.element %>">
                             <%= char.element %>
+                                <img src="/public/images/elements/<%= char.element.toLowerCase()%>.png"
+                                    alt="failed_to_load" />
                         </td>
                         <td>
                             <%= char.weapon %>
@@ -90,11 +92,11 @@
     }
 
     tbody tr:nth-child(odd) {
-        background: #dbdbdb;
+        background: #747373;
     }
 
     tbody tr:nth-child(even) {
-        background: #e6e6e6;
+        background: #a7a7a7;
     }
 
     tbody tr:first-child {
@@ -111,10 +113,43 @@
         text-align: left;
         padding: 16px;
         outline: white 1px solid;
+        height: 56px;
+    }
+
+    td img {
+        height: 100%;
     }
 
     a:hover {
         color: white;
+    }
+
+    .Pyro {
+        color: #FE925D;
+    }
+
+    .Hydro {
+        color: #21E1EB;
+    }
+
+    .Anemo {
+        color: #72E2C3;
+    }
+
+    .Electro {
+        color: #A757CB;
+    }
+
+    .Dendro {
+        color: #23C18A;
+    }
+
+    .Cryo {
+        color: #A0E9E5;
+    }
+
+    .Geo {
+        color: #E3B342;
     }
 </style>
 

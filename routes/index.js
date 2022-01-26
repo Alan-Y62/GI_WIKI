@@ -13,8 +13,11 @@ router.get("/characters", async (req, res) => {
   res.render("characters", { list: list });
 });
 
-router.get("/characters/:name", (req, res) => {
-  res.render("character");
+router.get("/characters/:name", async (req, res) => {
+  const b = req.url.split("/")[2];
+  const character = await Character.find({ name: b });
+  console.log(character);
+  res.render("character", { character: character });
 });
 
 module.exports = router;
