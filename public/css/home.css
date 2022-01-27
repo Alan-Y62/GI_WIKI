@@ -204,6 +204,19 @@ footer a {
     object-position: 25% center;
   }
 
+  .text {
+    width: 20rem;
+    right: 20rem;
+  }
+
+  .text h1 {
+    color: black;
+  }
+
+  .special-text {
+    color: #64d1ff;
+  }
+
   .bg-btn {
     display: inline;
   }

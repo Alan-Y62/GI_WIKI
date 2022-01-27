@@ -40,10 +40,18 @@
                                     alt="failed_to_load" />
                         </td>
                         <td>
-                            <%= char.weapon %>
+                            <a href="/weapons/<%= char.weapon %>">
+                                <%=char.weapon%>
+                            </a>
                         </td>
                         <td>
-                            <%= char.region %>
+                            <%if(char.region !=='Unknown' ) { %>
+                                <a href="/regions/<%= char.region %>">
+                                    <%=char.region%>
+                                </a>
+                                <% } else { %>
+                                    <%=char.region%>
+                                        <% } %>
                         </td>
                     </tr>
                     <% }) %>
