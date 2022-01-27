@@ -17,7 +17,7 @@ nav {
   display: flex;
   width: fit-content;
   list-style-type: none;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem;
   margin: 0;
 }
@@ -26,8 +26,8 @@ nav {
   color: black;
   text-decoration: none;
   margin-right: calc(3vw - 2rem);
-  padding: 10px 10px;
-  border-radius: 50px 50px;
+  padding: 10px 4px;
+  border-radius: 20px 20px;
 }
 
 .nav-list .nav-item a {
@@ -54,7 +54,7 @@ nav {
   background-color: #fee5cb;
   min-width: 150px;
   top: 40px;
-  left:0;
+  left: 0;
   border-radius: 0;
   outline: 1px solid gray;
   z-index: 1;
@@ -71,11 +71,15 @@ nav {
 }
 
 @keyframes fadein {
-  from{opacity: 0;}
-  to{opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-#vol-control{
+#vol-control {
   padding: 3px 0;
   cursor: grab;
 }
@@ -84,8 +88,8 @@ nav {
   background-color: red;
   border: none;
   font-size: 1rem;
-  width: 50px;
-  padding: 0 !important;
+  width: 55px;
+  padding: 0 2px !important;
   cursor: pointer;
 }
 

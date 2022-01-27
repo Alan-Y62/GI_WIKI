@@ -20,4 +20,8 @@ router.get("/characters/:name", async (req, res) => {
   res.render("character", { character: character });
 });
 
+router.get("/privacy", (req, res) => {
+  res.render("privacy");
+});
+
 module.exports = router;

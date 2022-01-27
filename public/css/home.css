@@ -25,6 +25,9 @@
 
 .bg-btn {
   display: none;
+  border: none;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .text {
