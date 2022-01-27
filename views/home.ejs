@@ -107,11 +107,11 @@
 
     function changebg() {
         if (bg.innerText == "L") {
-            video.style.objectPosition = '60%'
+            video.classList.add('bg-aether')
             bg.innerText = "A"
         }
         else {
-            video.style.objectPosition = '25%'
+            video.classList.remove('bg-aether')
             bg.innerText = "L"
         }
     }
