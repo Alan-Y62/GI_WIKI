@@ -201,6 +201,10 @@ footer a {
     object-position: 25% center;
   }
 
+  .video-container .bg-aether{
+    object-position: 65% center;
+  }
+
   .bg-btn {
     display: inline;
   }
