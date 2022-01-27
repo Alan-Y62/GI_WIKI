@@ -204,7 +204,6 @@ footer a {
     object-position: 25% center;
   }
 
-<<<<<<< HEAD
   .text {
     width: 20rem;
     right: 20rem;
@@ -216,10 +215,11 @@ footer a {
 
   .special-text {
     color: #64d1ff;
-=======
+  }
+
   .video-container .bg-aether{
     object-position: 65% center;
->>>>>>> 41a1997e525af6cae3cad5e025e0c7cb3a094696
+
   }
 
   .bg-btn {
