@@ -27,9 +27,15 @@
                 <% list.map((char)=> { %>
                     <tr>
                         <td>
-                            <a href='/characters/<%=char.name%>'>
-                                <%= char.name %>
-                            </a>
+                            <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
+                                <a href='/characters/<%=char.name%>(<%=char.element%>)'>
+                                    <%= char.name %>
+                                </a>
+                                <% } else { %>
+                                    <a href='/characters/<%=char.name%>'>
+                                        <%= char.name %>
+                                    </a>
+                                    <% } %>
                         </td>
                         <td>
                             <%= char.star %>
