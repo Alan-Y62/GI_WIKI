@@ -208,6 +208,10 @@ footer a {
     object-position: 65% center;
   }
 
+  .text {
+    left: 1rem;
+  }
+
   .bg-btn {
     display: inline;
   }
