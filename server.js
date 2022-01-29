@@ -12,6 +12,12 @@ const path = require("path");
 
 const mongoose = require("mongoose");
 
+//enable req.body
+const bodyparser = require("body-parser");
+
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+
 //ejs
 app.set("view engine", "ejs");
 

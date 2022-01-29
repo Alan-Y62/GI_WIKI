@@ -46,26 +46,8 @@
                                     alt="portrait" />
                             </div>
                             <div class="details-side">
-                                <p>
-                                    <span class="underline">
-                                        <%= character[0].name %>
-                                    </span>
-                                    is a
-                                    <span class="underline">
-                                        <%= character[0].star %>
-                                    </span>
-                                    <span class="underline">
-                                        <%= character[0].weapon %>
-                                    </span>
-                                    character. The element of their vision is
-                                    <span class="underline">
-                                        <%= character[0].element %>
-                                    </span>
-                                    . They rein from
-                                    <span class="underline">
-                                        <%= character[0].region %>
-                                    </span>.
-                                </p>
+                                <img src="/public/images/stats/<%=character[0].name%>_<%= character[0].element%>_ascension.png"
+                                    alt="stats">
                                 <!-- <div class="region">
                                 <%=character[0].region%>
                             </div>
@@ -76,8 +58,7 @@
                         </div>
                         <img src="/public/images/stats/<%=character[0].name%>_<%= character[0].element%>.png"
                             alt="stats">
-                        <img src="/public/images/stats/<%=character[0].name%>_<%= character[0].element%>_ascension.png"
-                            alt="stats">
+
                     </div>
                 </div>
                 <% } %>
@@ -97,7 +78,6 @@
 
     .container {
         margin: 0 auto;
-        height: 100rem;
         width: 90%;
         background: lightblue;
         border-radius: 10px 10px;
@@ -176,9 +156,8 @@
     .img-side,
     .details-side {
         height: fit-content;
-        width: 45%;
-        margin: .25rem 1.5rem;
     }
+
 
     .underline {
         text-decoration: underline;
