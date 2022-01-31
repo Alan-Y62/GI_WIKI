@@ -79,4 +79,10 @@ router.post("/temp", (req, res) => {
   res.redirect("/temp");
 });
 
+router.get("/secret", async (req, res) => {
+  const mona = await Character.find({ name: "Mona" });
+  console.log(typeof mona);
+  res.render("aujisdba", { character: mona });
+});
+
 module.exports = router;
