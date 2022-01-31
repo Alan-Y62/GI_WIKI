@@ -80,7 +80,7 @@ const CharSchema = new mongoose.Schema(
           required: true,
         },
       },
-      altsprints: {
+      altabilities: {
         name: {
           type: String,
           required: true,
@@ -112,6 +112,9 @@ const CharSchema = new mongoose.Schema(
           name: {
             type: String,
             required: true,
+          },
+          description: {
+            type: String,
           },
         },
       },

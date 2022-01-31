@@ -59,33 +59,20 @@
                         <h2>
                             Normal Attack: <%= character[0].talents.normalattack.name %>
                         </h2>
-                        <p>
-                            <span class="precursors">Normal Attack:</span>
-                            <%= character[0].talents.normalattack.normal %> <br>
-                                <span class="precursors">Charge Attack:</span>
-                                <%= character[0].talents.normalattack.charged %> <br>
-                                    <span class="precursors">Plunge:</span>
-                                    <%= character[0].talents.normalattack.plunged %>
-                        </p>
+                        <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
                         <h2>
                             Elemental Skill: <%= character[0].talents.skill.name %>
                         </h2>
-                        <p>
-                            <%= character[0].talents.skill.description %>
-                        </p>
+                        <pre><%= character[0].talents.skill.description.trim() %></pre>
                         <h2>
-                            Elemental Skill: <%= character[0].talents.burst.name %>
+                            Elemental Burst: <%= character[0].talents.burst.name %>
                         </h2>
-                        <p>
-                            <%= character[0].talents.burst.description %>
-                        </p>
-                        <% if(character[0].talents.altsprints.name !=="None" ) { %>
+                        <pre><%= character[0].talents.burst.description %></pre>
+                        <% if(character[0].talents.altabilities.name !=="None" ) { %>
                             <h2>
-                                Alternate Sprint: <%= character[0].talents.altsprints.name %>
+                                Alternate Ability: <%= character[0].talents.altabilities.name %>
                             </h2>
-                            <p>
-                                <%= character[0].talents.altsprints.description %>
-                            </p>
+                            <pre><%= character[0].talents.altabilities.description %></pre>
                             <% } %>
                     </div>
                     <div class="Passives">
@@ -94,15 +81,15 @@
                             <h2>
                                 First Passive: <%= character[0].talents.passives.battle[0].name %>
                             </h2>
-                            <p>
-                                <%= character[0].talents.passives.battle[0].description %>
-                            </p>
+                            <pre><%= character[0].talents.passives.battle[0].description %></pre>
                             <h2>
                                 Second Passive: <%= character[0].talents.passives.battle[1].name %>
                             </h2>
-                            <p>
-                                <%= character[0].talents.passives.battle[1].description %>
-                            </p>
+                            <pre><%= character[0].talents.passives.battle[1].description %></pre>
+                            <h2>
+                                Second Passive: <%= character[0].talents.passives.overworld.name %>
+                            </h2>
+                            <pre><%= character[0].talents.passives.overworld.description %></pre>
                         </div>
                     </div>
                 </div>
@@ -126,6 +113,7 @@
         width: 90%;
         background: lightblue;
         border-radius: 10px 10px;
+        padding-bottom: 5rem;
     }
 
     .bg-title.Anemo {
@@ -168,6 +156,10 @@
         margin: 0 auto;
     }
 
+    .char-title div {
+        margin: 0 .15rem;
+    }
+
     .vision,
     .weapon {
         width: 78px;
@@ -208,6 +200,21 @@
     h1 {
         font-size: 3rem;
         text-decoration: underline;
+    }
+
+    h2 {
+        outline: 1px solid black;
+        text-align: center;
+        background: rgba(255, 255, 255, .5);
+    }
+
+    pre {
+        padding: 0 2rem;
+        outline: 1px solid black;
+        width: 100%;
+        white-space: pre-wrap;
+        /* wrap text */
+        background: rgba(255, 255, 255, .2);
     }
 
     .precursors {

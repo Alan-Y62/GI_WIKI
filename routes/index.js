@@ -24,7 +24,7 @@ router.get("/characters/:name", async (req, res) => {
   } else {
     character = await Character.find({ name: name });
   }
-  console.log(character);
+  console.log(character[0].talents.skill.description);
   res.render("character", { character: character });
 });
 
