@@ -45,10 +45,12 @@
                                     alt="portrait" />
                             </div>
                             <div class="details-side">
-                                <div class="region">
-                                    <%=character[0].region%>
+                                <div class="story">
+                                    <h3>Brief Description</h3>
+                                    <%=character[0].story%>
                                 </div>
                                 <div class="constellation">
+                                    <h3>Constellation</h3>
                                     <%=character[0].constellation%>
                                 </div>
                             </div>
@@ -194,12 +196,12 @@
     .details-side {
         height: fit-content;
         width: 50%;
-        padding: 1rem .5rem;
+        padding: 1rem 1rem;
     }
 
     h1 {
         font-size: 3rem;
-        text-decoration: underline;
+        padding: 0 1rem;
     }
 
     h2 {
@@ -209,12 +211,17 @@
     }
 
     pre {
-        padding: 0 2rem;
+        padding: 2rem 2rem;
         outline: 1px solid black;
         width: 100%;
         white-space: pre-wrap;
         /* wrap text */
         background: rgba(255, 255, 255, .2);
+        margin-top: 0;
+    }
+
+    .constellation {
+        margin-top: 1rem;
     }
 
     .precursors {
