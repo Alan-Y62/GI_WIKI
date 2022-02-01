@@ -7,6 +7,10 @@ const WeapSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     rarity: {
       type: Number,
       required: true,

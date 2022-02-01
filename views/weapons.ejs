@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <title>Weapons</title>
+</head>
+
+<body>
+    <%- include("../views/navbar")%>
+        <h1>Weapons</h1>
+        <section>
+            <table class="table" id="swords">
+                <caption>SWORDS</caption>
+                <tr>
+                    <th>WEAPON NAME</th>
+                    <th>RARITY</th>
+                    <th>ATK</th>
+                    <th>SUB STAT</th>
+                    <th>SUB STAT RANGE</th>
+                    <th>MATERIAL</th>
+                </tr>
+                <% weapons.map((weapon)=> { %>
+                    <% if(weapon.type==="Sword" ) { %>
+                        <tr>
+                            <td>
+                                <%= weapon.name %>
+                            </td>
+                            <td>
+                                <%= weapon.rarity %>
+                            </td>
+                            <td>
+                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_stat %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
+                            </td>
+                            <td>
+                                <%= weapon.ascensions_mats %>
+                            </td>
+                        </tr>
+                        <% }}) %>
+            </table>
+            <table class="table" id="Claymores">
+                <caption>CLAYMORES</caption>
+                <tr>
+                    <th>WEAPON NAME</th>
+                    <th>RARITY</th>
+                    <th>ATK</th>
+                    <th>SUB STAT</th>
+                    <th>SUB STAT RANGE</th>
+                    <th>MATERIAL</th>
+                </tr>
+                <% weapons.map((weapon)=> { %>
+                    <% if(weapon.type==="Claymore" ) { %>
+                        <tr>
+                            <td>
+                                <%= weapon.name %>
+                            </td>
+                            <td>
+                                <%= weapon.rarity %>
+                            </td>
+                            <td>
+                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_stat %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
+                            </td>
+                            <td>
+                                <%= weapon.ascensions_mats %>
+                            </td>
+                        </tr>
+                        <% }}) %>
+            </table>
+            <table class="table" id="Polearms">
+                <caption>POLEARMS</caption>
+                <tr>
+                    <th>WEAPON NAME</th>
+                    <th>RARITY</th>
+                    <th>ATK</th>
+                    <th>SUB STAT</th>
+                    <th>SUB STAT RANGE</th>
+                    <th>MATERIAL</th>
+                </tr>
+                <% weapons.map((weapon)=> { %>
+                    <% if(weapon.type==="Polearm" ) { %>
+                        <tr>
+                            <td>
+                                <%= weapon.name %>
+                            </td>
+                            <td>
+                                <%= weapon.rarity %>
+                            </td>
+                            <td>
+                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_stat %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
+                            </td>
+                            <td>
+                                <%= weapon.ascensions_mats %>
+                            </td>
+                        </tr>
+                        <% }}) %>
+            </table>
+            <table class="table" id="Bows">
+                <caption>BOWS</caption>
+                <tr>
+                    <th>WEAPON NAME</th>
+                    <th>RARITY</th>
+                    <th>ATK</th>
+                    <th>SUB STAT</th>
+                    <th>SUB STAT RANGE</th>
+                    <th>MATERIAL</th>
+                </tr>
+                <% weapons.map((weapon)=> { %>
+                    <% if(weapon.type==="Bow" ) { %>
+                        <tr>
+                            <td>
+                                <%= weapon.name %>
+                            </td>
+                            <td>
+                                <%= weapon.rarity %>
+                            </td>
+                            <td>
+                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_stat %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
+                            </td>
+                            <td>
+                                <%= weapon.ascensions_mats %>
+                            </td>
+                        </tr>
+                        <% }}) %>
+            </table>
+            <table class="table" id="Catalysts">
+                <caption>CATALYSTS</caption>
+                <tr>
+                    <th>WEAPON NAME</th>
+                    <th>RARITY</th>
+                    <th>ATK</th>
+                    <th>SUB STAT</th>
+                    <th>SUB STAT RANGE</th>
+                    <th>MATERIAL</th>
+                </tr>
+                <% weapons.map((weapon)=> { %>
+                    <% if(weapon.type==="Catalyst" ) { %>
+                        <tr>
+                            <td>
+                                <%= weapon.name %>
+                            </td>
+                            <td>
+                                <%= weapon.rarity %>
+                            </td>
+                            <td>
+                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_stat %>
+                            </td>
+                            <td>
+                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
+                            </td>
+                            <td>
+                                <%= weapon.ascensions_mats %>
+                            </td>
+                        </tr>
+                        <% }}) %>
+            </table>
+        </section>
+        <audio id="the_audio" loop>
+            <source src="../public/audio/2_4.mp3" type="audio/mp3">
+        </audio>
+        <script src="../public/scripts/audio.js"></script>
+
+</body>
+
+
+<style>
+    h1 {
+        margin: 10rem 0 2rem 0;
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+    }
+
+    section {
+        width: 99%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    table {
+        background: #fee5cb;
+        width: fit-content;
+        margin: 1.5rem 2rem;
+    }
+
+    caption {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    td,
+    th {
+        text-align: center;
+        padding: .5rem .5rem;
+    }
+</style>
+
+</html>

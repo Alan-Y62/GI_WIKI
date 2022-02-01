@@ -28,6 +28,11 @@ router.get("/characters/:name", async (req, res) => {
   res.render("character", { character: character });
 });
 
+router.get("/weapons", async (req, res) => {
+  const weaponList = await Weapon.find().sort({ type: 1, rarity: 1, name: 1 });
+  res.render("weapons", { weapons: weaponList });
+});
+
 router.get("/privacy", (req, res) => {
   res.render("privacy");
 });
@@ -77,12 +82,6 @@ router.post("/temp", (req, res) => {
   weapon.save();
   console.log(weapon);
   res.redirect("/temp");
-});
-
-router.get("/secret", async (req, res) => {
-  const mona = await Character.find({ name: "Mona" });
-  console.log(typeof mona);
-  res.render("aujisdba", { character: mona });
 });
 
 module.exports = router;

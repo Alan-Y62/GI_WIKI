@@ -119,6 +119,10 @@ const CharSchema = new mongoose.Schema(
         },
       },
     },
+    story: {
+      type: String,
+      required: true,
+    },
   },
   { versionKey: false }
 );
