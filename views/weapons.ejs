@@ -35,6 +35,7 @@
             <table class="table" id="swords">
                 <caption>SWORDS</caption>
                 <tr>
+                    <th>ICON</th>
                     <th>WEAPON NAME</th>
                     <th>RARITY</th>
                     <th>ATK</th>
@@ -45,6 +46,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Sword" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -82,6 +87,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Claymore" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -119,6 +128,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Polearm" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -156,6 +169,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Bow" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -193,6 +210,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Catalyst" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -270,6 +291,40 @@
     th {
         text-align: center;
         padding: .5rem .5rem;
+    }
+
+    .star {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .star img {
+        margin: 0 auto;
+        height: 55%;
+        width: 55%;
+        max-width: 70px;
+        max-height: 70px;
+    }
+
+    .star1 {
+        background-image: url("/public/images/weapons/1star.png");
+    }
+
+    .star2 {
+        background-image: url("/public/images/weapons/2star.png");
+    }
+
+    .star3 {
+        background-image: url("/public/images/weapons/3star.png");
+    }
+
+    .star4 {
+        background-image: url("/public/images/weapons/4star.png");
+    }
+
+    .star5 {
+        background-image: url("/public/images/weapons/5star.png");
     }
 
     .mats {
