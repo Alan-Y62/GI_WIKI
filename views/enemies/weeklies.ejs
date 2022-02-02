@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include("../navbar")%>
+    <div class="weekly-container">
+        <% week.map((enemy) => { %>
+            <div>
+                <a href="/enemies/weekly_boss/<%= enemy.name %>"><%= enemy.name %> </a>
+            </div>
+            <% }) %>
+    </div>
+</body>
+<style>
+    .weekly-container{
+        margin: 7rem 1rem;
+        padding: 3rem 0;
+        background-color: rgba(255,255,255,0.5);
+    }
+</style>
+</html>

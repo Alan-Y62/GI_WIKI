@@ -35,6 +35,7 @@ dbConnect();
 
 //routes
 app.use("/", require("./routes/index"));
+app.use("/enemies", require("./routes/enemy"))
 
 const PORT = process.env.PORT || 3000;
 
