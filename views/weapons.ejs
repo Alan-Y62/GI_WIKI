@@ -14,10 +14,28 @@
 <body>
     <%- include("../views/navbar")%>
         <h1>Weapons</h1>
+        <ul class="wep-nav">
+            <li>
+                <a href="#swords">SWORDS</a>
+            </li>
+            <li>
+                <a href="#claymores">CLAYMORES</a>
+            </li>
+            <li>
+                <a href="#polearms">POLEARMS</a>
+            </li>
+            <li>
+                <a href="#bows">BOWS</a>
+            </li>
+            <li>
+                <a href="#catalysts">CATALYSTS</a>
+            </li>
+        </ul>
         <section>
             <table class="table" id="swords">
                 <caption>SWORDS</caption>
                 <tr>
+                    <th>ICON</th>
                     <th>WEAPON NAME</th>
                     <th>RARITY</th>
                     <th>ATK</th>
@@ -28,6 +46,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Sword" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -43,13 +65,16 @@
                             <td>
                                 <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
                             </td>
-                            <td>
-                                <%= weapon.ascensions_mats %>
+                            <td class="mats">
+                                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                                    <img src="/public/images/materials/<%= weapon.ascension_mats[i].split(' ').join('_') %>.png"
+                                        alt="<%= weapon.ascension_mats[i].split(' ').join('_')%>" />
+                                    <% } %>
                             </td>
                         </tr>
                         <% }}) %>
             </table>
-            <table class="table" id="Claymores">
+            <table class="table" id="claymores">
                 <caption>CLAYMORES</caption>
                 <tr>
                     <th>WEAPON NAME</th>
@@ -62,6 +87,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Claymore" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -77,13 +106,16 @@
                             <td>
                                 <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
                             </td>
-                            <td>
-                                <%= weapon.ascensions_mats %>
+                            <td class="mats">
+                                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                                    <img src="/public/images/materials/<%= weapon.ascension_mats[i].split(' ').join('_') %>.png"
+                                        alt="<%= weapon.ascension_mats[i].split(' ').join('_')%>" />
+                                    <% } %>
                             </td>
                         </tr>
                         <% }}) %>
             </table>
-            <table class="table" id="Polearms">
+            <table class="table" id="polearms">
                 <caption>POLEARMS</caption>
                 <tr>
                     <th>WEAPON NAME</th>
@@ -96,6 +128,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Polearm" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -111,13 +147,16 @@
                             <td>
                                 <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
                             </td>
-                            <td>
-                                <%= weapon.ascensions_mats %>
+                            <td class="mats">
+                                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                                    <img src="/public/images/materials/<%= weapon.ascension_mats[i].split(' ').join('_') %>.png"
+                                        alt="<%= weapon.ascension_mats[i].split(' ').join('_')%>" />
+                                    <% } %>
                             </td>
                         </tr>
                         <% }}) %>
             </table>
-            <table class="table" id="Bows">
+            <table class="table" id="bows">
                 <caption>BOWS</caption>
                 <tr>
                     <th>WEAPON NAME</th>
@@ -130,6 +169,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Bow" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -145,13 +188,16 @@
                             <td>
                                 <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
                             </td>
-                            <td>
-                                <%= weapon.ascensions_mats %>
+                            <td class="mats">
+                                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                                    <img src="/public/images/materials/<%= weapon.ascension_mats[i].split(' ').join('_') %>.png"
+                                        alt="<%= weapon.ascension_mats[i].split(' ').join('_')%>" />
+                                    <% } %>
                             </td>
                         </tr>
                         <% }}) %>
             </table>
-            <table class="table" id="Catalysts">
+            <table class="table" id="catalysts">
                 <caption>CATALYSTS</caption>
                 <tr>
                     <th>WEAPON NAME</th>
@@ -164,6 +210,10 @@
                 <% weapons.map((weapon)=> { %>
                     <% if(weapon.type==="Catalyst" ) { %>
                         <tr>
+                            <td class="star<%=weapon.rarity%> star">
+                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
+                                    alt="fail" />
+                            </td>
                             <td>
                                 <%= weapon.name %>
                             </td>
@@ -179,8 +229,11 @@
                             <td>
                                 <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
                             </td>
-                            <td>
-                                <%= weapon.ascensions_mats %>
+                            <td class="mats">
+                                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                                    <img src="/public/images/materials/<%= weapon.ascension_mats[i].split(' ').join('_') %>.png"
+                                        alt="<%= weapon.ascension_mats[i].split(' ').join('_')%>" />
+                                    <% } %>
                             </td>
                         </tr>
                         <% }}) %>
@@ -202,29 +255,106 @@
         color: white;
     }
 
+    .wep-nav {
+        list-style: none;
+        background: white;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .wep-nav li a {
+        color: black;
+        text-decoration: none;
+    }
+
     section {
         width: 99%;
         margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     table {
         background: #fee5cb;
-        width: fit-content;
-        margin: 1.5rem 2rem;
+        margin: 1.5rem auto;
+        width: 80%;
     }
 
     caption {
         font-weight: bold;
         font-size: 1.5rem;
+        width: fit-content;
+        margin: 0 auto;
     }
 
     td,
     th {
         text-align: center;
         padding: .5rem .5rem;
+    }
+
+    .star {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .star img {
+        margin: 0 auto;
+        height: 55%;
+        width: 55%;
+        max-width: 70px;
+        max-height: 70px;
+    }
+
+    .star1 {
+        background-image: url("/public/images/weapons/1star.png");
+    }
+
+    .star2 {
+        background-image: url("/public/images/weapons/2star.png");
+    }
+
+    .star3 {
+        background-image: url("/public/images/weapons/3star.png");
+    }
+
+    .star4 {
+        background-image: url("/public/images/weapons/4star.png");
+    }
+
+    .star5 {
+        background-image: url("/public/images/weapons/5star.png");
+    }
+
+    .mats {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .mats *:nth-child(1),
+    .mats *:nth-child(2) {
+        background-image: url("/public/images/materials/2star.png");
+        background-position: center;
+        background-repeat: none;
+        background-size: contain;
+        padding: .5rem;
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .mats *:nth-child(3) {
+        background-image: url("/public/images/materials/1star.png");
+        background-position: center;
+        background-repeat: none;
+        background-size: contain;
+        padding: .5rem;
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .mats *+* {
+        margin-left: 1rem;
     }
 </style>
 
