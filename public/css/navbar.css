@@ -166,4 +166,8 @@ nav {
   #volume-control {
     margin-left: 10px;
   }
+
+  #vol-control {
+    display: none;
+  }
 }

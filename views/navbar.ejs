@@ -34,17 +34,4 @@
             x.classList.remove("show")
         }
     }
-
-    let winSize = window.matchMedia("(max-width: 920px");
-    const control = document.getElementById("vol-control");
-    changeNav(winSize);
-    winSize.addEventListener("change", () => { changeNav(winSize) });
-
-    function changeNav(winSize){
-        if(winSize.matches){
-            control.style.width = "0px"
-        } else {
-            control.style.display = "5rem"
-        }
-    }
 </script>
