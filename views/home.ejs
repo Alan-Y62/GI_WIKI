@@ -15,7 +15,10 @@
 <body>
     <section id="home" class="video-container">
         <%- include("../views/navbar")%>
-            <button id="bg-display" class="bg-btn" style="z-index: index 999;;">L</button>
+            <div class="bgbtn-container">
+                <p>Switch view</p>
+                <button id="bg-display" class="bg-btn" style="z-index: index 999;;">Lumine</button>
+            </div>
             <video src="../public/video/bg2.mp4" id="the-vid" autoplay loop muted draggable="false"></video>
             <div class="text">
                 <h1>Welcome to the World of <span class="special-text">Teyvat</span>
@@ -110,13 +113,13 @@
 
 
     function changebg() {
-        if (bg.innerText == "L") {
+        if (bg.innerText == "Lumine") {
             video.classList.add('bg-aether')
-            bg.innerText = "A"
+            bg.innerText = "Aether"
         }
         else {
             video.classList.remove('bg-aether')
-            bg.innerText = "L"
+            bg.innerText = "Lumine"
         }
     }
 </script>

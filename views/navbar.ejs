@@ -15,7 +15,7 @@
             </div>
         </li>
         <li>
-            <button id="volume-control" class="vol">&nbsp;♪ OFF</button>
+            <button id="volume-control" class="vol on">♪</button>
         </li>
         <li class="vol-item">
             <input id="vol-control" type="range" value="1" min="0" max="100" step="1" oninput="setVolume(this.value)"
@@ -32,6 +32,19 @@
             x.classList.add("show")
         } else {
             x.classList.remove("show")
+        }
+    }
+
+    let winSize = window.matchMedia("(max-width: 920px");
+    const control = document.getElementById("vol-control");
+    changeNav(winSize);
+    winSize.addEventListener("change", () => { changeNav(winSize) });
+
+    function changeNav(winSize){
+        if(winSize.matches){
+            control.style.display = "none"
+        } else {
+            control.style.display = "inline"
         }
     }
 </script>

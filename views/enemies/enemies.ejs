@@ -14,28 +14,40 @@
         <h1>Enemies</h1>
         <p> a Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt quibusdam harum, explicabo culpa sapiente ut dignissimos, impedit reiciendis dolorum nulla aspernatur temporibus quo ducimus accusamus autem corporis iure quod animi.</p>
         <section id="common" class="enemy-sections">
-            <h2>Common Enemies</h2>
+            <div class="title-container">
+                <h2>Common Enemies</h2>
+                <img src="../../public/images/enemy_1.png" alt="s">
+            </div>
             <small>
                 <p>Go to: <a href="/enemies/common_enemies">Common enemies</a></p>
             </small>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolorum reprehenderit tempora exercitationem vero, quia eius iusto laborum consequatur voluptatum ut nam deserunt est alias necessitatibus? Nisi voluptatum in magnam?</p>
         </section>
         <section id="elite" class="enemy-sections">
-            <h2>Elite Enemies</h2>
+            <div class="title-container">
+                <h2>Elite Enemies</h2>
+                <img src="../../public/images/enemy_2.png" alt="s">
+            </div>
             <small>
                 <p>Go to: <a href="/enemies/elite_enemies">Elite enemies</a></p>
             </small>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores reiciendis doloremque temporibus maxime consequuntur fugiat quaerat tempore aspernatur sapiente illo, aperiam qui eos saepe impedit voluptate minima unde repellat corrupti!</p>
         </section>
         <section id="world" class="enemy-sections">
-            <h2>World Bosses</h2>
+            <div class="title-container">
+                <h2>World Bosses</h2>
+                <img src="../../public/images/enemy_3.png" alt="s">
+            </div>
             <small>
                 <p>Go to: <a href="/enemies/world_boss">World Bosses</a></p>
             </small>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate esse vitae deserunt tempore illum possimus aperiam blanditiis obcaecati, est nisi repellat soluta sint odio ad quis saepe, quae optio placeat?</p>
         </section>
         <section id="weekly" class="enemy-sections">
-            <h2>Weekly Bosses</h2>
+            <div class="title-container">
+                <h2>Weekly Bosses</h2>
+                <img src="../../public/images/enemy_4.png" alt="s">
+            </div>
             <small>
                 <p>Go to: <a href="/enemies/weekly_boss">Weekly Bosses</a></p>
             </small>
@@ -45,20 +57,30 @@
 </body>
 <style>
     .enemy-container{
-        margin: 7rem 1rem;
+        margin: 7rem;
         padding: 3rem 0;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255,255,255,0.8);
     }
 
-    h1, h2, p{
+    h1, p{
         padding: 0 1.5rem;
         margin: 0 3rem;
     }
 
-    h2{
+    .title-container{
+        display: flex;
+        padding: 0 1.5rem;
+        margin: 0 3rem;
         border-bottom: 3px solid black;
         margin-top: 1rem;
     }
-    
+
+    .title-container h2{
+        align-self: center;
+    }
+
+    .title-container img{
+        width: 150px;
+    }
 </style>
 </html>
