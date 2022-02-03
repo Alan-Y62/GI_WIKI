@@ -17,6 +17,7 @@
         <section>
             <table id="table">
                 <tr>
+                    <th>ICON</th>
                     <th onclick="sortTable(0)">Name <box-icon id="chevron" name='chevron-down'></box-icon>
                     </th>
                     <th onclick="sortTable(1)">Star</th>
@@ -26,6 +27,15 @@
                 </tr>
                 <% list.map((char)=> { %>
                     <tr>
+                        <td class="char-icon">
+                            <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
+                                <img src="/public/images/character/<%=char.name.toLowerCase()%><%=char.element.toLowerCase()%>.png"
+                                    alt="fail">
+                                <% } else { %>
+                                    <img src="/public/images/character/<%=char.name.toLowerCase().split(' ').join('_')%>.png"
+                                        alt="fail">
+                                    <% } %>
+                        </td>
                         <td>
                             <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
                                 <a href='/characters/<%=char.name%>(<%=char.element%>)'>
@@ -73,17 +83,16 @@
 
 <style>
     h1 {
-        margin: 10rem 0 2rem 0;
+        margin: 7rem 0 2rem 0;
         font-size: 3rem;
         text-align: center;
         color: white;
     }
 
     section {
-        margin-top: 1rem;
         background: #fee5cb;
         width: 90%;
-        margin: 0 auto;
+        margin: 1rem auto;
     }
 
     table {
@@ -132,6 +141,11 @@
 
     td img {
         height: 100%;
+    }
+
+    .char-icon {
+        padding: 0;
+        height: 80px;
     }
 
     a:hover {
