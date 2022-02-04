@@ -9,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  touch-action: manipulation; 
 }
 
 .video-container video {
@@ -30,7 +29,6 @@
   right: 0;
   display: none;
   padding: 10px;
-  touch-action: manipulation; 
 }
 
 .bgbtn-container p{
@@ -49,7 +47,6 @@
   top: 5.75rem;
   max-width: 40%;
   z-index: 999;
-  touch-action: manipulation; 
 }
 
 .text h1 {
