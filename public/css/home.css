@@ -23,11 +23,22 @@
   z-index: -1;
 }
 
-.bg-btn {
+.bgbtn-container{
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: none;
-  border: none;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.7);
+}
+
+.bgbtn-container p{
+  color:white;
+}
+
+.bg-btn{
+  border: none;
+  width: 100%;
+  background: rgb(255, 255, 255);
 }
 
 .text {
@@ -240,7 +251,7 @@ footer a {
     object-position: 65% center;
   }
 
-  .bg-btn {
+  .bgbtn-container {
     display: inline;
   }
 

@@ -36,7 +36,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
   background: rgba(31, 18, 0, 0.7);
+  touch-action: manipulation; 
+
 }
 
 /* A elements that don't have a class get default styles */
