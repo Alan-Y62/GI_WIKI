@@ -170,4 +170,10 @@ nav {
   #vol-control {
     display: none;
   }
+
+  #nav-enemies:active .enemy-content {
+    display: block;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+  }
 }
