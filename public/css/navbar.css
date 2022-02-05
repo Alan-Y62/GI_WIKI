@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -58,12 +58,11 @@ nav {
 }
 
 .enemy-content {
-  display: none;
   position: absolute;
-  background-color: white;
-  min-width: 150px;
-  top: 40px;
-  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 50px;
+  left: -20%;
+  visibility: hidden;
   border-radius: 0;
   outline: 1px solid gray;
   z-index: 1;
@@ -74,7 +73,8 @@ nav {
 }
 
 #nav-enemies:hover .enemy-content {
-  display: block;
+  visibility: visible;
+  min-width: 150px;
   animation-name: fadein;
   animation-duration: 0.5s;
 }
@@ -155,7 +155,7 @@ nav {
     width: 100vw;
     flex-direction: column;
     align-content: center;
-    padding-left: 1rem;
+    padding: 0 1rem;
   }
 
   .show li {
@@ -171,9 +171,25 @@ nav {
     display: none;
   }
 
-  .enemy-content.open{
-    display: block;
+
+  #nav-enemies.open .enemy-content{
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
     animation-name: fadein;
     animation-duration: 0.5s;
+  }
+
+  #nav-enemies .enemy-content{
+    position: static;
+    visibility: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    min-width: 0px;
+    max-width: 0px;
+    top: 20px;
+    max-height: 0px;
+    padding:0;
+    outline: 0;
+    overflow: hidden;
   }
 }

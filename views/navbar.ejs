@@ -5,7 +5,7 @@
         <li class="nav-item"><a href="#regions">Regions</a></li>
         <li class="nav-item"><a href="/weapons">Weapons</a></li>
         <li class="nav-item" id="nav-enemies">
-            <a>Enemies ▼</a>
+            <a href="#">Enemies ▼</a>
             <div class="enemy-content">
                 <a href="/enemies">All Enemies</a>
                 <a href="/enemies/weekly_boss">Weekly Boss</a>
@@ -36,6 +36,19 @@
     }
 
     const enemy = document.getElementById('nav-enemies');
-    enemy.addEventListener('touchstart', () => enemy.classList.add('open'));
-    enemy.addEventListener('touchend', () => enemy.classList.remove('open'));
+    const winsize = window.matchMedia("screen and (max-width: 920px)")
+    if(winsize.matches){
+        enemy.addEventListener('click', () => {open()})
+    } else{
+        enemy.addEventListener('click', () => {enemy.classList.remove('open')})
+    }
+
+    function open(){
+        if(enemy.classList.contains('open')){
+            enemy.classList.remove('open');
+        } else {
+            enemy.classList.add('open')
+        }
+    }
+    
 </script>
