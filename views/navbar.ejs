@@ -34,4 +34,8 @@
             x.classList.remove("show")
         }
     }
+
+    const enemy = document.getElementById('nav-enemies');
+    enemy.addEventListener('touchstart', () => enemy.classList.add('open'));
+    enemy.addEventListener('touchend', () => enemy.classList.remove('open'));
 </script>
