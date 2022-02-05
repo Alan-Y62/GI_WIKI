@@ -69,7 +69,8 @@
                         <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/skills/<%= character[0].name%>_skill.png" alt="ERROR">
+                                <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_skill.png"
+                                    alt="ERROR">
                             </div>
                             <h2>
                                 Elemental Skill: <%= character[0].talents.skill.name %>
@@ -78,7 +79,8 @@
                         <pre><%= character[0].talents.skill.description.trim() %></pre>
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/skills/<%= character[0].name%>_burst.png" alt="ERROR">
+                                <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_burst.png"
+                                    alt="ERROR">
                             </div>
                             <h2>
                                 Elemental Burst: <%= character[0].talents.burst.name %>
@@ -88,7 +90,8 @@
                         <% if(character[0].talents.altabilities.name !=="None" ) { %>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name%>_alt.png" alt="ERROR">
+                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_alt.png"
+                                        alt="ERROR">
                                 </div>
                                 <h2>
                                     Alternate Ability: <%= character[0].talents.altabilities.name %>
@@ -102,7 +105,8 @@
                         <div class="passive-container">
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name%>_asc1.png" alt="ERROR">
+                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc1.png"
+                                        alt="ERROR">
                                 </div>
                                 <h2>
                                     First Passive: <%= character[0].talents.passives.battle[0].name %>
@@ -111,7 +115,8 @@
                             <pre><%= character[0].talents.passives.battle[0].description %></pre>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name%>_asc2.png" alt="ERROR">
+                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc2.png"
+                                        alt="ERROR">
                                 </div>
                                 <h2>
                                     Second Passive: <%= character[0].talents.passives.battle[1].name %>
@@ -120,7 +125,8 @@
                             <pre><%= character[0].talents.passives.battle[1].description %></pre>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name%>_passive.png" alt="ERROR">
+                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
+                                        alt="ERROR">
                                 </div>
                                 <h2>
                                     Second Passive: <%= character[0].talents.passives.overworld.name %>
