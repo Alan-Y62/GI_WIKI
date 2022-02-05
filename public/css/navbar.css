@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background: rgba(255, 204, 128, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   width: 100%;
   position: fixed;
   top: 0px;
@@ -60,7 +60,7 @@ nav {
 .enemy-content {
   display: none;
   position: absolute;
-  background-color: #fee5cb;
+  background-color: white;
   min-width: 150px;
   top: 40px;
   left: 0;
@@ -94,17 +94,31 @@ nav {
 }
 
 .vol {
-  background-color: red;
-  border: none;
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
   font-size: 1rem;
-  width: 55px;
-  padding: 0 2px !important;
+  height: 1.6rem;
+  width: 1.6rem;
+  padding: 0 !important;
   cursor: pointer;
+  text-align: center;
 }
 
 .vol.on {
-  background-color: rgb(194, 194, 194);
+  background-color: white;
   color: black !important;
+}
+
+.vol.on::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  border-top: 1px black solid;
+  transform: rotate(45deg);
 }
 
 #closeBtn {
@@ -151,5 +165,15 @@ nav {
 
   #volume-control {
     margin-left: 10px;
+  }
+
+  #vol-control {
+    display: none;
+  }
+
+  #nav-enemies:active .enemy-content {
+    display: block;
+    animation-name: fadein;
+    animation-duration: 0.5s;
   }
 }
