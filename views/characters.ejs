@@ -36,7 +36,7 @@
                                         alt="fail">
                                     <% } %>
                         </td>
-                        <td>
+                        <td style="font-weight: bold;">
                             <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
                                 <a href='/characters/<%=char.name%>(<%=char.element%>)'>
                                     <%= char.name %>
@@ -97,6 +97,7 @@
 
     table {
         width: 100%;
+        border-spacing: 5px;
     }
 
     th {
@@ -108,18 +109,6 @@
         position: absolute;
         top: 30%;
         right: 1%;
-    }
-
-    tr {
-        outline: 1px solid black;
-    }
-
-    tbody tr:nth-child(odd) {
-        background: #747373;
-    }
-
-    tbody tr:nth-child(even) {
-        background: #a7a7a7;
     }
 
     tbody tr:first-child {
@@ -135,8 +124,8 @@
     td {
         text-align: left;
         padding: 16px;
-        outline: white 1px solid;
         height: 56px;
+        border-bottom: 1px solid gray;
     }
 
     td img {
