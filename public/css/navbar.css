@@ -47,11 +47,6 @@ nav {
   width: 5rem;
 }
 
-.nav-list .nav-item a:hover {
-  background: hsla(208, 62%, 50%);
-  color: black;
-}
-
 #nav-enemies {
   position: relative;
   cursor: pointer;
@@ -70,13 +65,6 @@ nav {
 
 .enemy-content a {
   display: block;
-}
-
-#nav-enemies:hover .enemy-content {
-  visibility: visible;
-  min-width: 150px;
-  animation-name: fadein;
-  animation-duration: 0.5s;
 }
 
 @keyframes fadein {
@@ -128,6 +116,20 @@ nav {
   width: 50px;
   padding: 5px;
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .nav-list .nav-item a:hover {
+    background: hsla(208, 62%, 50%);
+    color: black;
+  }
+
+  #nav-enemies:hover .enemy-content {
+    visibility: visible;
+    min-width: 150px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+  }
 }
 
 @media only screen and (max-width: 920px) {
