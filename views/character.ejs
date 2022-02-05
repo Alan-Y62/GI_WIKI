@@ -69,8 +69,13 @@
                         <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_skill.png"
-                                    alt="ERROR">
+                                <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_skill.png"
+                                        alt="ERROR">
+                                    <% } else { %>
+                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_skill.png"
+                                            alt="ERROR">
+                                        <% } %>
                             </div>
                             <h2>
                                 Elemental Skill: <%= character[0].talents.skill.name %>
@@ -79,8 +84,13 @@
                         <pre><%= character[0].talents.skill.description.trim() %></pre>
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_burst.png"
-                                    alt="ERROR">
+                                <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_burst.png"
+                                        alt="ERROR">
+                                    <% } else { %>
+                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_burst.png"
+                                            alt="ERROR">
+                                        <% } %>
                             </div>
                             <h2>
                                 Elemental Burst: <%= character[0].talents.burst.name %>
@@ -105,8 +115,13 @@
                         <div class="passive-container">
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc1.png"
-                                        alt="ERROR">
+                                    <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_asc1.png"
+                                            alt="ERROR">
+                                        <% } else { %>
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc1.png"
+                                                alt="ERROR">
+                                            <% } %>
                                 </div>
                                 <h2>
                                     First Passive: <%= character[0].talents.passives.battle[0].name %>
@@ -115,8 +130,13 @@
                             <pre><%= character[0].talents.passives.battle[0].description %></pre>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc2.png"
-                                        alt="ERROR">
+                                    <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_asc2.png"
+                                            alt="ERROR">
+                                        <% } else { %>
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc2.png"
+                                                alt="ERROR">
+                                            <% } %>
                                 </div>
                                 <h2>
                                     Second Passive: <%= character[0].talents.passives.battle[1].name %>
@@ -149,12 +169,12 @@
         max-width: 100%;
         display: block;
         padding: 106px 0;
+        color: white;
     }
 
     .container {
         margin: 0 auto;
         width: 90%;
-        background: lightblue;
         border-radius: 10px 10px;
         padding-bottom: 5rem;
     }
@@ -233,11 +253,19 @@
         flex-grow: 1;
     }
 
-    .img-side,
+    .img-side {
+        width: 45%;
+        padding: 1rem 0rem;
+        background: lightblue;
+        margin-right: 5%;
+        margin-top: 2rem;
+    }
+
+
     .details-side {
-        height: fit-content;
         width: 50%;
         padding: 1rem 1rem;
+        margin-top: 2rem;
     }
 
     h1 {
