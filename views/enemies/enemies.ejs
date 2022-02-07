@@ -1,105 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include("../navbar")%>
-        <div class="enemy-container">
-            <h1>Enemies</h1>
-            <p> a Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt quibusdam harum, explicabo culpa
-                sapiente ut dignissimos, impedit reiciendis dolorum nulla aspernatur temporibus quo ducimus accusamus
-                autem corporis iure quod animi.</p>
-            <section id="common" class="enemy-sections">
-                <div class="title-container">
-                    <h2>Common Enemies</h2>
-                    <img src="../../public/images/enemy_1.png" alt="s">
-                </div>
-                <small>
-                    <p>Go to: <a href="/enemies/common_enemies">Common enemies</a></p>
-                </small>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolorum reprehenderit tempora
-                    exercitationem vero, quia eius iusto laborum consequatur voluptatum ut nam deserunt est alias
-                    necessitatibus? Nisi voluptatum in magnam?</p>
-            </section>
-            <section id="elite" class="enemy-sections">
-                <div class="title-container">
-                    <h2>Elite Enemies</h2>
-                    <img src="../../public/images/enemy_2.png" alt="s">
-                </div>
-                <small>
-                    <p>Go to: <a href="/enemies/elite_enemies">Elite enemies</a></p>
-                </small>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores reiciendis doloremque temporibus
-                    maxime consequuntur fugiat quaerat tempore aspernatur sapiente illo, aperiam qui eos saepe impedit
-                    voluptate minima unde repellat corrupti!</p>
-            </section>
-            <section id="world" class="enemy-sections">
-                <div class="title-container">
-                    <h2>World Bosses</h2>
-                    <img src="../../public/images/enemy_3.png" alt="s">
-                </div>
-                <small>
-                    <p>Go to: <a href="/enemies/world_boss">World Bosses</a></p>
-                </small>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate esse vitae deserunt tempore illum
-                    possimus aperiam blanditiis obcaecati, est nisi repellat soluta sint odio ad quis saepe, quae optio
-                    placeat?</p>
-            </section>
-            <section id="weekly" class="enemy-sections">
-                <div class="title-container">
-                    <h2>Weekly Bosses</h2>
-                    <img src="../../public/images/enemy_4.png" alt="s">
-                </div>
-                <small>
-                    <p>Go to: <a href="/enemies/weekly_boss">Weekly Bosses</a></p>
-                </small>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum unde recusandae voluptate dolor
-                    mollitia voluptatem, deleniti modi quam soluta fugit reprehenderit qui reiciendis omnis et doloribus
-                    libero, aperiam commodi suscipit.</p>
-            </section>
+    <div class="enemy-container">
+      <h1>Enemies</h1>
+      <p>
+        Enemies in Genshin Impact can come in the form of creatures of other
+        humans. They can be found in the open world along with domains and the
+        spiral abyss. Enemies are classfied by their difficulty types which
+        include common enemies, elite enemies, normal bosses, and weekly bosses.
+      </p>
+      <section id="common" class="enemy-sections">
+        <div class="title-container">
+          <h2>Common Enemies</h2>
+          <img src="../../public/images/enemy_1.png" alt="s" />
         </div>
-</body>
-<style>
+        <small>
+          <p class="enemy-link">
+            Go to: <a href="/enemies/common_enemies">Common enemies</a>
+          </p>
+        </small>
+        <p>
+          Players can find common enemies in the open world, domains, and the
+          spiral abyss. These enemies can drop common ascension materials along
+          with small amounts of mora and character exp. Killing an enemy in the
+          open world will put them on a respawn timer based on the daily reset
+          time of the player's region.
+        </p>
+      </section>
+      <section id="elite" class="enemy-sections">
+        <div class="title-container">
+          <h2>Elite Enemies</h2>
+          <img src="../../public/images/enemy_2.png" alt="s" />
+        </div>
+        <small>
+          <p class="enemy-link">
+            Go to: <a href="/enemies/elite_enemies">Elite enemies</a>
+          </p>
+        </small>
+        <p>
+          Players can find elite enemeies in the open world, domains, and the
+          spiral abyss. These enemies can drop the same common ascension
+          materials as the common enemies along with other materials exclusive
+          to them. Like common enemies, they will drop small amounts of mora and
+          character exp. There is also a chance that they drop 3-4* artifacts.
+          The amount of elite enemy spawned in the open world is limited and by
+          killing them, they will be put on a respawn timer based on the daily
+          reset time of the player's region.
+        </p>
+      </section>
+      <section id="world" class="enemy-sections">
+        <div class="title-container">
+          <h2>World Bosses</h2>
+          <img src="../../public/images/enemy_3.png" alt="s" />
+        </div>
+        <small>
+          <p class="enemy-link">
+            Go to: <a href="/enemies/world_boss">World Bosses</a>
+          </p>
+        </small>
+        <p>
+          Players can find normal bosses in the open world and the spiral abyss.
+          Unlike common enemeies and elite enemies, these bosses will not drop
+          anything unless the player uses 40 resin to claim a blosom after
+          defeating the boss. These drops include adventure exp, mora and
+          companionship xp. They can also drop character ascension materials and
+          artifacts from the gladiator set or the wanderer set. Killing them
+          will put them on a respawen timer of around 3mins but they player has
+          to be away from the boss in order for it to respawn. This can include
+          teleporting or away, going to a serenitea pot, logging out, or joining
+          another player's world.
+        </p>
+      </section>
+      <section id="weekly" class="enemy-sections">
+        <div class="title-container">
+          <h2>Weekly Bosses</h2>
+          <img src="../../public/images/enemy_4.png" alt="s" />
+        </div>
+        <small>
+          <p class="enemy-link">
+            Go to: <a href="/enemies/weekly_boss">Weekly Bosses</a>
+          </p>
+        </small>
+        <p>
+          Weekly bosses can be found in their specific domains. Like normal
+          bosses, after defeating a weekly boss, the player can claim their
+          drops from a blossom. The cost of claiming is 30 resin for the first 3
+          weekly boss and 60 for the rest. Each boss will reward adventure exp,
+          mora, and companionship exp. There is also a chance that they will
+          drop character ascension materials, artifacts from the gladiator or
+          wanderer set, along with a northlander billet. They will also drop
+          their specific skill ascension material and may also drop a dream
+          solvent which allows a player to change the skill ascenion material.
+          Bosses will respawn but players can only collect the drops once per
+          week, with it resetting at 4am server time every monday.
+        </p>
+      </section>
+    </div>
+  </body>
+  <style>
     body {
-        background: transparent url('/public/images/bg/abyss.png') -35rem 0;
-        background-size: cover;
+      background: transparent url("/public/images/bg/abyss.png") -35rem 0;
+      background-size: cover;
     }
 
     .enemy-container {
-        margin: 7rem;
-        padding: 3rem 0;
-        background-color: rgba(255, 255, 255, 0.8);
+      margin: 7rem;
+      padding: 3rem 0;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     h1,
     p {
-        padding: 0 1.5rem;
-        margin: 0 3rem;
+      padding: 0 1.5rem;
+      margin: 0 3rem;
+    }
+
+    .enemy-link {
+      padding: 1rem 1.5rem;
     }
 
     .title-container {
-        display: flex;
-        padding: 0 1.5rem;
-        margin: 0 3rem;
-        border-bottom: 3px solid black;
-        margin-top: 1rem;
+      display: flex;
+      padding: 0 1.5rem;
+      margin: 0 3rem;
+      border-bottom: 3px solid black;
+      margin-top: 1rem;
     }
 
     .title-container h2 {
-        align-self: center;
+      align-self: center;
     }
 
     .title-container img {
-        width: 150px;
+      width: 150px;
     }
-</style>
-
+  </style>
 </html>

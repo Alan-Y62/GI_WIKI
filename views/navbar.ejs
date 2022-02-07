@@ -31,30 +31,38 @@
         if (!(x.className.includes("show"))) {
             x.classList.add("show")
             document.body.style.overflowY = 'hidden';
-            
+            document.body.style.position = 'fixed';
         } else {
             x.classList.remove("show")
             document.body.style.overflowY = 'visible';
+            document.body.style.position = '';
         }
     }
 
     const enemy = document.getElementById('nav-enemies');
     const enemyDrop = document.querySelector('.enemy-drop')
     const winsize = window.matchMedia("screen and (max-width: 920px)")
-    if(winsize.matches){
-        enemy.addEventListener('click', () => {open()})
-        enemyDrop.textContent = "+"
-    } else{
-        enemy.addEventListener('click', () => {enemy.classList.remove('open')})
-        enemyDrop.textContent = "▼"
-    }
 
-    function open(){
+    navchange();
+    window.addEventListener('resize', () => {navchange()});
+
+   function open(){
+        console.log('hello')
         if(enemy.classList.contains('open')){
             enemy.classList.remove('open');
         } else {
             enemy.classList.add('open')
         }
     }
-    
+
+     function navchange(){
+        if(winsize.matches) {
+            enemy.removeEventListener('click', open)
+            enemy.addEventListener('click', open)
+            enemyDrop.textContent = "+"
+        } else{
+            enemy.removeEventListener('click', open)
+            enemyDrop.textContent = "▼"
+        }
+    }
 </script>
