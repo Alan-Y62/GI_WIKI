@@ -98,7 +98,7 @@ nav {
   color: black !important;
 }
 
-.vol.on::before{
+.vol.on::before {
   content: "";
   position: absolute;
   left: 0;
@@ -173,24 +173,33 @@ nav {
     display: none;
   }
 
-
-  #nav-enemies.open .enemy-content{
+  #nav-enemies.open .enemy-content {
     visibility: visible;
     margin-top: 1rem;
     max-width: 100%;
     max-height: 300px;
   }
 
-  #nav-enemies .enemy-content{
+  #nav-enemies .enemy-content {
     position: static;
     visibility: hidden;
     background: rgba(255, 255, 255, 0.5);
-    top:0;
+    top: 0;
     margin-top: 0;
     max-height: 0px;
-    padding:0;
+    padding: 0;
     outline: 0;
     overflow: hidden;
     transition: all 0.3s ease-in;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .nav-list #closeBtn {
+    display: block;
+    position: absolute;
+    right: calc(100% - 99.9vw + 1.5rem);
+    top: 1rem;
+    color: black;
   }
 }

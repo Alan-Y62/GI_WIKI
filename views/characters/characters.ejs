@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="../public/css/characters.css" type="text/css" rel="stylesheet" />
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
     <title>Characters</title>
 </head>
 
 <body>
-    <%- include("../views/navbar")%>
+    <%- include("../navbar")%>
         <h1>Characters</h1>
         <section>
             <table id="table">
                 <tr>
                     <th>ICON</th>
-                    <th onclick="sortTable(0)">Name <box-icon id="chevron" name='chevron-down'></box-icon>
-                    </th>
+                    <th onclick="sortTable(0)">Name</th>
                     <th onclick="sortTable(1)">Star</th>
                     <th onclick="sortTable(2)">Element</th>
                     <th onclick="sortTable(3)">Weapon</th>
@@ -80,99 +80,6 @@
 
 </body>
 
-
-<style>
-    body {
-        background: transparent url("/public/images/bg/visions.png") -20px 0;
-    }
-
-    h1 {
-        margin: 7rem 0 2rem 0;
-        font-size: 3rem;
-        text-align: center;
-        color: white;
-    }
-
-    section {
-        background: #fee5cbd7;
-        width: 90%;
-        margin: 1rem auto;
-    }
-
-    table {
-        width: 100%;
-        border-spacing: 5px;
-    }
-
-    th {
-        cursor: pointer;
-        position: relative;
-    }
-
-    #chevron {
-        position: absolute;
-        top: 30%;
-        right: 1%;
-    }
-
-    tbody tr:first-child {
-        background: #fee5cb;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    th,
-    td {
-        text-align: left;
-        padding: 16px;
-        height: 56px;
-        border-bottom: 1px solid gray;
-    }
-
-    td img {
-        height: 100%;
-    }
-
-    .char-icon {
-        padding: 0;
-        height: 80px;
-    }
-
-    a:hover {
-        color: white;
-    }
-
-    .Pyro {
-        color: #FE925D;
-    }
-
-    .Hydro {
-        color: #21E1EB;
-    }
-
-    .Anemo {
-        color: #72E2C3;
-    }
-
-    .Electro {
-        color: #A757CB;
-    }
-
-    .Dendro {
-        color: #23C18A;
-    }
-
-    .Cryo {
-        color: #A0E9E5;
-    }
-
-    .Geo {
-        color: #E3B342;
-    }
-</style>
 
 <script>
 

@@ -1,0 +1,102 @@
+body {
+  background: transparent url("/public/images/bg/visions.png") -20px 0;
+}
+
+h1 {
+  margin: 7rem 0 2rem 0;
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
+section {
+  background: #fee5cbd7;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+table {
+  width: 100%;
+  border-spacing: 5px;
+}
+
+th {
+  cursor: pointer;
+  position: relative;
+}
+
+#chevron {
+  position: absolute;
+  top: 30%;
+  right: 1%;
+}
+
+tbody tr:first-child {
+  background: #fee5cb;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+  height: 56px;
+  border-bottom: 1px solid gray;
+}
+
+td img {
+  height: 100%;
+}
+
+.char-icon {
+  padding: 0;
+  height: 80px;
+}
+
+a:hover {
+  color: white;
+}
+
+.Pyro {
+  color: #fe925d;
+}
+
+.Hydro {
+  color: #21e1eb;
+}
+
+.Anemo {
+  color: #72e2c3;
+}
+
+.Electro {
+  color: #a757cb;
+}
+
+.Dendro {
+  color: #23c18a;
+}
+
+.Cryo {
+  color: #a0e9e5;
+}
+
+.Geo {
+  color: #795f24;
+}
+
+@media only screen and (max-width: 690px) {
+  section {
+    width: fit-content;
+  }
+
+  th,
+  td {
+    padding: 2px;
+    width: fit-content;
+  }
+}
