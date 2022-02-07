@@ -1,0 +1,200 @@
+section {
+  min-height: 100vh;
+  max-width: 100%;
+  display: block;
+  padding: 106px 0;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 10px 10px;
+  padding-bottom: 5rem;
+}
+
+.bg-title.Anemo {
+  background: #e27291;
+}
+
+.bg-title.Hydro {
+  background: #eb2b21;
+}
+
+.bg-title.Cryo {
+  background: #e9a0a4;
+}
+
+.bg-title.Electro {
+  background: #7bcb57;
+}
+
+.bg-title.Dendro {
+  background: #c1235a;
+}
+
+.bg-title.Pyro {
+  background: #5dc9fe;
+}
+
+.bg-title.Geo {
+  background: #4272e3;
+}
+
+.char-title {
+  font-size: 3rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  max-height: 120px;
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.char-title div {
+  margin: 0 0.15rem;
+}
+
+.vision,
+.weapon {
+  height: 100%;
+  width: 78px;
+  flex-shrink: 1;
+}
+
+.vision *,
+.weapon * {
+  height: 100%;
+  width: 100%;
+}
+
+.stars-container {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.stars {
+  max-height: 1.5rem;
+  max-width: 1.5rem;
+}
+
+.char-info {
+  height: calc(100% - 7rem);
+  display: flex;
+}
+
+.img-side {
+  width: 45%;
+  padding: 1rem 0rem;
+  background: lightblue;
+  margin-right: 5%;
+  margin-top: 2rem;
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.details-side {
+  width: 50%;
+  padding: 1rem 1rem;
+  margin-top: 2rem;
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 0 1rem;
+}
+
+.toprow {
+  outline: 1px solid black;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  height: auto;
+}
+
+.toprow h2 {
+  padding-top: 0.5rem;
+}
+
+.icon-con {
+  margin: 5px 5px;
+  min-height: 3rem;
+  min-width: 3rem;
+  max-height: 3rem;
+  max-width: 3rem;
+  border-radius: 50px;
+  padding: 7px;
+  display: grid;
+  place-content: center;
+}
+
+.Pyro_clr {
+  background: #ff945c;
+}
+
+.Hydro_clr {
+  background: #22e1eb;
+}
+
+.Electro_clr {
+  background: #a854cc;
+}
+
+.Cryo_clr {
+  background: #a0e9e5;
+}
+
+.Geo_clr {
+  background: #e4b444;
+}
+
+.Anemo_clr {
+  background: #78e4c4;
+}
+
+.Dendro_clr {
+  background: #28c48c;
+}
+
+pre {
+  padding: 2rem 2rem;
+  outline: 1px solid black;
+  width: 100%;
+  white-space: pre-wrap;
+  /* wrap text */
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 0;
+}
+
+.constellation {
+  margin-top: 1rem;
+}
+
+.precursors {
+  font-weight: bold;
+}
+
+#img-src {
+  margin: 0.5rem auto;
+}
+
+@media only screen and (max-width: 830px) {
+  .char-info {
+    display: block;
+  }
+
+  .img-side,
+  .details-side {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .char-title {
+    font-size: 2rem;
+  }
+}

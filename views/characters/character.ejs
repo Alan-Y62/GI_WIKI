@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="../public/css/character.css" type="text/css" rel="stylesheet" />
 
     <title>Character</title>
 </head>
@@ -27,7 +28,7 @@
                                     <%= character[0].name %>
                                 </h4>
                                 <div class="stars-container">
-                                    <% for(let i=0; i < character.star; i++) { %>
+                                    <% for(let i=0; i < character[0].star; i++) { %>
                                         <img class="stars" src="/public/images/misc/star.png" alt="star" />
                                         <% } %>
                                 </div>
@@ -145,8 +146,12 @@
                             <pre><%= character[0].talents.passives.battle[1].description %></pre>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
-                                        alt="ERROR">
+                                    <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                        <img src="/public/images/skills/search.png" alt="ERROR">
+                                        <% } else { %>
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
+                                                alt="ERROR">
+                                            <% } %>
                                 </div>
                                 <h2>
                                     Second Passive: <%= character[0].talents.passives.overworld.name %>
@@ -163,188 +168,5 @@
         </audio>
 </body>
 <script src="../public/scripts/audio.js"></script>
-<style>
-    section {
-        min-height: 100vh;
-        max-width: 100%;
-        display: block;
-        padding: 106px 0;
-        color: white;
-    }
-
-    .container {
-        margin: 0 auto;
-        width: 90%;
-        border-radius: 10px 10px;
-        padding-bottom: 5rem;
-    }
-
-    .bg-title.Anemo {
-        background: #E27291;
-    }
-
-    .bg-title.Hydro {
-        background: #EB2B21;
-    }
-
-    .bg-title.Cryo {
-        background: #E9A0A4;
-    }
-
-    .bg-title.Electro {
-        background: #7BCB57;
-    }
-
-    .bg-title.Dendro {
-        background: #C1235A;
-    }
-
-    .bg-title.Pyro {
-        background: #5DC9FE;
-    }
-
-    .bg-title.Geo {
-        background: #4272E3;
-    }
-
-    .char-title {
-        font-size: 3rem;
-        padding: .5rem 0;
-        text-align: center;
-        border-radius: 10px 10px 0 0;
-        max-height: 120px;
-        display: flex;
-        width: fit-content;
-        flex-direction: row;
-        margin: 0 auto;
-    }
-
-    .char-title div {
-        margin: 0 .15rem;
-    }
-
-    .vision,
-    .weapon {
-        width: 78px;
-        height: 78px;
-    }
-
-    .vision *,
-    .weapon * {
-        height: 100%;
-        width: 100%;
-    }
-
-    .stars-container {
-        display: flex;
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    .stars {
-        max-height: 1.5rem;
-        max-width: 1.5rem;
-    }
-
-    .char-info {
-        height: calc(100% - 7rem);
-        display: flex;
-        flex-basis: 100%;
-        flex-grow: 1;
-    }
-
-    .img-side {
-        width: 45%;
-        padding: 1rem 0rem;
-        background: lightblue;
-        margin-right: 5%;
-        margin-top: 2rem;
-    }
-
-
-    .details-side {
-        width: 50%;
-        padding: 1rem 1rem;
-        margin-top: 2rem;
-    }
-
-    h1 {
-        font-size: 3rem;
-        padding: 0 1rem;
-    }
-
-    .toprow {
-        outline: 1px solid black;
-        background: rgba(255, 255, 255, .5);
-        display: flex;
-        height: auto;
-    }
-
-    .toprow h2 {
-        padding-top: .5rem;
-    }
-
-    .icon-con {
-        margin: 5px 5px;
-        min-height: 3rem;
-        min-width: 3rem;
-        max-height: 3rem;
-        max-width: 3rem;
-        border-radius: 50px;
-        padding: 7px;
-        display: grid;
-        place-content: center;
-    }
-
-    .Pyro_clr {
-        background: #ff945c;
-    }
-
-    .Hydro_clr {
-        background: #22e1eb;
-    }
-
-    .Electro_clr {
-        background: #a854cc;
-    }
-
-    .Cryo_clr {
-        background: #a0e9e5;
-    }
-
-    .Geo_clr {
-        background: #e4b444;
-    }
-
-    .Anemo_clr {
-        background: #78e4c4;
-    }
-
-    .Dendro_clr {
-        background: #28c48c;
-    }
-
-    pre {
-        padding: 2rem 2rem;
-        outline: 1px solid black;
-        width: 100%;
-        white-space: pre-wrap;
-        /* wrap text */
-        background: rgba(255, 255, 255, .2);
-        margin-top: 0;
-    }
-
-    .constellation {
-        margin-top: 1rem;
-    }
-
-    .precursors {
-        font-weight: bold;
-    }
-
-    #img-src {
-        margin: .5rem auto;
-    }
-</style>
 
 </html>

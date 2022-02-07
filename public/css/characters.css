@@ -11,13 +11,14 @@ h1 {
 
 section {
   background: #fee5cbd7;
-  width: 90%;
+  width: 80%;
   margin: 1rem auto;
 }
 
 table {
   width: 100%;
   border-spacing: 5px;
+  table-layout: fixed;
 }
 
 th {
@@ -89,7 +90,7 @@ a:hover {
   color: #795f24;
 }
 
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 770px) {
   section {
     width: fit-content;
   }
@@ -98,5 +99,16 @@ a:hover {
   td {
     padding: 2px;
     width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  th:last-child,
+  td:last-child {
+    display: none;
+  }
+
+  table {
+    font-size: 0.75rem;
   }
 }
