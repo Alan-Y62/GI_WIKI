@@ -147,17 +147,22 @@ nav {
 
   .nav-list {
     padding: 0;
+    height: 0;
+    transition: height 0.3s;
   }
 
   .nav-list li {
     display: none;
+    font-size:1.5rem;
   }
 
-  .nav-list.show {
+  .show .nav-list {
     width: 100vw;
     flex-direction: column;
-    align-content: center;
+    justify-content: flex-start;
     padding: 0 1rem;
+    height: 90vh;
+    overflow-y: scroll;
   }
 
   .show li {
@@ -191,6 +196,17 @@ nav {
     outline: 0;
     overflow: hidden;
     transition: all 0.3s ease-in;
+  }
+
+  .enemy-drop{
+    display: inline-block;
+    padding: 0 5px;
+    font-size:1.5rem;
+    transition: all 0.2s ;
+  }
+
+  #nav-enemies.open .enemy-drop{
+    transform: rotate(-135deg);
   }
 }
 
