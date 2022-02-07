@@ -146,8 +146,12 @@
                             <pre><%= character[0].talents.passives.battle[1].description %></pre>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
-                                        alt="ERROR">
+                                    <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
+                                        <img src="/public/images/skills/search.png" alt="ERROR">
+                                        <% } else { %>
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
+                                                alt="ERROR">
+                                            <% } %>
                                 </div>
                                 <h2>
                                     Second Passive: <%= character[0].talents.passives.overworld.name %>
