@@ -153,7 +153,7 @@ nav {
 
   .nav-list li {
     display: none;
-    font-size:1.5rem;
+    font-size: 1.5rem;
   }
 
   .show .nav-list {
@@ -198,14 +198,14 @@ nav {
     transition: all 0.3s ease-in;
   }
 
-  .enemy-drop{
+  .enemy-drop {
     display: inline-block;
     padding: 0 5px;
-    font-size:1.5rem;
-    transition: all 0.2s ;
+    font-size: 1.5rem;
+    transition: all 0.2s;
   }
 
-  #nav-enemies.open .enemy-drop{
+  #nav-enemies.open .enemy-drop {
     transform: rotate(-135deg);
   }
 }
