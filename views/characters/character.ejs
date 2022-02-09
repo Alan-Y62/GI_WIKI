@@ -20,8 +20,8 @@
                     <div class="bg-title <%= character[0].element%>">
                         <div class="char-title">
                             <div class="vision">
-                                <img src="/public/images/elements/<%= character[0].element%>.png"
-                                    alt="vision element" />
+                                <img src="/public/images/elements/<%= character[0].element.toLowerCase()%>.png"
+                                    alt="ERROR" />
                             </div>
                             <div class="center-titles">
                                 <h4>
@@ -34,7 +34,8 @@
                                 </div>
                             </div>
                             <div class="weapon">
-                                <img src="/public/images/weapon_icons/<%-character[0].weapon%>.png" alt="weapon-type" />
+                                <img src="/public/images/weapon_icons/<%-character[0].weapon.toLowerCase()%>.png"
+                                    alt="ERROR" />
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,8 @@
                         <h1>Active Talents</h1>
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/skills/<%= character[0].weapon%>_normal.png" alt="ERROR">
+                                <img src="/public/images/skills/<%= character[0].weapon.toLowerCase()%>_normal.png"
+                                    alt="ERROR">
                             </div>
                             <h2>
                                 Normal Attack: <%= character[0].talents.normalattack.name %>
@@ -71,10 +73,10 @@
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
                                 <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
-                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_skill.png"
+                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_').toLowerCase()%>_skill.png"
                                         alt="ERROR">
                                     <% } else { %>
-                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_skill.png"
+                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_skill.png"
                                             alt="ERROR">
                                         <% } %>
                             </div>
@@ -86,10 +88,10 @@
                         <div class="toprow">
                             <div class="icon-con <%= character[0].element%>_clr">
                                 <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
-                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_burst.png"
+                                    <img src="/public/images/skills/<%= character[0].element.replace(' ','_').toLowerCase()%>_burst.png"
                                         alt="ERROR">
                                     <% } else { %>
-                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_burst.png"
+                                        <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_burst.png"
                                             alt="ERROR">
                                         <% } %>
                             </div>
@@ -101,7 +103,7 @@
                         <% if(character[0].talents.altabilities.name !=="None" ) { %>
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
-                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_alt.png"
+                                    <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_alt.png"
                                         alt="ERROR">
                                 </div>
                                 <h2>
@@ -117,10 +119,10 @@
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
-                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_asc1.png"
+                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_').toLowerCase()%>_asc1.png"
                                             alt="ERROR">
                                         <% } else { %>
-                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc1.png"
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_asc1.png"
                                                 alt="ERROR">
                                             <% } %>
                                 </div>
@@ -132,10 +134,10 @@
                             <div class="toprow">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
-                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_')%>_asc2.png"
+                                        <img src="/public/images/skills/<%= character[0].element.replace(' ','_').toLowerCase()%>_asc2.png"
                                             alt="ERROR">
                                         <% } else { %>
-                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_asc2.png"
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_asc2.png"
                                                 alt="ERROR">
                                             <% } %>
                                 </div>
@@ -149,7 +151,7 @@
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
                                         <img src="/public/images/skills/search.png" alt="ERROR">
                                         <% } else { %>
-                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_')%>_passive.png"
+                                            <img src="/public/images/skills/<%= character[0].name.replace(' ','_').toLowerCase()%>_passive.png"
                                                 alt="ERROR">
                                             <% } %>
                                 </div>
