@@ -161,8 +161,8 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 1rem;
-    height: 90vh;
-    overflow-y: scroll;
+    min-height: 60vh;
+    overflow: scroll;
   }
 
   .show li {
