@@ -161,7 +161,7 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 1rem;
-    min-height: 60vh;
+    height: 60vh;
     overflow: scroll;
   }
 
