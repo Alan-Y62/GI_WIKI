@@ -1,5 +1,9 @@
 body {
-  background: transparent url("/public/images/bg/visions.png") -20px 0;
+  background: transparent url("/public/images/bg/visions_landscape.png")
+    no-repeat fixed;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  top: 0;
 }
 
 h1 {
