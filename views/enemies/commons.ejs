@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("../navbar")%>
     <div class="common-container">
-        <% common.map((enemy) => { %>
-            <div>
-                <a href="/enemies/common_enemies/<%= enemy.name %>"><%= enemy.name %> </a>
-                <img src="../../public/images/enemies/common/<%= enemy.name.toLowerCase() %>/icon.png" alt="<%= enemy.name %>">
-            </div>
-            <% }) %>
+      <section>
+        <table>
+          <tr>
+            <td>Enemies</td>
+            <td>Drops</td>
+          </tr>
+          <% common.map((enemy) => { %>
+          <tr>
+            <td>
+              <div>
+                <img src="../../public/images/enemies/common/<%= enemy.name.toLowerCase() %>/icon.png"alt="<%= enemy.name %>"/>
+                <a href="/enemies/common_enemies/<%= enemy.name %>"
+                  ><%= enemy.name %>
+                </a>
+              </div>
+            </td>
+            <td>
+                <% enemy.drops.forEach((drops) => { %>
+                    <img src="../../public/images/drops/<%= drops.toLowerCase() %>.png " alt="<%= drops %> ">
+                <% }) %> 
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </section>
     </div>
-</body>
-<style>
-    .common-container{
-        margin: 7rem 1rem;
-        padding: 3rem 0;
-        background-color: rgba(255,255,255,0.5);
+  </body>
+  <style>
+    .common-container {
+      margin: 7rem 1rem;
+      padding: 3rem 0;
+      background-color: rgba(255, 255, 255, 0.5);
     }
-</style>
+  </style>
 </html>
