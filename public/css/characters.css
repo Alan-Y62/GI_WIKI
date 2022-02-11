@@ -1,0 +1,100 @@
+body {
+  background: black url("/public/images/bg/visions_landscape.png") no-repeat
+    fixed;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  top: 0;
+}
+
+section {
+  background: #fee5cbd7;
+  width: 80%;
+  margin: 10rem auto;
+}
+
+.character-container {
+  width: 339px;
+  outline: 2px solid black;
+  padding: 0.5rem 0.5rem;
+  margin: 1rem 1rem;
+  background: rgba(0, 0, 0, 0.171);
+}
+
+.grid-con {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 0px;
+  height: 100%;
+  width: fit-content;
+}
+
+.imgs {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 3;
+  grid-column-end: 2;
+}
+
+.weps,
+.elements {
+  height: 55px;
+  width: 55px;
+}
+
+.stars {
+  display: flex;
+  max-height: 35px;
+  max-width: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.char-icon {
+  padding: 0;
+  height: 80px;
+}
+
+a:hover {
+  color: white;
+}
+
+.Pyro {
+  color: #fe925d;
+}
+
+.Hydro {
+  color: #21e1eb;
+}
+
+.Anemo {
+  color: #72e2c3;
+}
+
+.Electro {
+  color: #a757cb;
+}
+
+.Dendro {
+  color: #23c18a;
+}
+
+.Cryo {
+  color: #a0e9e5;
+}
+
+.Geo {
+  color: #795f24;
+}
+
+@media only screen and (max-width: 380px) {
+  .character-container {
+    margin: 0 0;
+    width: 100%;
+  }
+}
