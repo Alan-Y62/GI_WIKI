@@ -14,26 +14,44 @@
       <section>
         <table>
           <tr>
-            <td>Enemies</td>
-            <td>Drops</td>
+            <th>Enemies</th>
+            <th>Drops</th>
           </tr>
-          <% common.map((enemy) => { %>
-          <tr>
-            <td>
-              <div>
-                <img src="../../public/images/enemies/common/<%= enemy.name.toLowerCase() %>/icon.png"alt="<%= enemy.name %>"/>
-                <a href="/enemies/common_enemies/<%= enemy.name %>"
-                  ><%= enemy.name %>
-                </a>
-              </div>
-            </td>
-            <td>
-                <% enemy.drops.forEach((drops) => { %>
-                    <img src="../../public/images/drops/<%= drops.toLowerCase() %>.png " alt="<%= drops %> ">
-                <% }) %> 
-            </td>
-          </tr>
-          <% }) %>
+          <% const enemies = common.reduce((enemy, {family, group, name, drops}) => { %> 
+            <% if(!enemy[family]) enemy[family] = []; %> 
+            <% if(!enemy[family][group]) enemy[family][group] = {list:[],drop:[]}; %> 
+            <% enemy[family][group].list.push(name); %> 
+            <% if(enemy[family][group].drop.length === 0) enemy[family][group].drop.push(...drops) %> 
+            <% return enemy; %> 
+          <% }, []) %> 
+          <% for(const fam in enemies){ %> 
+            <tr>
+              <th><%= fam %></th>
+            </tr>
+            <% for(const group in enemies[fam]) { %> 
+              <tr>
+                <td>
+                  <div class="group-container">
+                    <h1><%= group %></h1>
+                    <div>
+                      <% enemies[fam][group].list.map(name => {  %>
+                        <div>
+                          <img src="../../public/images/enemies/common/<%= name.toLowerCase() %>/icon.png"alt="<%= name %>"/>
+                          <p><%= name %> </p>
+                        </div>
+                        <% }) %>
+                    </div>
+                                    </td>
+                                    <td>
+                    <% enemies[fam][group].drop.map(name => {  %>
+                      <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                      <p><%= name %> </p>
+                      <% }) %>
+                  </div>
+                </td>
+              </tr>
+              <% } %> 
+          <% } %> 
         </table>
       </section>
     </div>
@@ -43,6 +61,14 @@
       margin: 7rem 1rem;
       padding: 3rem 0;
       background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    img{
+      width:100px;
+    }
+
+    .group-container{
+      display: flex;
     }
   </style>
 </html>
