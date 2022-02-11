@@ -1,25 +1,18 @@
 body {
-  background: transparent url("/public/images/bg/visions_landscape.png")
-    no-repeat fixed;
+  background: black url("/public/images/bg/visions_landscape.png") no-repeat
+    fixed;
   background-size: 100vw;
   background-repeat: no-repeat;
   top: 0;
 }
 
-h1 {
-  margin: 7rem 0 2rem 0;
-  font-size: 3rem;
-  text-align: center;
-  color: white;
-}
-
 section {
   background: #fee5cbd7;
   width: 80%;
-  margin: 1rem auto;
+  margin: 10rem auto;
 }
 
-table {
+/* table {
   width: 100%;
   border-spacing: 5px;
   table-layout: fixed;
@@ -39,13 +32,9 @@ th {
 tbody tr:first-child {
   background: #fee5cb;
 }
+*/
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-th,
+/* th,
 td {
   text-align: left;
   padding: 16px;
@@ -55,6 +44,11 @@ td {
 
 td img {
   height: 100%;
+} */
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .char-icon {
