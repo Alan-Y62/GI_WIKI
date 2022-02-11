@@ -28,13 +28,8 @@
                 <% list.map((char)=> { %>
                     <tr>
                         <td class="char-icon">
-                            <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
-                                <img src="/public/images/character/<%=char.name.toLowerCase()%><%=char.element.toLowerCase()%>.png"
-                                    alt="fail">
-                                <% } else { %>
-                                    <img src="/public/images/character/<%=char.name.toLowerCase().split(' ').join('_')%>.png"
-                                        alt="fail">
-                                    <% } %>
+                            <img src="/public/images/character/<%= char.name.split(' ').join('_')%>/icon.png"
+                                alt="fail">
                         </td>
                         <td style="font-weight: bold;">
                             <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
