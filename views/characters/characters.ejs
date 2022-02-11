@@ -8,15 +8,47 @@
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <link href="../public/css/characters.css" type="text/css" rel="stylesheet" />
-    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <!-- <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script> -->
     <title>Characters</title>
 </head>
 
 <body>
     <%- include("../navbar")%>
-        <h1>Characters</h1>
         <section>
-            <table id="table">
+            <div class="region container" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <% list.map((char)=> { %>
+                    <div class="character-container" style="">
+                        <div class="char-name" style="font-weight: bold; text-align: center; margin: .15rem 0;">
+                            <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
+                                <a href='/characters/<%=char.name%>(<%=char.element%>)'>
+                                    <%= char.name %>
+                                </a>
+                                <% } else { %>
+                                    <a href='/characters/<%=char.name%>'>
+                                        <%= char.name %>
+                                    </a>
+                                    <% } %>
+                        </div>
+                        <div class="grid-con">
+                            <img class="imgs"
+                                src="/public/images/character/<%= char.name.split(' ').join('_')%>/icon.png"
+                                alt="ERROR">
+                            <a href="/weapons"><img class="weps"
+                                    src="/public/images/weapon_icons/<%= char.weapon.toLowerCase()%>.png"
+                                    alt="ERROR"></a>
+                            <img class="elements" src="/public/images/elements/<%= char.element.toLowerCase()%>.png"
+                                alt="ERROR">
+                            <div class="stars">
+                                <% for(let i=0; i < char.star; i++) { %>
+                                    <img class="star" src="/public/images/misc/star.png" alt="star">
+                                    <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <!-- old style -->
+            <!-- <table id="table">
                 <tr>
                     <th>ICON</th>
                     <th onclick="sortTable(0)">Name</th>
@@ -66,7 +98,7 @@
                         </td>
                     </tr>
                     <% }) %>
-            </table>
+            </table> -->
         </section>
         <audio id="the_audio" loop>
             <source src="../public/audio/2_4.mp3" type="audio/mp3">
@@ -75,66 +107,52 @@
 
 </body>
 
+<style>
+    .character-container {
+        width: 339px;
+        outline: 4px solid black;
+        padding: .5rem .5rem;
+        margin: 1rem 1rem;
+        background: rgba(0, 0, 0, 0.171);
+    }
 
-<script>
+    .grid-con {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
 
-    const currSort = 0;
+        gap: 0px;
+        height: 100%;
+        width: fit-content;
 
-    function sortTable(n) {
-        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.getElementById("table");
-        switching = true;
-        // Set the sorting direction to ascending:
-        dir = "asc";
-        /* Make a loop that will continue until
-        no switching has been done: */
-        while (switching) {
-            // Start by saying: no switching is done:
-            switching = false;
-            rows = table.rows;
-            /* Loop through all table rows (except the
-            first, which contains table headers): */
-            for (i = 1; i < (rows.length - 1); i++) {
-                // Start by saying there should be no switching:
-                shouldSwitch = false;
-                /* Get the two elements you want to compare,
-                one from current row and one from the next: */
-                x = rows[i].getElementsByTagName("TD")[n];
-                y = rows[i + 1].getElementsByTagName("TD")[n];
-                /* Check if the two rows should switch place,
-                based on the direction, asc or desc: */
-                if (dir == "asc") {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        // If so, mark as a switch and break the loop:
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else if (dir == "desc") {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        // If so, mark as a switch and break the loop:
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-            }
-            if (shouldSwitch) {
-                /* If a switch has been marked, make the switch
-                and mark that a switch has been done: */
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-                // Each time a switch is done, increase this count by 1:
-                switchcount++;
-            } else {
-                /* If no switching has been done AND the direction is "asc",
-                set the direction to "desc" and run the while loop again. */
-                if (switchcount == 0 && dir == "asc") {
-                    dir = "desc";
-                    document.getElementById('chevron').setAttribute('name', 'chevron-up');
-                    switching = true;
-                }
-            }
+    }
+
+    .imgs {
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 2;
+    }
+
+    .weps,
+    .elements {
+        height: 55px;
+        width: 55px;
+    }
+
+    .stars {
+        display: flex;
+        max-height: 35px;
+        max-width: 100px;
+    }
+
+    @media only screen and (max-width: 380px) {
+        .character-container {
+            margin: 0 0;
+            width: 100%;
         }
     }
-</script>
+</style>
 
 </html>
