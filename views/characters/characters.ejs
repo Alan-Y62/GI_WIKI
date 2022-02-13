@@ -24,7 +24,7 @@
                                     <%= char.name %>
                                 </a>
                                 <% } else { %>
-                                    <a href='/characters/<%=char.name%>'>
+                                    <a href='/characters/<%=char.name.replace(" ","_")%>'>
                                         <%= char.name %>
                                     </a>
                                     <% } %>

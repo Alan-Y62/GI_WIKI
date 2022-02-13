@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= weapon.name %>
+    </title>
+</head>
+
+<body>
+    <section class="weapon">
+        <h1>
+            <%= weapon.name %>
+        </h1>
+        <div class="details">
+            <div class="image-con">
+                <img src="/public/images/fullsized_weapons/Mistsplitter_reforged.png">
+            </div>
+            <div class="lore">
+                <%= weapon.lore %>
+            </div>
+        </div>
+    </section>
+    <div>
+        <p>Random weapons</p>
+    </div>
+</body>
+
+<style>
+    body {
+        background: black;
+        color: white;
+    }
+
+    section {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        background: gray;
+        font-size: 4rem;
+        padding: .5rem 0;
+        text-align: center;
+    }
+
+    .details {
+        display: grid;
+    }
+
+    .image-con {
+        background: orange;
+        width: fit-content;
+        grid-row-start: 1;
+        grid-column-start: 1;
+
+        grid-row-end: 2;
+        grid-column-end: 2;
+    }
+
+    .lore {
+        padding: .5rem .5rem;
+
+        grid-row-start: 1;
+        grid-column-start: 2;
+
+        grid-row-end: 2;
+        grid-column-end: 4;
+    }
+</style>
+
+</html>
