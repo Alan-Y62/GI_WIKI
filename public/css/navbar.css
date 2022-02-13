@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background: rgba(255, 255, 255, 0.8);
+  background: whitesmoke;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -34,6 +34,7 @@ nav {
 
 .nav-list * {
   color: black;
+  position: relative;
   text-decoration: none;
   padding: 10px 4px;
   border-radius: 20px 20px;
@@ -41,6 +42,19 @@ nav {
 
 .nav-list .nav-item a {
   margin: 0 auto;
+}
+
+.nav-list .nav-item a::before{
+  content: "";
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 2px;
+  width: 100%;
+  background-color: hsla(208, 62%, 50%);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.2s ease-in;
 }
 
 #vol-control {
@@ -54,12 +68,11 @@ nav {
 
 .enemy-content {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: whitesmoke;
   top: 50px;
   left: -20%;
   visibility: hidden;
   border-radius: 0;
-  outline: 1px solid gray;
   z-index: 1;
 }
 
@@ -67,12 +80,15 @@ nav {
   display: block;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
+@keyframes growin {
+  0%{
+    transform: scaleY(0);
   }
-  to {
-    opacity: 1;
+  80%{
+    transform: scaleY(1.1);
+  }
+  100%{
+    transform: scaleY(1);
   }
 }
 
@@ -119,16 +135,18 @@ nav {
 }
 
 @media (hover: hover) {
-  .nav-list .nav-item a:hover {
-    background: hsla(208, 62%, 50%);
+  .nav-list .nav-item a:hover:before {
+    transform: scaleX(1);
     color: black;
   }
 
   #nav-enemies:hover .enemy-content {
     visibility: visible;
     min-width: 150px;
-    animation-name: fadein;
-    animation-duration: 0.5s;
+    animation-name: growin;
+    transform-origin: top center;
+    animation-duration: 0.2s;
+    transition-timing-function: ease-in-out;
   }
 }
 
@@ -167,7 +185,16 @@ nav {
 
   .show li {
     display: inline;
+    text-align: left;
     margin: 0;
+  }
+
+  .nav-list .nav-item a{
+    margin: 0;
+  }
+
+  .show li a{
+    max-width: fit-content;
   }
 
   #volume-control {
@@ -179,6 +206,7 @@ nav {
   }
 
   #nav-enemies.open .enemy-content {
+    animation-name: none;
     visibility: visible;
     margin-top: 1rem;
     max-width: 100%;

@@ -26,14 +26,14 @@
           <% }, []) %> 
           <% for(const fam in enemies){ %> 
             <tr>
-              <th><%= fam %></th>
+              <th colspan="2"><%= fam %></th>
             </tr>
             <% for(const group in enemies[fam]) { %> 
               <tr>
                 <td>
                   <div class="group-container">
                     <h1><%= group %></h1>
-                    <div>
+                    <div class="group-list-container">
                       <% enemies[fam][group].list.map(name => {  %>
                         <div>
                           <img src="../../public/images/enemies/common/<%= name.toLowerCase() %>/icon.png"alt="<%= name %>"/>
@@ -43,10 +43,11 @@
                     </div>
                                     </td>
                                     <td>
-                    <% enemies[fam][group].drop.map(name => {  %>
-                      <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
-                      <p><%= name %> </p>
-                      <% }) %>
+                    <div class="drop-container">
+                      <% enemies[fam][group].drop.map(name => {  %>
+                          <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                        <% }) %>
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -57,18 +58,63 @@
     </div>
   </body>
   <style>
+
+    table{
+      width: 100%;
+    }
     .common-container {
-      margin: 7rem 1rem;
+      margin: 7rem 3rem;
       padding: 3rem 0;
       background-color: rgba(255, 255, 255, 0.5);
     }
 
     img{
+      height:100px;
       width:100px;
+      border: 5px black solid;
     }
 
     .group-container{
       display: flex;
+      flex-direction: column;
+    }
+
+    .group-list-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .group-list-container p{
+      width:100px;
+      overflow-wrap: wrap
+    }
+
+    .drop-container{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .drop-container img{
+      width: 60px;
+      height: 60px;
+    }
+
+    th,td{
+      outline: 1px solid black;
+    }
+
+    .drop-container img:nth-child(3n + 1){
+      background: url("../../public/images/materials/1star.png") no-repeat center center/cover;
+    }
+
+    .drop-container img:nth-child(3n + 2){
+      background: url("../../public/images/materials/2star.png") no-repeat center center/cover;
+    }
+
+    .drop-container img:nth-child(3n + 3){
+      background: url("../../public/images/materials/3star.png") no-repeat center center/cover;
     }
   </style>
 </html>
