@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:name", async (req, res) => {
   let character = "";
-  let name = req.params.name;
+  let name = req.params.name.replace("_", " ");
   if (name.includes("Lumine") || name.includes("Aether")) {
     const element = name.slice(7, -1);
     name = name.slice(0, 6);
