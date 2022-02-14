@@ -14,7 +14,7 @@ const elitemobSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    group: {
+    groups: {
         type: String,
         required: true
     },

@@ -11,19 +11,32 @@
 <body>
     <%- include("../navbar")%>
     <div class="world-container">
-        <% world.map((enemy) => { %>
-            <div>
-                <a href="/enemies/world_boss/<%= enemy.name %>"><%= enemy.name %> </a>
-                <img src="../../public/images/enemies/world/<%= enemy.name.toLowerCase() %>/icon.png" alt="<%= enemy.name %>">
-            </div>
-            <% }) %>
+        <table>
+            <tr>
+                <th>Enemy</th>
+                <th>Drops</th>
+            </tr>
+            <% world.map((enemy) => { %>
+              <tr>
+                  <td>
+                      <a href="/enemies/world_boss/<%= enemy.name %>"><%= enemy.name %> </a>
+                      <img src="../../public/images/enemies/world/<%= enemy.name.toLowerCase() %>/icon.png" alt="<%= enemy.name %>">
+                  </td>
+                  <td>
+                      <% enemy.drops.character_ascension.map(char => { %>
+                          <img src="../../public/images/drops/<%= char.toLowerCase() %>.png"alt="<%= char %>"/>
+                      <% }) %>
+                  </td>
+              </tr>
+              <% }) %>
+        </table>
     </div>
 </body>
 <style>
     .world-container{
-        margin: 7rem 1rem;
+        margin: 7rem 3rem;
         padding: 3rem 0;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
     }
 </style>
 </html>
