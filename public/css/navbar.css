@@ -44,17 +44,17 @@ nav {
   margin: 0 auto;
 }
 
-.nav-list .nav-item a::before{
+.nav-list .nav-item a::before {
   content: "";
   position: absolute;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   height: 2px;
   width: 100%;
   background-color: hsla(208, 62%, 50%);
   transform: scaleX(0);
   transform-origin: bottom left;
-  transition: transform 0.2s ease-in;
+  transition: transform 0.35s ease-in;
 }
 
 #vol-control {
@@ -81,13 +81,13 @@ nav {
 }
 
 @keyframes growin {
-  0%{
+  0% {
     transform: scaleY(0);
   }
-  80%{
+  80% {
     transform: scaleY(1.1);
   }
-  100%{
+  100% {
     transform: scaleY(1);
   }
 }
@@ -189,11 +189,11 @@ nav {
     margin: 0;
   }
 
-  .nav-list .nav-item a{
+  .nav-list .nav-item a {
     margin: 0;
   }
 
-  .show li a{
+  .show li a {
     max-width: fit-content;
   }
 

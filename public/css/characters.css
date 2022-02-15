@@ -12,8 +12,13 @@ section {
   margin: 10rem auto;
 }
 
+.region a {
+  text-decoration: none;
+  position: relative;
+}
+
 .character-container {
-  width: 339px;
+  width: 330px;
   outline: 2px solid black;
   padding: 0.5rem 0.5rem;
   margin: 1rem 1rem;
@@ -21,47 +26,34 @@ section {
 }
 
 .grid-con {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  gap: 0px;
-  height: 100%;
-  width: fit-content;
+  display: flex;
+  width: 320px;
+  margin: 0.5rem auto;
 }
 
-.imgs {
-  grid-row-start: 1;
-  grid-column-start: 1;
-
-  grid-row-end: 3;
-  grid-column-end: 2;
-}
-
+.imgs,
 .weps,
 .elements {
-  height: 55px;
-  width: 55px;
+  flex-basis: 100%;
 }
 
 .stars {
   display: flex;
-  max-height: 35px;
-  max-width: 100px;
+  justify-content: center;
 }
 
-a {
-  text-decoration: none;
+.star {
+  max-width: 12.5%;
+  max-height: 12.5%;
+}
+
+.char-name {
   color: black;
 }
 
 .char-icon {
   padding: 0;
   height: 80px;
-}
-
-a:hover {
-  color: white;
 }
 
 .Pyro {
