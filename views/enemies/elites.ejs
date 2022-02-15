@@ -9,40 +9,112 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include("../navbar")%>
-    <div class="elite-container">
-        <section>
-            <table>
-              <tr>
-                <td>Enemies</td>
-                <td>Drops</td>
-              </tr>
-              <% elite.map((enemy) => { %>
-              <tr>
-                <td>
-                  <div>
-                    <img src="../../public/images/enemies/elite/<%= enemy.name.toLowerCase() %>/icon.png"alt="<%= enemy.name %>"/>
-                    <a href="/enemies/elite_enemies/<%= enemy.name %>"
-                      ><%= enemy.name %>
-                    </a>
+  <%- include("../navbar")%>
+  <div class="elite-container">
+    <section>
+      <table>
+        <tr>
+          <th>Enemies</th>
+          <th>Drops</th>
+        </tr>
+        <% const enemies = elite.reduce((enemy, {family, groups, name, drops}) => { %> 
+          <% if(!enemy[family]) enemy[family] = []; %> 
+          <% if(!enemy[family][groups]) enemy[family][groups] = {list:[],drop:[]}; %> 
+          <% enemy[family][groups].list.push(name); %> 
+          <% if(enemy[family][groups].drop.length === 0) enemy[family][groups].drop.push(...drops.specific_drops) %> 
+          <% return enemy; %> 
+        <% }, []) %> 
+        <% for(const fam in enemies){ %> 
+          <tr>
+            <th colspan="2"><%= fam %></th>
+          </tr>
+          <% for(const groups in enemies[fam]) { %> 
+            <tr>
+              <td>
+                <div class="group-container">
+                  <h1><%= groups %></h1>
+                  <div class="group-list-container">
+                    <% enemies[fam][groups].list.map(name => {  %>
+                      <div>
+                        <img src="../../public/images/enemies/elite/<%= name.toLowerCase() %>/icon.png"alt="<%= name %>"/>
+                        <p><%= name %> </p>
+                      </div>
+                      <% }) %>
                   </div>
-                </td>
-                <td>
-                    <% enemy.drops.specific_drops.forEach((drops) => { %>
-                        <img src="../../public/images/drops/<%= drops.toLowerCase() %>.png " alt="<%= drops %> ">
-                    <% }) %> 
-                </td>
-              </tr>
-              <% }) %>
-            </table>
-          </section>
-    </div>
+                                  </td>
+                                  <td>
+                  <div class="drop-container">
+                    <% enemies[fam][groups].drop.map(name => {  %>
+                        <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                      <% }) %>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% } %> 
+        <% } %> 
+      </table>
+    </section>
+  </div>
 </body>
 <style>
-    .elite-container{
-        margin: 7rem 1rem;
-        padding: 3rem 0;
-        background-color: rgba(255,255,255,0.5);
-    }
+
+  table{
+    width: 100%;
+  }
+  .elite-container {
+    margin: 7rem 3rem;
+    padding: 3rem 0;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  img{
+    height:100px;
+    width:100px;
+    border: 5px black solid;
+  }
+
+  .group-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group-list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .group-list-container p{
+    width:100px;
+    overflow-wrap: wrap
+  }
+
+  .drop-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .drop-container img{
+    width: 60px;
+    height: 60px;
+  }
+
+  th,td{
+    outline: 1px solid black;
+  }
+
+  .drop-container img:nth-child(3n + 1){
+    background: url("../../public/images/materials/1star.png") no-repeat center center/cover;
+  }
+
+  .drop-container img:nth-child(3n + 2){
+    background: url("../../public/images/materials/2star.png") no-repeat center center/cover;
+  }
+
+  .drop-container img:nth-child(3n + 3){
+    background: url("../../public/images/materials/3star.png") no-repeat center center/cover;
+  }
 </style>
 </html>

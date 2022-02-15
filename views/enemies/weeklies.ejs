@@ -11,12 +11,25 @@
 <body>
     <%- include("../navbar")%>
     <div class="weekly-container">
-        <% week.map((enemy) => { %>
-            <div>
-                <a href="/enemies/weekly_boss/<%= enemy.name %>"><%= enemy.name %> </a>
-                <img src="../../public/images/enemies/weekly/<%= enemy.name.toLowerCase() %>/icon.png" alt="<%= enemy.name %>">
-            </div>
+      <table>
+          <tr>
+              <th>Enemy</th>
+              <th>Drops</th>
+          </tr>
+          <% week.map((enemy) => { %>
+            <tr>
+                <td>
+                    <a href="/enemies/weekly_boss/<%= enemy.name %>"><%= enemy.name %> </a>
+                    <img src="../../public/images/enemies/weekly/<%= enemy.name.toLowerCase() %>/icon.png" alt="<%= enemy.name %>">
+                </td>
+                <td>
+                    <% enemy.drops.talent_level_up.map(talent => { %>
+                        <img src="../../public/images/drops/<%= talent.toLowerCase() %>.png"alt="<%= talent %>"/>
+                    <% }) %>
+                </td>
+            </tr>
             <% }) %>
+      </table>
     </div>
 </body>
 <style>
