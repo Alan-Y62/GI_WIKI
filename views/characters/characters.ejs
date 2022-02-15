@@ -17,35 +17,41 @@
         <section>
             <div class="region container" style="display: flex; flex-wrap: wrap; justify-content: center;">
                 <% list.map((char)=> { %>
-                    <div class="character-container" style="">
-                        <div class="char-name" style="font-weight: bold; text-align: center; margin: .15rem 0;">
-                            <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
-                                <a href='/characters/<%=char.name%>(<%=char.element%>)'>
-                                    <%= char.name %>
+                    <% if(char.name==='Lumine' || char.name==='Aether' ) { %>
+                        <a href='/characters/<%=char.name%>(<%=char.element%>)'>
+                            <% } else { %>
+                                <a href='/characters/<%=char.name.replace(" ","_")%>'>
+                                    <% } %>
+                                        <div class="character-container">
+                                            <div class="char-name"
+                                                style="font-weight: bold; text-align: center; margin: .15rem 0;">
+                                                <%= char.name %>
+                                            </div>
+                                            <div class="grid-con">
+                                                <div class="elements">
+                                                    <img class="elements"
+                                                        src="/public/images/elements/<%= char.element.toLowerCase()%>.png"
+                                                        alt="ERROR">
+                                                </div>
+                                                <div class="imgs">
+                                                    <img class="imgs"
+                                                        src="/public/images/character/<%= char.name.split(' ').join('_')%>/icon.png"
+                                                        alt="ERROR">
+                                                </div>
+                                                <div class="weps">
+                                                    <img class="weps"
+                                                        src="/public/images/weapon_icons/<%= char.weapon.toLowerCase()%>.png"
+                                                        alt="ERROR">
+                                                </div>
+                                            </div>
+                                            <div class="stars">
+                                                <% for(let i=0; i < char.star; i++) { %>
+                                                    <img class="star" src="/public/images/misc/star.png" alt="star">
+                                                    <% } %>
+                                            </div>
+                                        </div>
                                 </a>
-                                <% } else { %>
-                                    <a href='/characters/<%=char.name.replace(" ","_")%>'>
-                                        <%= char.name %>
-                                    </a>
-                                    <% } %>
-                        </div>
-                        <div class="grid-con">
-                            <img class="imgs"
-                                src="/public/images/character/<%= char.name.split(' ').join('_')%>/icon.png"
-                                alt="ERROR">
-                            <a href="/weapons"><img class="weps"
-                                    src="/public/images/weapon_icons/<%= char.weapon.toLowerCase()%>.png"
-                                    alt="ERROR"></a>
-                            <img class="elements" src="/public/images/elements/<%= char.element.toLowerCase()%>.png"
-                                alt="ERROR">
-                            <div class="stars">
-                                <% for(let i=0; i < char.star; i++) { %>
-                                    <img class="star" src="/public/images/misc/star.png" alt="star">
-                                    <% } %>
-                            </div>
-                        </div>
-                    </div>
-                    <% }) %>
+                                <% }) %>
             </div>
             <!-- old style -->
             <!-- <table id="table">
