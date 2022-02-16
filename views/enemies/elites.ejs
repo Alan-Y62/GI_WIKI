@@ -36,8 +36,10 @@
                   <div class="group-list-container">
                     <% enemies[fam][groups].list.map(name => {  %>
                       <div>
-                        <img src="../../public/images/enemies/elite/<%= name.toLowerCase() %>/icon.png"alt="<%= name %>"/>
-                        <p><%= name %> </p>
+                        <a href="/enemies/elite_enemies/<%= name %> ">
+                          <img src="../../public/images/enemies/elite/<%= name.toLowerCase() %>/icon.png"alt="<%= name %>"/>
+                          <p><%= name %> </p>
+                        </a>
                       </div>
                       <% }) %>
                   </div>
@@ -106,15 +108,15 @@
   }
 
   .drop-container img:nth-child(3n + 1){
-    background: url("../../public/images/materials/1star.png") no-repeat center center/cover;
+    background: url("../../public/images/drops/Rarity1background.png") no-repeat center center/cover;
   }
 
   .drop-container img:nth-child(3n + 2){
-    background: url("../../public/images/materials/2star.png") no-repeat center center/cover;
+    background: url("../../public/images/drops/Rarity2background.png") no-repeat center center/cover;
   }
 
   .drop-container img:nth-child(3n + 3){
-    background: url("../../public/images/materials/3star.png") no-repeat center center/cover;
+    background: url("../../public/images/drops/Rarity3background.png") no-repeat center center/cover;
   }
 </style>
 </html>
