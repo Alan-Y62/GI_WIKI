@@ -107,23 +107,23 @@ th {
 
 .mats *:nth-child(1),
 .mats *:nth-child(2) {
-  background-image: url("/public/images/materials/2star.png");
+  background-image: url("/public/images/drops/Rarity2background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   padding: 0.5rem;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .mats *:nth-child(3) {
-  background-image: url("/public/images/materials/1star.png");
+  background-image: url("/public/images/drops/Rarity1background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   padding: 0.5rem;
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .mats * + * {
