@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="enemy">
+        <img src="../public/images/enemies/common/anemo samachurl/icon.png" alt="">
+        <div class="name">
+            <p>Anemo Samachurl</p>
+        </div>
+    </div>
+    <div class="enemy">
+        <img src="../public/images/enemies/common/mutant electro slime/icon.png" alt="">
+        <div class="name">
+            <p>mutant electro slime</p>
+        </div>
+    </div>
+</body>
+
+<style>
+    .enemy{
+        margin:2rem;
+        position: relative;
+        border: 1px solid black;
+        border-radius: 5%;
+        width:200px;
+    }
+
+    .enemy img{
+        width:100%;
+    }
+
+    .name{
+        position: absolute;
+        bottom:-20px;
+        width: 100%;
+        text-align: center;
+        background-color: black;
+        padding-top:2rem;
+        color: white;
+        clip-path: polygon(10% 43%, 90% 43%, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+
+</style>
+</html>
