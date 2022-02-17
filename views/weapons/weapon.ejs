@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>
         <%= weapon.name %>
     </title>
 </head>
 
 <body>
-    <section class="weapon">
-        <h1>
-            <%= weapon.name %>
-        </h1>
-        <div class="details">
-            <div class="image-con">
-                <img src="/public/images/fullsized_weapons/Mistsplitter_reforged.png">
+    <%- include("../navbar")%>
+        <section class="weapon">
+            <h1>
+                <%= weapon.name %>
+            </h1>
+            <div class="details">
+                <div class="image-con">
+                    <img src="/public/images/fullsized_weapons/Mistsplitter_reforged.png">
+                </div>
+                <div class="lore">
+                    <%= weapon.lore %>
+                </div>
             </div>
-            <div class="lore">
-                <%= weapon.lore %>
-            </div>
+        </section>
+        <div>
+            <p>Random weapons</p>
         </div>
-    </section>
-    <div>
-        <p>Random weapons</p>
-    </div>
 </body>
 
 <style>
@@ -36,8 +38,9 @@
     }
 
     section {
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
+        padding: 106px 0;
     }
 
     h1 {
