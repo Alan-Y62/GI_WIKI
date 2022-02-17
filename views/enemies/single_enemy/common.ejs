@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
-    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="../../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title><%= common.name %></title>
 </head>
 <body>
-    <img src="../../../public/images/enemies/common/<%= common.name.toLowerCase() %>/icon.png" alt="">
+    <%- include("../../navbar")%>
+    <img src="../../../public/images/enemies/common/<%= common.name.toLowerCase() %>/main.png" alt="">
 </body>
 </body>
 </html>
