@@ -20,19 +20,44 @@
             <p>mutant electro slime</p>
         </div>
     </div>
+    <div class="enemy">
+        <img src="../public/images/enemies/common/mutant electro slime/icon.png" alt="">
+        <div class="element">
+            <img src="../public/images/elements/electro.png" alt="">
+        </div>
+        <div class="name">
+            <p>mutant electro slime</p>
+        </div>
+    </div>
 </body>
 
 <style>
+    body{
+        background:dimgray;
+    }
     .enemy{
         margin:2rem;
         position: relative;
         border: 1px solid black;
         border-radius: 5%;
-        width:200px;
+        width:150px;
     }
 
     .enemy img{
         width:100%;
+    }
+
+    .element{
+        position: absolute;
+        top: -10px;;
+        right:-10px;
+        background-color: black;
+        border-radius: 50%;
+        padding:5px;
+    }
+
+    .element img{
+        width:1rem;
     }
 
     .name{
