@@ -4,6 +4,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 const Weapon = require("../models/weapons");
+const Spiral = require("../models/spiral")
 
 router.get("/", (req, res) => {
   res.render("home");
@@ -27,6 +28,11 @@ router.get("/privacy", (req, res) => {
 
 router.get("/design" , (req,res) => {
   res.render("design")
+})
+
+router.get("/spiral" , async (req, res) => {
+  let spiral = await Spiral.find();
+  res.render("spiral", {spiral: spiral})
 })
 
 module.exports = router;
