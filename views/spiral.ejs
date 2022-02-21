@@ -11,7 +11,11 @@
     <% spiral.map(floor => { %>
         <h1 style="color:white">Floor:<%= floor.floor %> </h1>
         <% floor.chamber_1.first_half.map(enemy => { %>
-            <img src="../public/images/enemies/common/<%= enemy.toLowerCase() %>/icon.png" alt="">
+            <% const index = enemy.lastIndexOf(".") %> 
+            <% const type =  enemy.substring(index + 1, enemy.length) %>
+            <% const mob = enemy.substring(0, index).toLowerCase() %>  
+            <img src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png" alt="">
+            <p style="color:white"><%= mob %> </p>
        <% }) %> 
     <% }) %> 
 </body>
