@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <title>Document</title>
-</head>
-<body>
-    <% spiral.map(floor => { %>
-        <h1 style="color:white">Floor:<%= floor.floor %> </h1>
-        <% floor.chamber_1.first_half.map(enemy => { %>
-            <% const index = enemy.lastIndexOf(".") %> 
-            <% const type =  enemy.substring(index + 1, enemy.length) %>
-            <% const mob = enemy.substring(0, index).toLowerCase() %>  
-            <img src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png" alt="">
-            <p style="color:white"><%= mob %> </p>
-       <% }) %> 
-    <% }) %> 
-</body>
+  </head>
+
+  <body>
+    <% spiral.map(floor=> { %>
+    <h1 style="color: white">Floor:<%= floor.floor %></h1>
+    <h2 style="color: white">chamber 1</h2>
+    <% floor.chamber_1.first_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %> <% floor.chamber_1.second_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %>
+    <h2 style="color: white">Chamber 2</h2>
+    <% floor.chamber_2.first_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %> <% floor.chamber_2.second_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %>
+    <h2 style="color: white">Chamber 3</h2>
+    <% floor.chamber_3.first_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %> <% floor.chamber_3.second_half.map(enemy=> { %> <% const
+    index=enemy.lastIndexOf(".") %> <% const type=enemy.substring(index + 1,
+    enemy.length) %> <% const mob=enemy.substring(0, index).toLowerCase() %>
+    <img
+      src="../public/images/enemies/<%= type %>/<%= mob %>/icon.png"
+      alt="<%= mob %>"
+    />
+    <% }) %> <% }) %>
+  </body>
+
+  <style>
+    img {
+      width: 200px;
+      color: white;
+    }
+  </style>
 </html>
