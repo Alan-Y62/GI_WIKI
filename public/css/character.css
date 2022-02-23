@@ -8,9 +8,14 @@ section {
 
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   border-radius: 10px 10px;
   padding-bottom: 5rem;
+}
+
+.bg-title {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .bg-title.Anemo {
@@ -104,14 +109,38 @@ section {
   flex-grow: 1;
 }
 
+.rest {
+  width: 95%;
+  margin: 0 auto;
+}
+
 h1 {
   font-size: 3rem;
   padding: 0 1rem;
 }
 
+.Actives .toprow,
+.Actives pre,
+.passive-container .toprow,
+.passive-container pre {
+  position: relative;
+  width: 80%;
+  margin-left: 2%;
+}
+
+.Actives .toprow:nth-child(3),
+.Actives pre:nth-child(4),
+.Actives .toprow:nth-child(7),
+.Actives pre:nth-child(8),
+.passive-container .toprow:nth-child(3),
+.passive-container pre:nth-child(4) {
+  margin-left: auto;
+  margin-right: 2%;
+}
+
 .toprow {
   outline: 1px solid black;
-  background: rgba(255, 255, 255, 0.5);
+  background: black;
   display: flex;
   height: auto;
 }
@@ -162,11 +191,10 @@ h1 {
 
 pre {
   padding: 2rem 2rem;
-  outline: 1px solid black;
-  width: 100%;
+  color: black;
   white-space: pre-wrap;
   /* wrap text */
-  background: rgba(255, 255, 255, 0.2);
+  background: white;
   margin-top: 0;
 }
 
