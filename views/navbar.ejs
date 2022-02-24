@@ -44,12 +44,15 @@
     navchange();
     window.addEventListener('resize', () => {navchange()});
 
-   function open(){
+   function open(e){
         console.log('hello')
-        if(enemy.classList.contains('open')){
-            enemy.classList.remove('open');
+        if(e.target !== this) return;
+        else{
+            if(e.target.classList.contains('open')){
+            e.target.classList.remove('open');
         } else {
-            enemy.classList.add('open')
+            e.target.classList.add('open')
+        }
         }
     }
 
