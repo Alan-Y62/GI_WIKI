@@ -61,12 +61,7 @@ nav {
   width: 5rem;
 }
 
-#nav-enemies {
-  position: relative;
-  cursor: pointer;
-}
-
-.enemy-content {
+.drop-content {
   position: absolute;
   background-color: whitesmoke;
   top: 50px;
@@ -76,7 +71,7 @@ nav {
   z-index: 1;
 }
 
-.enemy-content a {
+.drop-content a {
   display: block;
 }
 
@@ -139,15 +134,17 @@ nav {
     transform: scaleX(1);
     color: black;
   }
+}
 
-  #nav-enemies:hover .enemy-content {
-    visibility: visible;
-    min-width: 150px;
-    animation-name: growin;
-    transform-origin: top center;
-    animation-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-  }
+@media (hover: hover) and (min-width: 920px){
+  .drop:hover .drop-content {
+      visibility: visible;
+      min-width: 150px;
+      animation-name: growin;
+      transform-origin: top center;
+      animation-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
 }
 
 @media only screen and (max-width: 920px) {
@@ -205,15 +202,14 @@ nav {
     display: none;
   }
 
-  #nav-enemies.open .enemy-content {
-    animation-name: none;
+  .drop.open .drop-content {
     visibility: visible;
     margin-top: 1rem;
     max-width: 100%;
     max-height: 300px;
   }
 
-  #nav-enemies .enemy-content {
+  .drop .drop-content {
     position: static;
     visibility: hidden;
     background: rgba(255, 255, 255, 0.5);
@@ -223,10 +219,10 @@ nav {
     padding: 0;
     outline: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
   }
 
-  .enemy-drop {
+  .drop-icon {
     display: inline-block;
     padding: 0 5px;
     font-size: 1.5rem;
@@ -234,7 +230,8 @@ nav {
     transition: all 0.2s;
   }
 
-  #nav-enemies.open .enemy-drop {
+  .drop.open .drop-icon {
+    transform-origin: center;
     transform: rotate(-135deg);
   }
 }
