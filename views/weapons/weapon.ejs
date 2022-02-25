@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
     <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>
         <%= weapon.name %>
@@ -13,17 +14,61 @@
 
 <body>
     <%- include("../navbar")%>
-        <section class="weapon">
+        <section class="basicdetails">
             <h1>
                 <%= weapon.name %>
             </h1>
-            <div class="details">
-                <div class="image-con">
-                    <img src="/public/images/fullsized_weapons/Mistsplitter_reforged.png">
+            <div class="container">
+                <div class="leftside">
+                    <div class="image-con">
+                        <% if(weapon.name==='"The Catch"' ){ %>
+                            <img
+                                src='/public/images/fullsized_weapons/<%=weapon.type.toLowerCase()%>/The Catch/full.png'>
+                            <% } else { %>
+                                <img
+                                    src='/public/images/fullsized_weapons/<%=weapon.type.toLowerCase()%>/<%= weapon.name.toLowerCase()%>/full.png'>
+                                <% } %>
+                    </div>
                 </div>
-                <div class="lore">
+                <div class="rightside lore">
                     <%= weapon.lore %>
                 </div>
+            </div>
+        </section>
+        <section class="moredetails">
+            <div class="ascension">
+                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                    <div class="group">
+                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item1.toLowerCase() %>.png"
+                            alt="<%= weapon.ascension_mats[0]%>" />
+                        <span class="betweeners">
+                            X <%= weapon.ascension_mats[i].count1 %>
+                        </span>
+                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item2.toLowerCase() %>.png"
+                            alt="<%= weapon.ascension_mats[0].item1%>" />
+                        <span class="betweeners">
+                            X <%= weapon.ascension_mats[i].count1 %>
+                        </span>
+                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item3.toLowerCase() %>.png"
+                            alt="<%= weapon.ascension_mats[0].item1%>" />
+                        <span class="betweeners">
+                            X <%= weapon.ascension_mats[i].count1 %>
+                        </span>
+                        <img src="/public/images/drops/Mora.png" alt="Mora" />
+                        <span class="betweeners">
+                            X <%= weapon.ascension_mats[i].cost %>
+                        </span>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="refinement">
+                <% if(weapon.refinement_abilities.length !==0) { %>
+                    <% for(let j=0; j < weapon.refinement_abilities.length; j++) { %>
+                        <div>
+                            <%= weapon.refinement_abilities[j] %>
+                        </div>
+
+                        <% }} %>
             </div>
         </section>
         <div>
@@ -37,41 +82,72 @@
         color: white;
     }
 
-    section {
-        width: 90%;
+    .basicdetails {
+        width: 99%;
         margin: 0 auto;
         padding: 106px 0;
     }
 
     h1 {
-        background: gray;
-        font-size: 4rem;
+        background: orange;
+        font-size: 3rem;
         padding: .5rem 0;
         text-align: center;
+        border-radius: 50rem 50rem;
+        max-width: 700px;
+        margin: .5rem auto
     }
 
-    .details {
-        display: grid;
+    .container {
+        display: flex;
+    }
+
+    .leftside {
+        flex-basis: 50%;
+        height: 550px;
+    }
+
+    .rightside {
+        flex-basis: 49%;
+        background: gray;
+        padding: .5rem .5rem;
+        border-radius: 10px 10px;
     }
 
     .image-con {
-        background: orange;
-        width: fit-content;
-        grid-row-start: 1;
-        grid-column-start: 1;
-
-        grid-row-end: 2;
-        grid-column-end: 2;
+        width: 50vh;
+        height: 600px;
+        margin: 0 auto;
     }
 
-    .lore {
-        padding: .5rem .5rem;
+    .image-con img {
+        width: 100%;
+        height: 100%;
+    }
 
-        grid-row-start: 1;
-        grid-column-start: 2;
+    .moredetails {
+        display: flex;
+    }
 
-        grid-row-end: 2;
-        grid-column-end: 4;
+    .ascension {
+        max-width: 50%;
+    }
+
+    .group {
+        display: flex;
+    }
+
+    .group img {
+        max-width: 15%;
+    }
+
+    .betweeners {
+        padding: 7% 0;
+    }
+
+    .refinement * {
+        display: block;
+        font-size: 3rem;
     }
 </style>
 
