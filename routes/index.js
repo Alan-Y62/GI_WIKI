@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 const Weapon = require("../models/weapons");
 const Spiral = require("../models/spiral")
+const Artifact = require("../models/artifact")
 
 router.get("/", (req, res) => {
   res.render("home");
@@ -33,6 +34,11 @@ router.get("/design" , (req,res) => {
 router.get("/spiral" , async (req, res) => {
   let spiral = await Spiral.find();
   res.render("spiral", {spiral: spiral})
+})
+
+router.get("/artifacts" , async(req,res) => {
+  const artifacts = await Artifact.find();
+  res.render("artifacts", {artifacts: artifacts})
 })
 
 module.exports = router;
