@@ -4,27 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>Document</title>
 </head>
 <body>
+    <%- include("../views/navbar")%>
     <div class="container">
         <% artifacts.map(artifact => { %>
             <div class="set-container">
                 <% if (artifact.flower.name !== 'none') { %>
-                     <img src="../public/images/artifacts/<%= artifact.name %>/flower.png " alt="<%= artifact.name %>'s flower">
-                <% } %>
-                <% if (artifact.plume.name !== 'none') { %>
-                    <img src="../public/images/artifacts/<%= artifact.name %>/plume.png " alt="<%= artifact.name %>'s plume">
-                       <% } %>
-                       <% if (artifact.sands.name !== 'none') { %>
-                <img src="../public/images/artifacts/<%= artifact.name %>/sands.png " alt="<%= artifact.name %>'s sands">
-                       <% } %>
-                       <% if (artifact.goblet.name !== 'none') { %>
-                <img src="../public/images/artifacts/<%= artifact.name %>/goblet.png " alt="<%= artifact.name %>'s goblet">
-                       <% } %>
-                       <% if (artifact.circlet.name !== 'none') { %>
-                <img src="../public/images/artifacts/<%= artifact.name %>/circlet.png " alt="<%= artifact.name %>'s circlet">
-                       <% } %>
+                     <img src="../public/images/artifacts/<%= artifact.name %>/flower.png " alt="<%= artifact.name %>">
+                     <p><%= artifact.name %> </p>
+                <% } else { %>
+                    <img src="../public/images/artifacts/<%= artifact.name %>/circlet.png " alt="<%= artifact.name %>">
+                    <p><%= artifact.name %> </p>
+                <% } %> 
             </div>
         <% }) %>
     </div>
