@@ -19,7 +19,7 @@
                 <%= weapon.name %>
             </h1>
             <div class="container">
-                <div class="leftside">
+                <div class="left">
                     <div class="image-con">
                         <% if(weapon.name==='"The Catch"' ){ %>
                             <img
@@ -30,37 +30,42 @@
                                 <% } %>
                     </div>
                 </div>
-                <div class="rightside lore">
-                    <%= weapon.lore %>
+                <div class="middle ascension">
+                    <h3>ASCENSIONS</h3>
+                    <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
+                        <div class="group">
+                            <div class="item-group">
+                                <img src="/public/images/drops/<%= weapon.ascension_mats[i].item1.toLowerCase() %>.png"
+                                    alt="<%= weapon.ascension_mats[0]%>" />
+                                <span class="betweeners">
+                                    X <%= weapon.ascension_mats[i].count1 %>
+                                </span>
+                            </div>
+                            <div class="item-group">
+                                <img src="/public/images/drops/<%= weapon.ascension_mats[i].item2.toLowerCase() %>.png"
+                                    alt="<%= weapon.ascension_mats[0].item1%>" />
+                                <span class="betweeners">
+                                    X <%= weapon.ascension_mats[i].count2 %>
+                                </span>
+                            </div>
+                            <div class="item-group">
+                                <img src="/public/images/drops/<%= weapon.ascension_mats[i].item3.toLowerCase() %>.png"
+                                    alt="<%= weapon.ascension_mats[0].item1%>" />
+                                <span class="betweeners">
+                                    X <%= weapon.ascension_mats[i].count2 %>
+                                </span>
+                            </div>
+                            <div class="item-group">
+                                <img src="/public/images/drops/Mora.png" alt="Mora" />
+                                <span class="betweeners">
+                                    X <%= weapon.ascension_mats[i].cost %>
+                                </span>
+                            </div>
+                        </div>
+                        <% } %>
                 </div>
             </div>
-        </section>
-        <section class="moredetails">
-            <div class="ascension">
-                <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
-                    <div class="group">
-                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item1.toLowerCase() %>.png"
-                            alt="<%= weapon.ascension_mats[0]%>" />
-                        <span class="betweeners">
-                            X <%= weapon.ascension_mats[i].count1 %>
-                        </span>
-                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item2.toLowerCase() %>.png"
-                            alt="<%= weapon.ascension_mats[0].item1%>" />
-                        <span class="betweeners">
-                            X <%= weapon.ascension_mats[i].count1 %>
-                        </span>
-                        <img src="/public/images/drops/<%= weapon.ascension_mats[i].item3.toLowerCase() %>.png"
-                            alt="<%= weapon.ascension_mats[0].item1%>" />
-                        <span class="betweeners">
-                            X <%= weapon.ascension_mats[i].count1 %>
-                        </span>
-                        <img src="/public/images/drops/Mora.png" alt="Mora" />
-                        <span class="betweeners">
-                            X <%= weapon.ascension_mats[i].cost %>
-                        </span>
-                    </div>
-                    <% } %>
-            </div>
+            <h2>REFINMENTS</h2>
             <div class="refinement">
                 <% if(weapon.refinement_abilities.length !==0) { %>
                     <% for(let j=0; j < weapon.refinement_abilities.length; j++) { %>
@@ -69,6 +74,10 @@
                         </div>
 
                         <% }} %>
+            </div>
+            <h2>LORE</h2>
+            <div class="lore">
+                <%= weapon.lore %>
             </div>
         </section>
         <div>
@@ -90,28 +99,35 @@
 
     h1 {
         background: orange;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: .5rem 0;
         text-align: center;
-        border-radius: 50rem 50rem;
-        max-width: 700px;
-        margin: .5rem auto
+        border-radius: 50px 50px;
+        max-width: 500px;
+        margin: 1rem auto
+    }
+
+    h2 {
+        text-align: center;
+        background: orange;
+        border-radius: 10px 10px;
+        margin: 2.5rem 0;
+    }
+
+    h3 {
+        text-align: center;
+        background: orange;
+        border-radius: 10px 10px;
     }
 
     .container {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
-    .leftside {
-        flex-basis: 50%;
-        height: 550px;
-    }
-
-    .rightside {
-        flex-basis: 49%;
-        background: gray;
-        padding: .5rem .5rem;
-        border-radius: 10px 10px;
+    .left {
+        height: 650px;
     }
 
     .image-con {
@@ -125,29 +141,65 @@
         height: 100%;
     }
 
-    .moredetails {
-        display: flex;
+    .ascension {
+        background: #202020;
+        height: fit-content;
+        padding: 1rem 1rem;
     }
 
-    .ascension {
-        max-width: 50%;
+    .refinement {
+        max-width: 95%;
+        background: #e1e1e1;
+        padding: 1rem .5rem;
+        margin: 0 auto;
+    }
+
+    .refinement * {
+        background: #202020;
+        margin: .5rem 0;
+        padding: .7rem .75rem;
     }
 
     .group {
         display: flex;
     }
 
-    .group img {
-        max-width: 15%;
+    .item-group {
+        margin: 0 .2rem;
+    }
+
+    .item-group img {
+        max-width: 90px;
+        max-height: 90px;
     }
 
     .betweeners {
-        padding: 7% 0;
+        display: block;
+        text-align: center;
     }
 
     .refinement * {
         display: block;
-        font-size: 3rem;
+        font-size: 1rem;
+    }
+
+    @media only screen and (max-width: 465px) {
+        .item-group {
+            margin: 0;
+            width: 26%;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .ascension {
+            width: 99%;
+        }
+
+        .group {
+            width: 99%;
+        }
     }
 </style>
 
