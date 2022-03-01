@@ -14,260 +14,28 @@
 
 <body>
     <%- include("../navbar")%>
-        <h1>Weapons</h1>
-        <ul class="wep-nav">
-            <li>
-                <a href="#swords">SWORDS</a>
-            </li>
-            <li>
-                <a href="#claymores">CLAYMORES</a>
-            </li>
-            <li>
-                <a href="#polearms">POLEARMS</a>
-            </li>
-            <li>
-                <a href="#bows">BOWS</a>
-            </li>
-            <li>
-                <a href="#catalysts">CATALYSTS</a>
-            </li>
-        </ul>
-        <section>
-            <table id="swords">
-                <caption>SWORDS</caption>
-                <tr>
-                    <th>ICON</th>
-                    <th>WEAPON NAME</th>
-                    <th>RARITY</th>
-                    <th>ATK</th>
-                    <th>SUB STAT</th>
-                    <th>SUB STAT RANGE</th>
-                    <th>MATERIAL</th>
-                </tr>
-                <% weapons.map((weapon)=> { %>
-                    <% if(weapon.type==="Sword" ) { %>
-                        <tr>
-                            <td class="star<%=weapon.rarity%> star">
-                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
-                                    alt="fail" />
-                            </td>
-                            <td>
-                                <a href="/weapons/<%= weapon.name.replace(' ', '_') %>">
-                                    <%=weapon.name %>
-                                </a>
-                            </td>
-                            <td>
-                                <%= weapon.rarity %>
-                            </td>
-                            <td>
-                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_stat %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
-                            </td>
-                            <td class="mats">
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item1.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0]%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item2.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item3.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                            </td>
-                        </tr>
-                        <% }}) %>
-            </table>
-            <table id="claymores">
-                <caption>CLAYMORES</caption>
-                <tr>
-                    <th>ICON</th>
-                    <th>WEAPON NAME</th>
-                    <th>RARITY</th>
-                    <th>ATK</th>
-                    <th>SUB STAT</th>
-                    <th>SUB STAT RANGE</th>
-                    <th>MATERIAL</th>
-                </tr>
-                <% weapons.map((weapon)=> { %>
-                    <% if(weapon.type==="Claymore" ) { %>
-                        <tr>
-                            <td class="star<%=weapon.rarity%> star">
-                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
-                                    alt="fail" />
-                            </td>
-                            <td>
-                                <a href="/weapons/<%= weapon.name.replace(' ', '_') %>">
-                                    <%=weapon.name %>
-                                </a>
-                            </td>
-                            <td>
-                                <%= weapon.rarity %>
-                            </td>
-                            <td>
-                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_stat %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
-                            </td>
-                            <td class="mats">
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item1.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0]%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item2.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item3.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                            </td>
-                        </tr>
-                        <% }}) %>
-            </table>
-            <table id="polearms">
-                <caption>POLEARMS</caption>
-                <tr>
-                    <th>ICON</th>
-                    <th>WEAPON NAME</th>
-                    <th>RARITY</th>
-                    <th>ATK</th>
-                    <th>SUB STAT</th>
-                    <th>SUB STAT RANGE</th>
-                    <th>MATERIAL</th>
-                </tr>
-                <% weapons.map((weapon)=> { %>
-                    <% if(weapon.type==="Polearm" ) { %>
-                        <tr>
-                            <td class="star<%=weapon.rarity%> star">
-                                <% if(weapon.name.endsWith('"')) { %>
-                                    <img src="/public/images/weapons/The_Catch.png" alt="fail" />
-                                    <% } else { %>
-                                        <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
-                                            alt="fail" />
-                                        <% } %>
-                            </td>
-                            <td>
-                                <a href="/weapons/<%= weapon.name.replace(' ', '_') %>">
-                                    <%=weapon.name %>
-                                </a>
-                            </td>
-                            <td>
-                                <%= weapon.rarity %>
-                            </td>
-                            <td>
-                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_stat %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
-                            </td>
-                            <td class="mats">
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item1.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0]%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item2.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item3.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                            </td>
-                        </tr>
-                        <% }}) %>
-            </table>
-            <table id="bows">
-                <caption>BOWS</caption>
-                <tr>
-                    <th>ICON</th>
-                    <th>WEAPON NAME</th>
-                    <th>RARITY</th>
-                    <th>ATK</th>
-                    <th>SUB STAT</th>
-                    <th>SUB STAT RANGE</th>
-                    <th>MATERIAL</th>
-                </tr>
-                <% weapons.map((weapon)=> { %>
-                    <% if(weapon.type==="Bow" ) { %>
-                        <tr>
-                            <td class="star<%=weapon.rarity%> star">
-                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
-                                    alt="fail" />
-                            </td>
-                            <td>
-                                <a href="/weapons/<%= weapon.name.replace(' ', '_') %>">
-                                    <%=weapon.name %>
-                                </a>
-                            </td>
-                            <td>
-                                <%= weapon.rarity %>
-                            </td>
-                            <td>
-                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_stat %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
-                            </td>
-                            <td class="mats">
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item1.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0]%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item2.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item3.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                            </td>
-                        </tr>
-                        <% }}) %>
-            </table>
-            <table id="catalysts">
-                <caption>CATALYSTS</caption>
-                <tr>
-                    <th>ICON</th>
-                    <th>WEAPON NAME</th>
-                    <th>RARITY</th>
-                    <th>ATK</th>
-                    <th>SUB STAT</th>
-                    <th>SUB STAT RANGE</th>
-                    <th>MATERIAL</th>
-                </tr>
-                <% weapons.map((weapon)=> { %>
-                    <% if(weapon.type==="Catalyst" ) { %>
-                        <tr>
-                            <td class="star<%=weapon.rarity%> star">
-                                <img src="/public/images/weapons/<%= weapon.name.split(' ').join('_') %>.png"
-                                    alt="fail" />
-                            </td>
-                            <td>
-                                <a href="/weapons/<%= weapon.name.replace(' ', '_') %>">
-                                    <%=weapon.name %>
-                                </a>
-                            </td>
-                            <td>
-                                <%= weapon.rarity %>
-                            </td>
-                            <td>
-                                <%= weapon.base_atk%> - <%= weapon.maxed_atk %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_stat %>
-                            </td>
-                            <td>
-                                <%= weapon.sub_base_value %> - <%= weapon.sub_max_value %>
-                            </td>
-                            <td class="mats">
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item1.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0]%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item2.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                                <img src="/public/images/drops/<%= weapon.ascension_mats[0].item3.toLowerCase() %>.png"
-                                    alt="<%= weapon.ascension_mats[0].item1%>" />
-                            </td>
-                        </tr>
-                        <% }}) %>
-            </table>
-        </section>
+        <div class="content">
+            <div class="swords">
+                <a href="/weapons/swords">Swords</a>
+                <img src="/public/images/swordchar.png" alt="sword-image">
+            </div>
+            <div class=" polearms">
+                <a href="/weapons/polearms">Polearms</a>
+                <img src="/public/images/polearmchar.png" alt="polearm-image">
+            </div>
+            <div class="claymores">
+                <a href="/weapons/claymores">Claymores</a>
+                <img src="/public/images/claymorechar.png" alt="claymore-image">
+            </div>
+            <div class="catalysts">
+                <a href="/weapons/catalysts">Catalysts</a>
+                <img src="/public/images/catalystchar.png" alt="catalyst-image">
+            </div>
+            <div class="bows">
+                <a href="/weapons/bows">Bows</a>
+                <img src="/public/images/bowchar.png" alt="bow-image">
+            </div>
+        </div>
         <audio id="the_audio" loop>
             <source src="../public/audio/2_4.mp3" type="audio/mp3">
         </audio>
