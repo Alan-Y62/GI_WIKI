@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
-    <link href="../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <link href="/public/css/navbar.css" type="text/css" rel="stylesheet" />
     <title>
         <%= weapon.name %>
     </title>
@@ -19,7 +19,7 @@
                 <%= weapon.name %>
             </h1>
             <div class="container">
-                <div class="left">
+                <div class="left" style="background: rgb(140, 140, 243);">
                     <div class="image-con">
                         <% if(weapon.name==='"The Catch"' ){ %>
                             <img
@@ -66,19 +66,22 @@
                 </div>
             </div>
             <h2>REFINMENTS</h2>
-            <div class="refinement">
-                <% if(weapon.refinement_abilities.length !==0) { %>
+            <% if(weapon.refinement_abilities.length !==0) { %>
+                <div class="refinement">
+
                     <% for(let j=0; j < weapon.refinement_abilities.length; j++) { %>
+                        <span>Refinement Lv <%= j %>:</span>
                         <div>
                             <%= weapon.refinement_abilities[j] %>
                         </div>
 
-                        <% }} %>
-            </div>
-            <h2>LORE</h2>
-            <div class="lore">
-                <%= weapon.lore %>
-            </div>
+                        <% } %>
+                </div>
+                <% } %>
+                    <h2>LORE</h2>
+                    <div class="lore">
+                        <%= weapon.lore %>
+                    </div>
         </section>
         <div>
             <p>Random weapons</p>
