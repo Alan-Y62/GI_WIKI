@@ -18,15 +18,6 @@ table {
   padding: 0.5rem 0.5rem;
 }
 
-caption {
-  font-weight: bold;
-  font-size: 1.5rem;
-  width: fit-content;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  color: whitesmoke;
-}
-
 td,
 th {
   text-align: center;
@@ -36,6 +27,10 @@ th {
 
 th {
   background: rgba(255, 255, 255, 0.5);
+}
+
+td a {
+  text-decoration: none;
 }
 
 .star {
