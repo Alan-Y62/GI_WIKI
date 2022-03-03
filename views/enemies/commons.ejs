@@ -64,8 +64,14 @@
   <style>
 
     table{
+      table-layout: fixed;
       width: 100%;
     }
+
+    tr th:nth-child(1){
+      width: 75%;
+    }
+
     .common-container {
       margin: 7rem 3rem;
       padding: 3rem 0;
@@ -85,18 +91,17 @@
     }
 
     .group-list-container p{
-      width:100px;
       overflow-wrap: wrap
     }
 
     .drop-container{
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .drop-container img{
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
     }
 
     th,td{
@@ -120,7 +125,7 @@
       position: relative;
       border: 1px solid black;
       border-radius: 5%;
-      width:200px;
+      width:150px;
     }
 
     .enemy-card img{
@@ -131,7 +136,7 @@
       position: absolute;
       bottom:-20px;
       left:-1px;
-      width:200px;
+      width:150px;
       border: 1px solid white;
       border-radius: 5%;
       text-align: center;
