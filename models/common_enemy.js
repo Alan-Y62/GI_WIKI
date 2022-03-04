@@ -6,6 +6,10 @@ const commonmobSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    shorthand:{
+        type: String,
+        required: true,
+    },
     element: [{
         type: String,
         required:true
