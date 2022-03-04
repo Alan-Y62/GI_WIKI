@@ -62,31 +62,40 @@
                     </div>
                     <h1>Active Talents</h1>
                     <div class="Actives">
-                        <div class="toprow">
-                            <div class="icon-con <%= character[0].element%>_clr">
-                                <img src="/public/images/character/<%=character[0].weapon%>.png" alt="ERROR">
+                        <div class="active-block">
+                            <div class="icon-con">
+                                <img class="<%= character[0].element%>_clr"
+                                    src="/public/images/character/<%=character[0].weapon%>.png" alt="ERROR">
                             </div>
-                            <h2>
-                                Normal Attack: <%= character[0].talents.normalattack.name %>
-                            </h2>
+                            <div class="box-block">
+                                <h2>
+                                    Normal Attack: <%= character[0].talents.normalattack.name %>
+                                </h2>
+                                <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
+                            </div>
                         </div>
-                        <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
-                        <div class="toprow">
-                            <div class="icon-con <%= character[0].element%>_clr">
+                        <div class="active-block">
+                            <div class="icon-con">
                                 <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
-                                    <img src="/public/images/character/<%= character[0].name%>/<%= character[0].element%>skill.png"
+                                    <img class="<%= character[0].element%>_clr"
+                                        src="/public/images/character/<%= character[0].name%>/<%= character[0].element%>skill.png"
                                         alt="ERROR">
                                     <% } else { %>
-                                        <img src="/public/images/character/<%= character[0].name.replace(' ','_')%>/skill.png"
+                                        <img class="<%= character[0].element%>_clr"
+                                            src="/public/images/character/<%= character[0].name.replace(' ','_')%>/skill.png"
                                             alt="ERROR">
                                         <% } %>
                             </div>
-                            <h2>
-                                Elemental Skill: <%= character[0].talents.skill.name %>
-                            </h2>
+                            <div class="box-block">
+                                <h2>
+                                    Elemental Skill: <%= character[0].talents.skill.name %>
+                                </h2>
+                                <pre><%= character[0].talents.skill.description.trim() %></pre>
+                            </div>
+
                         </div>
-                        <pre><%= character[0].talents.skill.description.trim() %></pre>
-                        <div class="toprow">
+
+                        <div class="active-block">
                             <div class="icon-con <%= character[0].element%>_clr">
                                 <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
                                     <img src="/public/images/character/<%= character[0].name%>/<%= character[0].element%>burst.png"
@@ -102,7 +111,7 @@
                         </div>
                         <pre><%= character[0].talents.burst.description %></pre>
                         <% if(character[0].talents.altabilities.name !=="None" ) { %>
-                            <div class="toprow">
+                            <div class="active-block">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <img src="/public/images/character/<%= character[0].name.replace(' ','_')%>/alt.png"
                                         alt="ERROR">
@@ -117,7 +126,7 @@
                     <div class="Passives">
                         <h1>Passive Talents</h1>
                         <div class="passive-container">
-                            <div class="toprow">
+                            <div class="passive-block">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
                                         <img src="/public/images/character/<%= character[0].name%>/<%= character[0].element%>asc1.png"
@@ -132,7 +141,7 @@
                                 </h2>
                             </div>
                             <pre><%= character[0].talents.passives.battle[0].description %></pre>
-                            <div class="toprow">
+                            <div class="passive-block">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
                                         <img src="/public/images/character/<%= character[0].name%>/<%= character[0].element%>asc2.png"
@@ -147,7 +156,7 @@
                                 </h2>
                             </div>
                             <pre><%= character[0].talents.passives.battle[1].description %></pre>
-                            <div class="toprow">
+                            <div class="passive-block">
                                 <div class="icon-con <%= character[0].element%>_clr">
                                     <img src="/public/images/character/<%= character[0].name.replace(' ','_')%>/passive.png"
                                         alt="ERROR">

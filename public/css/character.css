@@ -119,46 +119,14 @@ h1 {
   padding: 0 1rem;
 }
 
-.Actives .toprow,
-.Actives pre,
-.passive-container .toprow,
-.passive-container pre {
-  position: relative;
-  width: 80%;
-  margin-left: 2%;
-}
-
-.Actives .toprow:nth-child(3),
-.Actives pre:nth-child(4),
-.Actives .toprow:nth-child(7),
-.Actives pre:nth-child(8),
-.passive-container .toprow:nth-child(3),
-.passive-container pre:nth-child(4) {
-  margin-left: auto;
-  margin-right: 2%;
-}
-
-.toprow {
-  outline: 1px solid black;
-  background: black;
+.active-block {
+  width: 98%;
+  margin: 0 auto;
   display: flex;
-  height: auto;
-}
-
-.toprow h2 {
-  padding-top: 0.5rem;
 }
 
 .icon-con {
-  margin: 5px 5px;
-  min-height: 3rem;
-  min-width: 3rem;
-  max-height: 3rem;
-  max-width: 3rem;
-  border-radius: 50px;
-  padding: 7px;
-  display: grid;
-  place-content: center;
+  max-width: 80px;
 }
 
 .Pyro_clr {
