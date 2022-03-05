@@ -1,0 +1,135 @@
+<div class="enemy-container">
+    <section>
+      <table>
+        <tr>
+          <th>Enemies</th>
+          <th>Drops</th>
+        </tr>
+        <% for(const fam in enemies){ %> 
+          <tr>
+            <th colspan="2"><%= fam %></th>
+          </tr>
+          <% for(const group in enemies[fam]) { %> 
+            <tr>
+              <td>
+                <div class="group-container">
+                  <h1><%= group %></h1>
+                  <div class="group-list-container">
+                    <% enemies[fam][group].list.map(names => {  %>
+                      <div class="enemy-card">
+                        <a href="/enemies/<%= page %>/<%= names.name %>">
+                          <img src="../../public/images/enemies/<%= folder %>/<%= names.name.toLowerCase() %>/icon.png"alt="<%= names.name %>"/>
+                          <div class="enemy-name">
+                            <p><%= names.shorthand %> </p>
+                          </div>
+                        </a>
+                      </div>
+                      <% }) %>
+                  </div>
+                                  </td>
+                                  <td>
+                  <div class="drop-container">
+                    <% enemies[fam][group].drop.map(name => {  %>
+                        <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                      <% }) %>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <% } %> 
+        <% } %> 
+      </table>
+    </section>
+  </div>
+
+  <style>
+
+    table{
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    tr th:nth-child(1){
+      width: 75%;
+    }
+
+    .enemy-container {
+      margin: 7rem 3rem;
+      padding: 3rem 0;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .group-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .group-list-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .group-list-container p{
+      overflow-wrap: wrap
+    }
+
+    .drop-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .drop-container img{
+      width: 80px;
+      height: 80px;
+    }
+
+    th,td{
+      outline: 1px solid black;
+    }
+
+    .drop-container img:nth-child(3n + 1){
+      background: url("../../public/images/drops/Rarity1background.png") no-repeat center center/cover;
+    }
+
+    .drop-container img:nth-child(3n + 2){
+      background: url("../../public/images/drops/Rarity2background.png") no-repeat center center/cover;
+    }
+
+    .drop-container img:nth-child(3n + 3){
+      background: url("../../public/images/drops/Rarity3background.png") no-repeat center center/cover;
+    }
+
+    .enemy-card{
+      margin:2rem;
+      position: relative;
+      border: 1px solid black;
+      border-radius: 5%;
+      width:150px;
+    }
+
+    .enemy-card img{
+      width: 100%;
+    }
+
+    .enemy-name{
+      position: absolute;
+      bottom:-20px;
+      left:-1px;
+      width:150px;
+      border: 1px solid black;
+      border-radius: 5%;
+      text-align: center;
+      background-color: #dddddd;
+      padding-top:3rem;
+      color: black;
+      clip-path: polygon(93% 62%, 100% 39%, 100% 99%, 0 98%, 0 62%);
+    }
+    
+    .enemy-name p{
+      font-size:1rem;
+      width: 100%;
+    }
+
+  </style>
