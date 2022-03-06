@@ -9,8 +9,7 @@
     <title><%= common.name %></title>
 </head>
 <body>
-    <%- include("../../navbar")%>
-    <img src="../../../public/images/enemies/common/<%= common.name.toLowerCase() %>/main.png" alt="">
+    <%- include("./single_container", {type: common, folder: "common"}) %> 
 </body>
 </body>
 </html>
