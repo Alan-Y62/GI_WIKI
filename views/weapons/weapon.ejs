@@ -19,7 +19,8 @@
                 <%= weapon.name %>
             </h1>
             <div class="container">
-                <div class="left" style="background: url('/public/images/undecided/starrysky.png')">
+                <div class="left"
+                    style="background: url('/public/images/undecided/starrysky.png'); margin-bottom: 1rem">
                     <div class="image-con">
                         <% if(weapon.name==='"The Catch"' ){ %>
                             <img
@@ -30,7 +31,7 @@
                                 <% } %>
                     </div>
                 </div>
-                <div class="middle ascension">
+                <div class="ascension">
                     <h3>ASCENSIONS</h3>
                     <% for(let i=0; i < weapon.ascension_mats.length; i++) { %>
                         <div class="group">
@@ -70,7 +71,7 @@
                 <div class="refinement">
 
                     <% for(let j=0; j < weapon.refinement_abilities.length; j++) { %>
-                        <span>Refinement Lv <%= j %>:</span>
+                        <span style="background: rgb(90, 90, 90);">Refinement Lv <%= j %>:</span>
                         <div>
                             <%= weapon.refinement_abilities[j] %>
                         </div>
@@ -127,21 +128,35 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        height: fit-content;
+        width: 100%;
     }
 
     .left {
-        height: 650px;
+        width: 600px;
+        max-height: 924px;
     }
 
     .image-con {
-        width: 50vh;
-        height: 600px;
-        margin: 0 auto;
+        max-width: 90%;
+        max-height: 90%;
     }
 
-    .image-con img {
-        width: 100%;
-        height: 100%;
+    .ascension {
+        width: 700px;
+    }
+
+    .group {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .item-group {
+        height: fit-content;
+    }
+
+    .item-group img {
+        max-width: 120px;
     }
 
     .ascension {
@@ -168,17 +183,14 @@
     }
 
     .item-group {
-        margin: 0 .2rem;
-    }
-
-    .item-group img {
-        max-width: 90px;
-        max-height: 90px;
+        margin: 0 .5rem;
     }
 
     .betweeners {
         display: block;
         text-align: center;
+        width: max-content;
+        margin: 0 auto;
     }
 
     .refinement * {
