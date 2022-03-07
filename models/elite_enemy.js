@@ -10,7 +10,7 @@ const elitemobSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    element: [{
+    elements: [{
         type: String,
         required:true
     }],
