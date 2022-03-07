@@ -125,8 +125,7 @@ h1 {
   grid-template-columns: auto auto;
 }
 
-.active-block,
-.passive-block {
+.sub-block {
   width: 98%;
   margin: 0 auto;
 }
