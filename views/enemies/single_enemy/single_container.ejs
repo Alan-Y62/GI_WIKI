@@ -1,2 +1,16 @@
 <%- include("../../navbar")%>
-<img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/main.png" alt="">
+<div class="single-container">
+    <h1><%= type.name %> </h1>
+    <img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/main.png" alt="">
+    <% type.elements.map(element => { %>
+        <img src="../../../public/images/elements/<%= element %>.png" alt="<%= element %>">
+    <% }) %>
+    <p><%= type.description %> </p>
+</div>
+
+<style>
+    .single-container{
+        margin-top:7rem;
+        color: white;
+    }
+</style>
