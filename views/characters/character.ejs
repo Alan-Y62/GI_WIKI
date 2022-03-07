@@ -62,7 +62,7 @@
                     </div>
                     <h1>Active Talents</h1>
                     <div class="Actives">
-                        <div class="active-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <img class="<%= character[0].element%>_clr"
@@ -74,7 +74,7 @@
                             </div>
                             <pre><span class="precursors">Normal Attack: </span><%= character[0].talents.normalattack.normal %> <br><span class="precursors">Charge Attack: </span><%= character[0].talents.normalattack.charged %> <br><span class="precursors">Plunge Attack: </span><%= character[0].talents.normalattack.plunged %></pre>
                         </div>
-                        <div class="active-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
@@ -94,7 +94,7 @@
                             <pre><%= character[0].talents.skill.description.trim() %></pre>
                         </div>
 
-                        <div class="active-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
@@ -114,7 +114,7 @@
                             <pre><%= character[0].talents.burst.description %></pre>
                         </div>
                         <% if(character[0].talents.altabilities.name !=="None" ) { %>
-                            <div class="active-block">
+                            <div class="sub-block">
                                 <div class="box-block">
                                     <div class="icon-container">
                                         <img class="<%= character[0].element%>_clr"
@@ -131,7 +131,7 @@
                     </div>
                     <h1>Passive Talents</h1>
                     <div class="Passives">
-                        <div class="passive-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
@@ -150,7 +150,7 @@
                             </div>
                             <pre><%= character[0].talents.passives.battle[0].description %></pre>
                         </div>
-                        <div class="passive-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <% if(character[0].name==='Lumine' || character[0].name==='Aether' ) { %>
@@ -169,7 +169,7 @@
                             </div>
                             <pre><%= character[0].talents.passives.battle[1].description %></pre>
                         </div>
-                        <div class="passive-block">
+                        <div class="sub-block">
                             <div class="box-block">
                                 <div class="icon-container">
                                     <img class="<%= character[0].element%>_clr"

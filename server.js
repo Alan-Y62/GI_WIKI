@@ -42,6 +42,7 @@ dbConnect();
 app.use("/", require("./routes/index"));
 app.use("/enemies", require("./routes/enemy"));
 app.use("/characters", require("./routes/character"));
+app.use("/weapons", require("./routes/weapon"));
 
 const PORT = process.env.PORT || 3000;
 
