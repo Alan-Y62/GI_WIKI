@@ -7,7 +7,7 @@ body {
 }
 
 section {
-  background: #fee5cbd7;
+  background: #464646d7;
   width: 80%;
   margin: 10rem auto;
 }
@@ -15,13 +15,22 @@ section {
 .region a {
   text-decoration: none;
   position: relative;
+  margin: 1rem 1rem;
+}
+
+.region a:hover .char-name {
+  text-decoration: underline 2px;
+  color: black;
+}
+
+.region a:hover .character-container {
+  background: rgba(214, 214, 214, 0.658);
 }
 
 .character-container {
   width: 330px;
   outline: 2px solid black;
   padding: 0.5rem 0.5rem;
-  margin: 1rem 1rem;
   background: rgba(0, 0, 0, 0.171);
 }
 
@@ -48,7 +57,7 @@ section {
 }
 
 .char-name {
-  color: black;
+  color: white;
 }
 
 .char-icon {
