@@ -137,7 +137,7 @@ nav {
   }
 }
 
-@media (hover: hover) and (min-width: 920px){
+@media (min-width: 920px){
   .drop:hover .drop-content {
       visibility: visible;
       min-width: 150px;
