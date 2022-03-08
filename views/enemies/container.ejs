@@ -16,21 +16,24 @@
                   <h1><%= group %></h1>
                   <div class="group-list-container">
                     <% enemies[fam][group].list.map(names => {  %>
+                      <a href="/enemies/<%= page %>/<%= names.name %>">
                       <div class="enemy-card">
-                        <a href="/enemies/<%= page %>/<%= names.name %>">
                           <img src="../../public/images/enemies/<%= folder %>/<%= names.name.toLowerCase() %>/icon.png"alt="<%= names.name %>"/>
                           <div class="enemy-name">
                             <p><%= names.shorthand %> </p>
                           </div>
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                       <% }) %>
                   </div>
                                   </td>
                                   <td>
                   <div class="drop-container">
                     <% enemies[fam][group].drop.map(name => {  %>
-                        <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                        <div class="drops">
+                          <img src="../../public/images/drops/<%= name.toLowerCase() %>.png"alt="<%= name %>"/>
+                          <p><%= name %></p>
+                        </div>
                       <% }) %>
                   </div>
                 </div>
@@ -50,7 +53,7 @@
     }
 
     tr th:nth-child(1){
-      width: 75%;
+      width: 70%;
     }
 
     .enemy-container {
@@ -89,26 +92,36 @@
       outline: 1px solid black;
     }
 
-    .drop-container img:nth-child(3n + 1){
+    .drop-container .drops:nth-child(3n + 1) img{
       background: url("../../public/images/drops/Rarity1background.png") no-repeat center center/cover;
     }
 
-    .drop-container img:nth-child(3n + 2){
+    .drop-container .drops:nth-child(3n + 2) img{
       background: url("../../public/images/drops/Rarity2background.png") no-repeat center center/cover;
     }
 
-    .drop-container img:nth-child(3n + 3){
+    .drop-container .drops:nth-child(3n + 3) img{
       background: url("../../public/images/drops/Rarity3background.png") no-repeat center center/cover;
     }
 
+    .drops{
+      max-width: 80px;
+    }
+
+    .drops p{
+      font-size: 12px;
+      word-wrap: wrap;
+    }
+
     .enemy-card{
-      margin:2rem;
+      margin-bottom:2rem;
       display: flex;
       align-items: flex-end;
       position: relative;
       border: 1px solid black;
       border-radius: 5%;
       width:150px;
+      height:150px;
     }
 
     .enemy-card img{
@@ -119,7 +132,7 @@
       position: absolute;
       bottom:-20px;
       left:-1px;
-      width:150px;
+      width:calc(100% + 2px);
       border: 1px solid black;
       border-radius: 5%;
       text-align: center;
