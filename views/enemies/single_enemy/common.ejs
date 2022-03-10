@@ -1,1 +1,12 @@
-<p>common</p>
+<div class="drops">
+    <% type.drops.map(drop => { %> 
+        <img src="../../../public/images/drops/<%= drop %>.png" alt="<%= drop %> ">
+    <% }) %> 
+</div>
+
+<style>
+    .drops{
+        display: flex;
+        flex-direction: row;
+    }
+</style>

@@ -17,7 +17,7 @@
                 <%= type.name %>
             </h1>
             <div class="main-img">
-                <img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/main.png" alt="">
+                <img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/icon.png" alt="">
             </div>
             <div class="main-info">
                 <% type.elements.map(element=> { %>
@@ -28,16 +28,16 @@
                     </p>
                     <% switch (folder) {
                         case 'common': %>
-                          <%- include ("./common") %>
+                          <%- include ("./common"), {type:type, folder:folder}%>
                           <% break; %>
                         <% case 'elite': %>
-                          <%- include ("./elite") %>
+                          <%- include ("./elite"), {type:type, folder:folder}%>
                           <% break; %>
                         <% case 'world': %>
-                          <%- include ("./world") %>
+                          <%- include ("./world"), {type:type, folder:folder}%>
                           <% break; %>
-                        <% case 'week': %>
-                          <%- include ("./week") %>
+                        <% case 'weekly': %>
+                          <%- include ("./week"), {type:type, folder:folder}%>
                           <% break; %>
                       <% } %>
             </div>
@@ -61,6 +61,11 @@
             .main-img {
                 display: flex;
                 justify-content: center;
+            }
+
+            .main-img img{
+                max-height:500px;
+                max-width:500px;
             }
 
             .main-info img {

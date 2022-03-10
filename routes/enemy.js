@@ -17,7 +17,7 @@ router.get('/weekly_boss', async (req, res) => {
 router.get('/weekly_boss/:name', async (req, res) => {
     const name = req.params.name;
     const weekly = await Weekly.find({name:name});
-    res.render("./enemies/single_enemy/single_container", {type: weekly[0], folder: "week"});
+    res.render("./enemies/single_enemy/single_container", {type: weekly[0], folder: "weekly"});
 });
 
 router.get('/world_boss', async (req, res) => {

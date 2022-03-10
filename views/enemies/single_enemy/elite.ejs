@@ -1,1 +1,29 @@
-<p>elite</p>
+<div class="drops">
+    <div class="specific_drops">
+        <% type.drops.specific_drops.map(drop => { %>
+            <img src="../../../public/images/drops/<%= drop %>.png" alt="<%= drop %> ">
+        <% }) %>
+    </div>
+    <div class="artifacts">
+        <% type.drops.artifacts.map(drop => { %>
+            <img src="../../../public/images/artifacts/<%= drop %>/flower.png" alt="<%= drop %> ">
+        <% }) %>
+    </div>
+</div>
+
+<style>
+    .drops{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .specific_drops{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .artifacts{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
