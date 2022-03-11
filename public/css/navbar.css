@@ -70,6 +70,7 @@ nav {
   visibility: hidden;
   border-radius: 0;
   z-index: 1;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .drop-content a {
@@ -137,7 +138,7 @@ nav {
   }
 }
 
-@media (hover: hover) and (min-width: 920px){
+@media (min-width: 920px){
   .drop:hover .drop-content {
       visibility: visible;
       min-width: 150px;

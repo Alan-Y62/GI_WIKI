@@ -17,7 +17,7 @@ router.get('/weekly_boss', async (req, res) => {
 router.get('/weekly_boss/:name', async (req, res) => {
     const name = req.params.name;
     const weekly = await Weekly.find({name:name});
-    res.render("./enemies/single_enemy/week", {weekly: weekly[0]});
+    res.render("./enemies/single_enemy/single_container", {type: weekly[0], folder: "weekly"});
 });
 
 router.get('/world_boss', async (req, res) => {
@@ -28,7 +28,7 @@ router.get('/world_boss', async (req, res) => {
 router.get('/world_boss/:name', async (req, res) => {
     const name = req.params.name;
     const world = await World.find({name:name});
-    res.render("./enemies/single_enemy/world", {world: world[0]});
+    res.render("./enemies/single_enemy/single_container", {type: world[0], folder: "world"});
 });
 
 router.get('/elite_enemies', async (req, res) => {
@@ -39,7 +39,7 @@ router.get('/elite_enemies', async (req, res) => {
 router.get('/elite_enemies/:name', async (req, res) => {
     const name = req.params.name;
     const elite = await Elite.find({name:name});
-    res.render("./enemies/single_enemy/elite", {elite: elite[0]});
+    res.render("./enemies/single_enemy/single_container", {type: elite[0], folder: "elite"});
 });
 
 router.get('/common_enemies', async (req, res) => {
@@ -50,7 +50,7 @@ router.get('/common_enemies', async (req, res) => {
 router.get('/common_enemies/:name', async (req, res) => {
     const name = req.params.name;
     const common = await Common.find({name:name});
-    res.render("./enemies/single_enemy/common", {common: common[0]});
+    res.render("./enemies/single_enemy/single_container", {type: common[0], folder: "common"});
 });
 
 module.exports = router;

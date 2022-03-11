@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
-    <link href="../../public/css/navbar.css" type="text/css" rel="stylesheet" />
-    <title><%= elite.name %> </title>
-</head>
-<body>
-    <%- include("./single_container", {type: elite , folder: "elite"}) %> 
-</body>
-</html>
+<div class="drops">
+    <div class="specific_drops">
+        <% type.drops.specific_drops.map(drop => { %>
+            <img src="../../../public/images/drops/<%= drop %>.png" alt="<%= drop %> ">
+        <% }) %>
+    </div>
+    <div class="artifacts">
+        <% type.drops.artifacts.map(drop => { %>
+            <img src="../../../public/images/artifacts/<%= drop %>/flower.png" alt="<%= drop %> ">
+        <% }) %>
+    </div>
+</div>
+
+<style>
+    .drops{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .specific_drops{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .artifacts{
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

@@ -1,16 +1,77 @@
-<%- include("../../navbar")%>
-<div class="single-container">
-    <h1><%= type.name %> </h1>
-    <img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/main.png" alt="">
-    <% type.elements.map(element => { %>
-        <img src="../../../public/images/elements/<%= element %>.png" alt="<%= element %>">
-    <% }) %>
-    <p><%= type.description %> </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-    .single-container{
-        margin-top:7rem;
-        color: white;
-    }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="../../public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <title><%= type.name %> </title>
+</head>
+
+<body>
+    <%- include("../../navbar")%>
+        <div class="single-container">
+            <h1>
+                <%= type.name %>
+            </h1>
+            <div class="main-img">
+                <img src="../../../public/images/enemies/<%= folder %>/<%= type.name.toLowerCase() %>/icon.png" alt="">
+            </div>
+            <div class="main-info">
+                <% type.elements.map(element=> { %>
+                    <img src="../../../public/images/elements/<%= element %>.png" alt="<%= element %>">
+                <% }) %>
+                    <p>
+                        <%= type.description %>
+                    </p>
+                    <% switch (folder) {
+                        case 'common': %>
+                          <%- include ("./common"), {type:type, folder:folder}%>
+                          <% break; %>
+                        <% case 'elite': %>
+                          <%- include ("./elite"), {type:type, folder:folder}%>
+                          <% break; %>
+                        <% case 'world': %>
+                          <%- include ("./world"), {type:type, folder:folder}%>
+                          <% break; %>
+                        <% case 'weekly': %>
+                          <%- include ("./week"), {type:type, folder:folder}%>
+                          <% break; %>
+                      <% } %>
+            </div>
+        </div>
+
+        <style>
+            .single-container {
+                display: grid;
+                color: white;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 2rem;
+                margin: 7rem 2rem 0 2rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                margin: auto;
+                grid-column: span 2;
+            }
+
+            .main-img {
+                display: flex;
+                justify-content: center;
+            }
+
+            .main-img img{
+                max-height:500px;
+                max-width:500px;
+            }
+
+            .main-info img {
+                width: 50px;
+            }
+        </style>
+</body>
+
+</html>
