@@ -21,7 +21,7 @@
             </div>
             <div class="main-info">
                 <% type.elements.map(element=> { %>
-                    <img src="../../../public/images/elements/<%= element %>.png" alt="<%= element %>">
+                    <img src="../../../public/images/elements/<%= element.toLowerCase() %>.png" alt="<%= element %>">
                 <% }) %>
                     <p>
                         <%= type.description %>
