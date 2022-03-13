@@ -104,23 +104,27 @@
                             <div class="flnum">8</div>
                         </div>
                     </button>
-                </div>
-                <div id="data-set">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos voluptatem voluptatum ex natus
-                    quidem veritatis earum! Quibusdam aut reiciendis impedit voluptas cumque necessitatibus nobis
-                    facilis, accusamus expedita rem numquam?
-                    Ex dolore, quaerat, dolor a placeat iure commodi natus adipisci totam perferendis eum distinctio?
-                    Quisquam, ut vel officia aperiam maiores iusto repellendus quam nesciunt a, temporibus sint in,
-                    similique deserunt!
-                    Minima quisquam ea ut dolorum, harum asperiores aperiam nulla autem id quod pariatur numquam totam
-                    magni assumenda, repellat corrupti ducimus suscipit reprehenderit fugiat qui aliquid itaque.
-                    Officiis quibusdam veniam accusamus!
-                    Quis voluptatem deserunt cum obcaecati ipsum cumque illo quam, labore architecto hic numquam aliquam
-                    fugiat at, iusto animi eum vero eius nesciunt maiores nam eos pariatur ut. Id, doloribus
-                    dignissimos.
-                    Temporibus impedit nihil architecto, similique aliquam illo expedita vitae veritatis veniam!
-                    Voluptatum ut quibusdam soluta, vero magnam animi, quia nihil hic dicta id, officiis dolores?
-                    Placeat id adipisci asperiores fuga.
+                    <div id="data-set">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos voluptatem voluptatum ex
+                        natus
+                        quidem veritatis earum! Quibusdam aut reiciendis impedit voluptas cumque necessitatibus nobis
+                        facilis, accusamus expedita rem numquam?
+                        Ex dolore, quaerat, dolor a placeat iure commodi natus adipisci totam perferendis eum
+                        distinctio?
+                        Quisquam, ut vel officia aperiam maiores iusto repellendus quam nesciunt a, temporibus sint in,
+                        similique deserunt!
+                        Minima quisquam ea ut dolorum, harum asperiores aperiam nulla autem id quod pariatur numquam
+                        totam
+                        magni assumenda, repellat corrupti ducimus suscipit reprehenderit fugiat qui aliquid itaque.
+                        Officiis quibusdam veniam accusamus!
+                        Quis voluptatem deserunt cum obcaecati ipsum cumque illo quam, labore architecto hic numquam
+                        aliquam
+                        fugiat at, iusto animi eum vero eius nesciunt maiores nam eos pariatur ut. Id, doloribus
+                        dignissimos.
+                        Temporibus impedit nihil architecto, similique aliquam illo expedita vitae veritatis veniam!
+                        Voluptatum ut quibusdam soluta, vero magnam animi, quia nihil hic dicta id, officiis dolores?
+                        Placeat id adipisci asperiores fuga.
+                    </div>
                 </div>
             </div>
             <div id="moon-spire" data-spiral-content>
@@ -204,7 +208,7 @@
         flex-wrap: wrap;
         height: 100%;
         width: 100%;
-        overflow: hidden;
+        overflow-y: hidden;
     }
 
     .floor {
@@ -212,9 +216,17 @@
         height: 90%;
         width: 150px;
         background: url("/public/images/undecided/spiral_sky.jpg") center;
-        border-radius: 150px 150px 150px 150px;
+        clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
         position: relative;
         transform: translate(0, 5%);
+    }
+
+    .floor.inactive {
+        display: none;
+    }
+
+    .floor.active {
+        display: unset;
     }
 
     .flcon {
@@ -231,22 +243,27 @@
         display: grid;
         place-content: center;
         position: relative;
-        margin: 2rem auto;
+        margin: 5rem auto;
     }
 
     #data-set {
         height: 85%;
-        width: 87%;
+        width: calc(100% - 175px);
         background: white;
-        position: absolute;
-        top: 11%;
-        left: 13%;
+        position: relative;
+        top: 5%;
         display: none;
         color: black;
     }
 
     #data-set.active {
-        display: inline-block;
+        display: unset;
+    }
+
+    @media only screen and (max-width: 1716px) {
+        .flgroup {
+            overflow-y: unset;
+        }
     }
 </style>
 
@@ -325,6 +342,13 @@
 
     function displayinfo(flr) {
         document.getElementById("data-set").classList.add("active");
+        let children = flr.parentNode.children;
+        for (let i = 0; i < children.length; i++) {
+            if (children[i].tagName === "BUTTON" && children[i] !== flr) {
+                children[i].classList.add("inactive");
+            }
+        }
+        flr.classList.add("active");
     }
 
 
