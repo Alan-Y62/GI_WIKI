@@ -1,12 +1,12 @@
 <div class="drops">
     <div class="specific_drops">
         <% type.drops.character_ascension.map(drop => { %>
-            <img src="../../../public/images/drops/<%= drop %>.png" alt="<%= drop %> ">
+            <img src="../../../public/images/drops/<%= drop.toLowerCase() %>.png" alt="<%= drop %> ">
         <% }) %>
     </div>
     <div class="artifacts">
         <% type.drops.artifacts.map(drop => { %>
-            <img src="../../../public/images/artifacts/<%= drop %>/flower.png" alt="<%= drop %> ">
+            <img src="../../../public/images/artifacts/<%= drop.toLowerCase() %>/flower.png" alt="<%= drop %> ">
         <% }) %>
     </div>
 </div>

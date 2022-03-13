@@ -14,10 +14,10 @@
         <% artifacts.map(artifact => { %>
             <div class="set-container">
                 <% if (artifact.flower.name !== 'none') { %>
-                     <img src="../public/images/artifacts/<%= artifact.name %>/flower.png " alt="<%= artifact.name %>">
+                     <img src="../public/images/artifacts/<%= artifact.name.toLowerCase() %>/flower.png " alt="<%= artifact.name %>">
                      <p><%= artifact.name %> </p>
                 <% } else { %>
-                    <img src="../public/images/artifacts/<%= artifact.name %>/circlet.png " alt="<%= artifact.name %>">
+                    <img src="../public/images/artifacts/<%= artifact.name.toLowerCase() %>/circlet.png " alt="<%= artifact.name %>">
                     <p><%= artifact.name %> </p>
                 <% } %> 
             </div>
