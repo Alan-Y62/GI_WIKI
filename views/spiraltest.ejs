@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/presets.css" type="text/css" />
+    <link href="./public/css/navbar.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="nav">
+        <div id="nav-logo" class="logo"></div>
+        <ul id="nav-list" class="nav-list">
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item"><a href="/characters">Characters</a></li>
+            <li class="nav-item drop">
+                <a href="#">Weapons<span class="drop-icon">+</span></a>
+                <div class="drop-content">
+                    <a href="/weapons">Weapons</a>
+                    <a href="/weapons/swords">Swords</a>
+                    <a href="/weapons/polearms">Polearms</a>
+                    <a href="/weapons/claymores">Claymores</a>
+                    <a href="/weapons/catalysts">Catalysts</a>
+                    <a href="/weapons/bows">Bows</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="#regions">Regions</a></li>
+            <li class="nav-item drop" id="nav-enemies">
+                <a href="#">Enemies<span class="drop-icon">▼</span></a>
+                <div class="drop-content">
+                    <a href="/enemies">All Enemies</a>
+                    <a href="/enemies/common_enemies">Common Enemies</a>
+                    <a href="/enemies/elite_enemies">Elite Enemies</a>
+                    <a href="/enemies/world_boss">World Boss</a>
+                    <a href="/enemies/weekly_boss">Weekly Boss</a>
+                </div>
+            </li>
+            <li class="nav-item drop" id="nav-other">
+                <a href="#">Others<span class="drop-icon">▼</span></a>
+                <div class="drop-content">
+                    <a href="/spiral">Spiral Abyss</a>
+                    <a href="/artifacts">Artifacts</a>
+                    <a href="/#">Drops</a>
+                </div>
+            </li>
+            <li>
+                <button id="volume-control" class="vol on">♪</button>
+            </li>
+            <li class="vol-item">
+                <input id="vol-control" type="range" value="1" min="0" max="100" step="1"
+                    oninput="setVolume(this.value)" onchange="setVolume(this.value)"></input>
+            </li>
+            <button id="closeBtn" onclick="toggleNav(this)">≡</button>
+        </ul>
+    </nav>
+    <div class="spiral-container">
+        <ul class="spiral-tabs">
+            <li class="tab active" data-spiral-tab="#spiral-corridor">Spiral Corridor</li>
+            <li class="tab" data-spiral-tab="#moon-spire">Abyssal Moon Spire</li>
+        </ul>
+        <div class="spiral-content">
+            <div id="spiral-corridor" class="active" data-spiral-content>
+                <div id="flgroup" class="flgroup">
+                    <% for(let i=0; i< 8; i++) { %>
+                        <button class="floor floor<%=spiral[i].floor%>" onclick="displayinfo(this)">
+                            <div class="flcon">
+                                <div class="flnum">
+                                    <%=spiral[i].floor%>
+                                </div>
+                            </div>
+                        </button>
+                        <% } %>
+                            <div id="data-set">
+                                <div class="data-header" style="display: flex;">
+                                    <div style="display: flex; flex-wrap: wrap;">Leyline Disorder: <ul>
+                                            <li>
+                                                <%= spiral[0].leyline_disorders[0] %>
+                                            </li>
+                                            <li>
+                                                <%= spiral[0].leyline_disorders[1] %>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button onclick="closeinfo()" style="position: absolute; right: 0;">X</button>
+                                </div>
+                                <div class="data-data">
+                                    <div class="chamber1">
+                                        <button class="chamber1-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                            1</button>
+                                        <div class="thisone" style="display: none;">
+                                            <div class="chamber1-data">
+                                                <span>Clear Condition: <%= spiral[0].chamber_1.challenge %>
+                                            </div>
+                                            <div>First Half</div>
+                                            <span style=" display: flex;">
+                                                <% for(let i=0; i< spiral[0].chamber_1.first_half.length; i++) { %>
+                                                    <img class="chamber-img"
+                                                        src="/public/images/enemies/<%=spiral[0].chamber_1.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_1.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                        alt="failed_to_load">
+                                                    <% } %>
+                                            </span>
+                                            <% if(spiral[0].chamber_1.second_half.length> 0) { %>
+                                                <div>Second Half
+                                                    <span style=" display: flex;">
+
+                                                        <% for(let i=0; i< spiral[0].chamber_1.second_half.length; i++)
+                                                            { %>
+                                                            <img class="chamber-img"
+                                                                src="/public/images/enemies/<%=spiral[0].chamber_1.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_1.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                                alt="failed_to_load">
+                                                            <% } %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="chamber2">
+                                        <button class="chamber2-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                            2</button>
+                                        <div class="thisone" style="display: none;">
+                                            <div class="chamber2-data">
+                                                <span>Clear Condition: <%= spiral[0].chamber_2.challenge %>
+                                            </div>
+                                            <div>First Half</div>
+                                            <span style=" display: flex;">
+                                                <% for(let i=0; i< spiral[0].chamber_2.first_half.length; i++) { %>
+                                                    <img class="chamber-img"
+                                                        src="/public/images/enemies/<%=spiral[0].chamber_2.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_2.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                        alt="failed_to_load">
+                                                    <% } %>
+                                            </span>
+                                            <% if(spiral[0].chamber_2.second_half.length> 0) { %>
+                                                <div>Second Half
+                                                    <span style=" display: flex;">
+
+                                                        <% for(let i=0; i< spiral[0].chamber_2.second_half.length; i++)
+                                                            { %>
+                                                            <img class="chamber-img"
+                                                                src="/public/images/enemies/<%=spiral[0].chamber_2.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_2.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                                alt="failed_to_load">
+                                                            <% } %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="chamber3">
+                                        <button class="chamber3-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                            3</button>
+                                        <div class="thisone" style="display: none;">
+                                            <div class="chamber3-data">
+                                                <span>Clear Condition: <%= spiral[0].chamber_3.challenge %>
+                                            </div>
+                                            <div>First Half</div>
+                                            <span style=" display: flex;">
+                                                <% for(let i=0; i< spiral[0].chamber_3.first_half.length; i++) { %>
+                                                    <img class="chamber-img"
+                                                        src="/public/images/enemies/<%=spiral[0].chamber_3.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_3.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                        alt="failed_to_load">
+                                                    <% } %>
+                                            </span>
+                                            <% if(spiral[0].chamber_3.second_half.length> 0) { %>
+                                                <div>Second Half
+                                                    <span style=" display: flex;">
+
+                                                        <% for(let i=0; i< spiral[0].chamber_3.second_half.length; i++)
+                                                            { %>
+                                                            <img class="chamber-img"
+                                                                src="/public/images/enemies/<%=spiral[0].chamber_3.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_3.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
+                                                                alt="failed_to_load">
+                                                            <% } %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div id=" moon-spire" data-spiral-content>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti maiores
+            vel ab eveniet deserunt
+            rem omnis! Deleniti dignissimos explicabo necessitatibus, nobis animi
+            sapiente cum quae nesciunt
+            repellat doloribus ipsam dolor!
+            Maxime, nemo temporibus! Optio laboriosam odio consequuntur cumque sapiente
+            vero in, tempore iure,
+            earum vel consectetur ea aut! Itaque veritatis consectetur dolore ex beatae
+            saepe rem illo laborum
+            cum aspernatur.
+            Delectus molestias aperiam asperiores atque iste maxime voluptatibus nobis
+            beatae consequatur,
+            corrupti iure deleniti reprehenderit unde pariatur vero assumenda in odio.
+            Perferendis est,
+            veritatis laudantium illum aut reiciendis rem enim.
+            Consequatur, tempora nulla itaque cum magni officia quam veniam quis,
+            accusamus labore fuga
+            corporis, laboriosam omnis earum! Harum maiores exercitationem fugit
+            architecto sequi suscipit in
+            fuga blanditiis facilis dolorum! Mollitia.
+            Nisi laborum unde consectetur debitis reprehenderit fugiat, temporibus,
+            mollitia maxime amet, odit
+            laudantium corporis a. Atque ipsum explicabo maxime nisi at accusantium,
+            consequuntur dolorum,
+            expedita, unde vel necessitatibus illo fugit?
+        </div>
+    </div>
+    </div>
+</body>
+
+<style>
+    :root {
+        --tab-height: 3.5rem;
+    }
+
+    .spiral-container {
+        margin: 6rem 0;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        width: 70%;
+        height: 75vh;
+        border: 1px solid white;
+    }
+
+    .spiral-tabs {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem 0;
+        margin: 0;
+        height: var(--tab-height);
+        border-bottom: 1px solid white;
+        list-style-type: none;
+    }
+
+    [data-spiral-content] {
+        display: none;
+    }
+
+    [data-spiral-content].active {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+    }
+
+    .tab {
+        cursor: pointer;
+    }
+
+    .tab.active {
+        border-bottom: 1px solid white;
+    }
+
+    .spiral-content {
+        height: calc(100% - var(--tab-height));
+        overflow: auto;
+    }
+
+    img {
+        width: 200px;
+        color: white;
+    }
+
+    .flgroup {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+    }
+
+    .floor {
+        border: none;
+        height: 90%;
+        width: 12%;
+        background: url("/public/images/undecided/spiral_sky.jpg") center;
+        clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0% 90%, 0% 10%);
+        position: relative;
+        transform: translate(0, 5%);
+    }
+
+    .floor.inactive {
+        display: none;
+    }
+
+    .floor.active {
+        display: unset;
+    }
+
+    .flcon {
+        height: 100%;
+        width: 100%;
+    }
+
+    .flnum {
+        background: rgba(255, 255, 255, 0.301);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 2.25rem;
+        display: grid;
+        place-content: center;
+        position: relative;
+        margin: 5rem auto;
+    }
+
+    #data-set {
+        height: fit-content;
+        width: calc(100% - 175px);
+        background: rgba(54, 10, 158, 0.877);
+        position: relative;
+        top: 5%;
+        display: none;
+        color: white;
+        border-radius: 5px 5px 5px 5px;
+        padding: .5rem;
+    }
+
+    #data-set.active {
+        display: unset;
+    }
+
+    .chamber-btn {
+        height: 75px;
+        width: 100%;
+    }
+
+    .chamber-img {
+        background: white;
+        padding: 5px 5px;
+        margin-left: 1rem;
+        width: 12.5%;
+    }
+
+    /* @media only screen and (max-width: 1716px) {
+        .floor {
+            height: 100px;
+            width: 40%;
+            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+        }
+
+        .flcon {
+            display: grid;
+            place-content: center;
+        }
+
+        .flnum {
+            margin: 0 0;
+            height: 50px;
+            width: 50px;
+        }
+
+        #data-set {
+            width: 100%;
+        }
+    } */
+
+    @media only screen and (max-width: 1000px) {
+        #data-set {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-height: 825px) {
+        .chamber-btn {
+            height: 50px;
+        }
+
+        .floor.rotational {
+            height: 100px;
+            width: 100%;
+            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+        }
+
+        .floor.rotational .flcon {
+            display: grid;
+            place-content: center;
+        }
+
+
+        .flgroup {
+            overflow-y: auto;
+        }
+    }
+</style>
+
+<script>
+    function toggleNav(btn) {
+        const x = document.getElementById("nav")
+        if (!(x.className.includes("show"))) {
+            x.classList.add("show")
+            document.body.style.overflow = 'hidden';
+        } else {
+            x.classList.remove("show")
+            drops.forEach(drop => {
+                drop.classList.remove('open');
+            })
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    const drops = document.querySelectorAll('.drop')
+    const dropIcon = document.querySelectorAll('.drop-icon')
+    const winsize = window.matchMedia("screen and (max-width: 920px)")
+
+    navchange();
+    window.addEventListener('resize', () => { navchange() });
+
+    function open(e) {
+        if (e.target !== this.firstElementChild && e.target.parentElement !== this.firstElementChild) return;
+        else {
+            e.preventDefault();
+            if (e.currentTarget.classList.contains('open')) {
+                e.currentTarget.classList.remove('open');
+            } else {
+                e.currentTarget.classList.add('open')
+            }
+        }
+    }
+
+    function navchange() {
+        if (winsize.matches) {
+            drops.forEach(drop => {
+                drop.removeEventListener('click', open)
+                drop.addEventListener('click', open)
+            })
+            dropIcon.forEach(icon => icon.textContent = "+")
+        } else {
+            document.body.style.overflow = 'auto';
+            drops.forEach(drop => {
+                drop.removeEventListener('click', open)
+                drop.addEventListener('click', open)
+            })
+            dropIcon.forEach(icon => icon.textContent = "▼")
+        }
+    }
+</script>
+
+<script>
+    const spiralTabs = document.querySelectorAll("[data-spiral-tab]")
+    const spiralContent = document.querySelectorAll("[data-spiral-content]")
+
+    const rotational = window.matchMedia("(max-height: 825px)")
+
+    function changeTab(e) {
+        remove(spiralTabs)
+        remove(spiralContent)
+        e.target.classList.add("active")
+        document.querySelector(e.target.dataset.spiralTab).classList.add("active")
+    }
+
+    function remove(spirals) {
+        spirals.forEach(spiral => {
+            spiral.classList.remove("active")
+        })
+    }
+
+    spiralTabs.forEach(tab => {
+        tab.addEventListener('click', changeTab)
+    })
+
+    function displayinfo(flr) {
+        document.getElementById("data-set").classList.add("active");
+        let children = flr.parentNode.children;
+        for (let i = 0; i < children.length; i++) {
+            if (children[i].tagName === "BUTTON" && children[i] !== flr) {
+                children[i].classList.add("inactive");
+            }
+        }
+        flr.classList.add("active");
+        if (rotational.matches) {
+            flr.classList.add("rotational");
+        }
+    }
+
+    function closeinfo() {
+        document.getElementById("data-set").classList.remove("active");
+        let children = document.getElementById("flgroup").children;
+        for (let j = 0; j < children.length; j++) {
+            if (children[j].tagName === "BUTTON") {
+                children[j].classList.remove("inactive");
+                children[j].classList.remove("active");
+            }
+        }
+        if (rotational.matches) {
+            flr.classList.remove("rotational");
+        }
+    }
+
+    function showChamber(btn) {
+        let chamberBtn = document.getElementsByClassName("chamber-btn");
+        for (let k = 0; k < 3; k++) {
+            if (chamberBtn[k] !== btn) {
+                chamberBtn[k].nextElementSibling.style.display = 'none';
+            }
+        }
+        if (btn.nextElementSibling.style.display === "unset") {
+            btn.nextElementSibling.style.display = "none"
+        }
+        else {
+            btn.nextElementSibling.style.display = "unset";
+        }
+    }
+
+
+</script>
+
+</html>

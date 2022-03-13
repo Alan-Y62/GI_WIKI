@@ -23,6 +23,12 @@ router.get("/spiral", async (req, res) => {
   res.render("spiral", { spiral: spiral });
 });
 
+router.get("/spiraltest", async (req, res) => {
+  let spiral = await Spiral.find();
+  console.log(spiral);
+  res.render("spiraltest", { spiral: spiral });
+});
+
 router.get("/artifacts", async (req, res) => {
   const artifacts = await Artifact.find();
   res.render("artifacts", { artifacts: artifacts });
