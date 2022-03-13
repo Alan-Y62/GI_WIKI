@@ -231,12 +231,11 @@ nav {
     padding: 0 5px;
     font-size: 1.5rem;
     line-height: 1.5rem;
-    transform-origin: center;
+    transform-origin: center center;
     transition: transform 0.2s;
   }
 
   .drop.open .drop-icon {
-    transform-origin: center;
     transform: rotate(-135deg);
   }
 }
