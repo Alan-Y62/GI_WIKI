@@ -165,7 +165,7 @@ nav {
   .nav-list {
     padding: 0;
     height: 0;
-    transition: height 0.3s;
+    transition: height 0.2s ease-in;
   }
 
   .nav-list li {
@@ -221,7 +221,9 @@ nav {
     padding: 0;
     outline: 0;
     overflow: hidden;
-    transition: all 0.2s ease-in;
+    transition-property: max-height, visibility, margin-top;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
   }
 
   .drop-icon {
@@ -229,7 +231,8 @@ nav {
     padding: 0 5px;
     font-size: 1.5rem;
     line-height: 1.5rem;
-    transition: all 0.2s;
+    transform-origin: center;
+    transition: transform 0.2s;
   }
 
   .drop.open .drop-icon {
