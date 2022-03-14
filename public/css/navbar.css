@@ -230,14 +230,14 @@ nav {
     display: inline-block;
     transform-box: fill-box;
     transform-origin: center center;
-    transition: transform 0.2s;
-  }
-
-  .drop.open .drop-icon {
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    transition: transform 0.2s;
+  }
+
+  .drop.open .drop-icon {
     transform: rotate(-135deg);
   }
 }
