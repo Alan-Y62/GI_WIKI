@@ -227,8 +227,8 @@ nav {
   }
 
   .drop-icon {
-    display: inline-block;
-    transform-box: fill-box;
+    display: inline-flex;
+    place-content: center;
     transform-origin: center center;
     transition: transform 0.2s;
   }
