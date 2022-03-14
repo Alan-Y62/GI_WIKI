@@ -138,15 +138,15 @@ nav {
   }
 }
 
-@media (min-width: 920px){
+@media (min-width: 920px) {
   .drop:hover .drop-content {
-      visibility: visible;
-      min-width: 150px;
-      animation-name: growin;
-      transform-origin: top center;
-      animation-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
+    visibility: visible;
+    min-width: 150px;
+    animation-name: growin;
+    transform-origin: top center;
+    animation-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
 }
 
 @media only screen and (max-width: 920px) {
