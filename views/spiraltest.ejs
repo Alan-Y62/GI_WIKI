@@ -72,113 +72,110 @@
                                 </div>
                             </div>
                         </button>
-                        <% } %>
-                            <div id="data-set">
-                                <div class="data-header" style="display: flex;">
-                                    <div style="display: flex; flex-wrap: wrap;">Leyline Disorder: <ul>
-                                            <li>
-                                                <%= spiral[0].leyline_disorders[0] %>
-                                            </li>
-                                            <li>
-                                                <%= spiral[0].leyline_disorders[1] %>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <button onclick="closeinfo()" style="position: absolute; right: 0;">X</button>
+                        <div class="data-set" id="flr<%=spiral[i].floor%>">
+                            <div class="data-header" style="display: flex;">
+                                <div style="display: flex; flex-wrap: wrap;">Leyline Disorder: <ul>
+                                        <li>
+                                            <%= spiral[i].leyline_disorders[0] %>
+                                        </li>
+                                        <li>
+                                            <%= spiral[i].leyline_disorders[1] %>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="data-data">
-                                    <div class="chamber1">
-                                        <button class="chamber1-btn chamber-btn" onclick="showChamber(this)">CHAMBER
-                                            1</button>
-                                        <div class="thisone" style="display: none;">
-                                            <div class="chamber1-data">
-                                                <span>Clear Condition: <%= spiral[0].chamber_1.challenge %>
-                                            </div>
-                                            <div>First Half</div>
-                                            <span style=" display: flex;">
-                                                <% for(let i=0; i< spiral[0].chamber_1.first_half.length; i++) { %>
-                                                    <img class="chamber-img"
-                                                        src="/public/images/enemies/<%=spiral[0].chamber_1.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_1.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                        alt="failed_to_load">
-                                                    <% } %>
-                                            </span>
-                                            <% if(spiral[0].chamber_1.second_half.length> 0) { %>
-                                                <div>Second Half
-                                                    <span style=" display: flex;">
-
-                                                        <% for(let i=0; i< spiral[0].chamber_1.second_half.length; i++)
-                                                            { %>
-                                                            <img class="chamber-img"
-                                                                src="/public/images/enemies/<%=spiral[0].chamber_1.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_1.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                                alt="failed_to_load">
-                                                            <% } %>
-                                                    </span>
-                                                </div>
-                                                <% } %>
+                                <button onclick="closeinfo(this)" style="position: absolute; right: 0;">X</button>
+                            </div>
+                            <div class="data-data">
+                                <div class="chamber1">
+                                    <button class="chamber1-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                        1</button>
+                                    <div class="thisone" style="display: none;">
+                                        <div class="chamber1-data">
+                                            <span>Clear Condition: <%= spiral[i].chamber_1.challenge %>
                                         </div>
+                                        <div>First Half</div>
+                                        <span style=" display: flex;">
+                                            <% for(let j=0; j< spiral[i].chamber_1.first_half.length; j++) { %>
+                                                <img class="chamber-img"
+                                                    src="/public/images/enemies/<%=spiral[i].chamber_1.first_half[j].split('.')[1]%>/<%=spiral[i].chamber_1.first_half[j].split('.')[0].toLowerCase()%>/icon.png"
+                                                    alt="failed_to_load">
+                                                <% } %>
+                                        </span>
+                                        <% if(spiral[i].chamber_1.second_half.length> 0) { %>
+                                            <div>Second Half
+                                                <span style=" display: flex;">
+
+                                                    <% for(let k=0; k< spiral[i].chamber_1.second_half.length; k++) { %>
+                                                        <img class="chamber-img"
+                                                            src="/public/images/enemies/<%=spiral[i].chamber_1.second_half[k].split('.')[1]%>/<%=spiral[i].chamber_1.second_half[k].split('.')[0].toLowerCase()%>/icon.png"
+                                                            alt="failed_to_load">
+                                                        <% } %>
+                                                </span>
+                                            </div>
+                                            <% } %>
                                     </div>
-                                    <div class="chamber2">
-                                        <button class="chamber2-btn chamber-btn" onclick="showChamber(this)">CHAMBER
-                                            2</button>
-                                        <div class="thisone" style="display: none;">
-                                            <div class="chamber2-data">
-                                                <span>Clear Condition: <%= spiral[0].chamber_2.challenge %>
-                                            </div>
-                                            <div>First Half</div>
-                                            <span style=" display: flex;">
-                                                <% for(let i=0; i< spiral[0].chamber_2.first_half.length; i++) { %>
-                                                    <img class="chamber-img"
-                                                        src="/public/images/enemies/<%=spiral[0].chamber_2.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_2.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                        alt="failed_to_load">
-                                                    <% } %>
-                                            </span>
-                                            <% if(spiral[0].chamber_2.second_half.length> 0) { %>
-                                                <div>Second Half
-                                                    <span style=" display: flex;">
-
-                                                        <% for(let i=0; i< spiral[0].chamber_2.second_half.length; i++)
-                                                            { %>
-                                                            <img class="chamber-img"
-                                                                src="/public/images/enemies/<%=spiral[0].chamber_2.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_2.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                                alt="failed_to_load">
-                                                            <% } %>
-                                                    </span>
-                                                </div>
-                                                <% } %>
+                                </div>
+                                <div class="chamber2">
+                                    <button class="chamber2-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                        2</button>
+                                    <div class="thisone" style="display: none;">
+                                        <div class="chamber2-data">
+                                            <span>Clear Condition: <%= spiral[i].chamber_2.challenge %>
                                         </div>
+                                        <div>First Half</div>
+                                        <span style=" display: flex;">
+                                            <% for(let q=0; q< spiral[i].chamber_2.first_half.length; q++) { %>
+                                                <img class="chamber-img"
+                                                    src="/public/images/enemies/<%=spiral[i].chamber_2.first_half[q].split('.')[1]%>/<%=spiral[i].chamber_2.first_half[q].split('.')[0].toLowerCase()%>/icon.png"
+                                                    alt="failed_to_load">
+                                                <% } %>
+                                        </span>
+                                        <% if(spiral[i].chamber_2.second_half.length> 0) { %>
+                                            <div>Second Half
+                                                <span style=" display: flex;">
+
+                                                    <% for(let w=0; w< spiral[i].chamber_2.second_half.length; w++) { %>
+                                                        <img class="chamber-img"
+                                                            src="/public/images/enemies/<%=spiral[i].chamber_2.second_half[w].split('.')[1]%>/<%=spiral[i].chamber_2.second_half[w].split('.')[0].toLowerCase()%>/icon.png"
+                                                            alt="failed_to_load">
+                                                        <% } %>
+                                                </span>
+                                            </div>
+                                            <% } %>
                                     </div>
-                                    <div class="chamber3">
-                                        <button class="chamber3-btn chamber-btn" onclick="showChamber(this)">CHAMBER
-                                            3</button>
-                                        <div class="thisone" style="display: none;">
-                                            <div class="chamber3-data">
-                                                <span>Clear Condition: <%= spiral[0].chamber_3.challenge %>
-                                            </div>
-                                            <div>First Half</div>
-                                            <span style=" display: flex;">
-                                                <% for(let i=0; i< spiral[0].chamber_3.first_half.length; i++) { %>
-                                                    <img class="chamber-img"
-                                                        src="/public/images/enemies/<%=spiral[0].chamber_3.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_3.first_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                        alt="failed_to_load">
-                                                    <% } %>
-                                            </span>
-                                            <% if(spiral[0].chamber_3.second_half.length> 0) { %>
-                                                <div>Second Half
-                                                    <span style=" display: flex;">
-
-                                                        <% for(let i=0; i< spiral[0].chamber_3.second_half.length; i++)
-                                                            { %>
-                                                            <img class="chamber-img"
-                                                                src="/public/images/enemies/<%=spiral[0].chamber_3.first_half[i].split('.')[1]%>/<%=spiral[0].chamber_3.second_half[i].split('.')[0].toLowerCase()%>/icon.png"
-                                                                alt="failed_to_load">
-                                                            <% } %>
-                                                    </span>
-                                                </div>
-                                                <% } %>
+                                </div>
+                                <div class="chamber3">
+                                    <button class="chamber3-btn chamber-btn" onclick="showChamber(this)">CHAMBER
+                                        3</button>
+                                    <div class="thisone" style="display: none;">
+                                        <div class="chamber3-data">
+                                            <span>Clear Condition: <%= spiral[0].chamber_3.challenge %>
                                         </div>
+                                        <div>First Half</div>
+                                        <span style=" display: flex;">
+                                            <% for(let e=0; e< spiral[i].chamber_3.first_half.length; e++) { %>
+                                                <img class="chamber-img"
+                                                    src="/public/images/enemies/<%=spiral[i].chamber_3.first_half[e].split('.')[1]%>/<%=spiral[i].chamber_3.first_half[e].split('.')[0].toLowerCase()%>/icon.png"
+                                                    alt="failed_to_load">
+                                                <% } %>
+                                        </span>
+                                        <% if(spiral[0].chamber_3.second_half.length> 0) { %>
+                                            <div>Second Half
+                                                <span style=" display: flex;">
+
+                                                    <% for(let r=0; r< spiral[i].chamber_3.second_half.length; i++) { %>
+                                                        <img class="chamber-img"
+                                                            src="/public/images/enemies/<%=spiral[i].chamber_3.first_half[r].split('.')[1]%>/<%=spiral[i].chamber_3.second_half[r].split('.')[0].toLowerCase()%>/icon.png"
+                                                            alt="failed_to_load">
+                                                        <% } %>
+                                                </span>
+                                            </div>
+                                            <% } %>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <% } %>
                 </div>
             </div>
         </div>
@@ -311,7 +308,7 @@
         margin: 5rem auto;
     }
 
-    #data-set {
+    .data-set {
         height: fit-content;
         width: calc(100% - 175px);
         background: rgba(54, 10, 158, 0.877);
@@ -323,7 +320,7 @@
         padding: .5rem;
     }
 
-    #data-set.active {
+    .data-set.active {
         display: unset;
     }
 
@@ -363,7 +360,7 @@
     } */
 
     @media only screen and (max-width: 1000px) {
-        #data-set {
+        .data-set {
             width: 100%;
         }
     }
@@ -467,7 +464,7 @@
     })
 
     function displayinfo(flr) {
-        document.getElementById("data-set").classList.add("active");
+        flr.nextElementSibling.classList.add("active");
         let children = flr.parentNode.children;
         for (let i = 0; i < children.length; i++) {
             if (children[i].tagName === "BUTTON" && children[i] !== flr) {
@@ -480,8 +477,8 @@
         }
     }
 
-    function closeinfo() {
-        document.getElementById("data-set").classList.remove("active");
+    function closeinfo(btn) {
+        btn.parentElement.parentElement.classList.remove("active");
         let children = document.getElementById("flgroup").children;
         for (let j = 0; j < children.length; j++) {
             if (children[j].tagName === "BUTTON") {
@@ -490,15 +487,15 @@
             }
         }
         if (rotational.matches) {
-            flr.classList.remove("rotational");
+            btn.parentElement.parentElement.previousElementSibling.classList.remove("rotational");
         }
     }
 
     function showChamber(btn) {
-        let chamberBtn = document.getElementsByClassName("chamber-btn");
+        let chamberBtn = btn.parentElement.parentElement.children;
         for (let k = 0; k < 3; k++) {
-            if (chamberBtn[k] !== btn) {
-                chamberBtn[k].nextElementSibling.style.display = 'none';
+            if (chamberBtn[k] !== btn.parentElement) {
+                chamberBtn[k].children[1].style.display = 'none';
             }
         }
         if (btn.nextElementSibling.style.display === "unset") {
