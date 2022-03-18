@@ -94,7 +94,7 @@
                                             <span>Clear Condition: <%= spiral[i].chamber_1.challenge %>
                                         </div>
                                         <div>First Half</div>
-                                        <span style=" display: flex;">
+                                        <span class="img-con">
                                             <% for(let j=0; j< spiral[i].chamber_1.first_half.length; j++) { %>
                                                 <img class="chamber-img"
                                                     src="/public/images/enemies/<%=spiral[i].chamber_1.first_half[j].split('.')[1]%>/<%=spiral[i].chamber_1.first_half[j].split('.')[0].toLowerCase()%>/icon.png"
@@ -103,7 +103,7 @@
                                         </span>
                                         <% if(spiral[i].chamber_1.second_half.length> 0) { %>
                                             <div>Second Half
-                                                <span style=" display: flex;">
+                                                <span class="img-con">
 
                                                     <% for(let k=0; k< spiral[i].chamber_1.second_half.length; k++) { %>
                                                         <img class="chamber-img"
@@ -123,7 +123,7 @@
                                             <span>Clear Condition: <%= spiral[i].chamber_2.challenge %>
                                         </div>
                                         <div>First Half</div>
-                                        <span style=" display: flex;">
+                                        <span class="img-con">
                                             <% for(let q=0; q< spiral[i].chamber_2.first_half.length; q++) { %>
                                                 <img class="chamber-img"
                                                     src="/public/images/enemies/<%=spiral[i].chamber_2.first_half[q].split('.')[1]%>/<%=spiral[i].chamber_2.first_half[q].split('.')[0].toLowerCase()%>/icon.png"
@@ -132,7 +132,7 @@
                                         </span>
                                         <% if(spiral[i].chamber_2.second_half.length> 0) { %>
                                             <div>Second Half
-                                                <span style=" display: flex;">
+                                                <span class="img-con">
 
                                                     <% for(let w=0; w< spiral[i].chamber_2.second_half.length; w++) { %>
                                                         <img class="chamber-img"
@@ -152,7 +152,7 @@
                                             <span>Clear Condition: <%= spiral[0].chamber_3.challenge %>
                                         </div>
                                         <div>First Half</div>
-                                        <span style=" display: flex;">
+                                        <span class="img-con">
                                             <% for(let e=0; e< spiral[i].chamber_3.first_half.length; e++) { %>
                                                 <img class="chamber-img"
                                                     src="/public/images/enemies/<%=spiral[i].chamber_3.first_half[e].split('.')[1]%>/<%=spiral[i].chamber_3.first_half[e].split('.')[0].toLowerCase()%>/icon.png"
@@ -161,7 +161,7 @@
                                         </span>
                                         <% if(spiral[0].chamber_3.second_half.length> 0) { %>
                                             <div>Second Half
-                                                <span style=" display: flex;">
+                                                <span class="img-con">
 
                                                     <% for(let r=0; r< spiral[i].chamber_3.second_half.length; i++) { %>
                                                         <img class="chamber-img"
@@ -309,7 +309,7 @@
     }
 
     .data-set {
-        height: fit-content;
+        max-height: fit-content;
         width: calc(100% - 175px);
         background: rgba(54, 10, 158, 0.877);
         position: relative;
@@ -329,10 +329,17 @@
         width: 100%;
     }
 
+    .img-con {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .chamber-img {
         background: white;
         padding: 5px 5px;
         margin-left: 1rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
         width: 12.5%;
     }
 
@@ -362,7 +369,27 @@
     @media only screen and (max-width: 1000px) {
         .data-set {
             width: 100%;
+            position: relative;
+            margin-top: -1.5rem;
         }
+
+        .floor {
+            margin-top: .5rem;
+            height: 100px;
+            width: 100%;
+            clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+        }
+
+        .floor .flcon {
+            display: grid;
+            place-content: center;
+        }
+
+        .chamber-img {
+            width: 75px;
+        }
+    }
+
     }
 
     @media only screen and (max-height: 900px) {
@@ -371,6 +398,7 @@
         }
 
         .floor.rotational {
+            margin-top: .5rem;
             height: 100px;
             width: 100%;
             clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
