@@ -7,7 +7,7 @@ body {
 }
 
 section {
-  background: #464646d7;
+  background: #888888d6;
   width: 80%;
   margin: 10rem auto;
 }
@@ -20,7 +20,7 @@ section {
 
 .region a:hover .char-name {
   text-decoration: underline 2px;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .region a:hover .character-container {
@@ -57,7 +57,7 @@ section {
 }
 
 .char-name {
-  color: white;
+  color: black;
 }
 
 .char-icon {
@@ -91,6 +91,33 @@ section {
 
 .Geo {
   color: #795f24;
+}
+
+@media only screen and (max-width: 918px) {
+  section {
+    width: 100%;
+  }
+
+  .grid-con {
+    display: grid;
+    place-content: center;
+    width: 100%;
+  }
+
+  .weps,
+  .elements {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .character-container {
+    width: 100%;
+  }
+
+  .container a {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 380px) {
